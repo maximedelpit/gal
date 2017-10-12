@@ -5,4 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable
   has_many :leads
   acts_as_taggable
+
+  def full_name
+    return "#{first_name} #{last_name}"
+  end
+
 end

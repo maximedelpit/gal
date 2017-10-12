@@ -10,10 +10,14 @@ class LeadsController < ApplicationController
     @lead.user.tag_list = params[:lead][:tag_list]
     @lead.price ||= 30
     if @lead.save
-      render 'pages/success', lead: @lead, user: current_user
+      redirect_to success_lead_path(@lead)
     else
       render :new
     end
+  end
+
+  def show
+    @lead = Lead.find(params[:id])
   end
 
   private

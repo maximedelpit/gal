@@ -16,7 +16,8 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem "select2-rails"
+gem 'rails-assets-select2', source: 'https://rails-assets.org'
+
 
 
 gem 'acts-as-taggable-on', '~> 4.0'
