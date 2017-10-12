@@ -1,0 +1,22 @@
+<h1><%= t('.new_title', default: "Create your lead") %></h1>
+
+<%= simple_form_for @lead do |f| %>
+  <%= f.error_notification %>
+  <%= f.input :last_name, wrapper_html: {class: 'col-xs-6'} %>
+  <%= f.input :first_name, wrapper_html: {class: 'col-xs-6'} %>
+  <%= f.input :company, wrapper_html: {class: 'col-xs-6'} %>
+  <%= f.input :job_title, wrapper_html: {class: 'col-xs-6'} %>
+  <%= f.input :phone, wrapper_html: {class: 'col-xs-6'} %>
+  <%= f.input :linkedin_url, wrapper_html: {class: 'col-xs-6'} %>
+  <%= f.input :mail, wrapper_html: {class: 'col-xs-6'} %>
+  <%= f.input :company_size, collection: Lead::COMPANY_SIZES, wrapper_html: {class: 'col-xs-6'} %>
+  <%= f.input :location, wrapper_html: {class: 'col-xs-6'} %>
+
+  <%= f.input :description, wrapper_html: {class: 'col-xs-12'} %>
+
+  <%= f.input :tag_list, collection: ActsAsTaggableOn::Tag.all, value_method: :name, label_method: :name, wrapper_html: { multiple: true, class: 'select2 col-xs-12' } %>
+  <div class="col-xs-12 text-right">
+    <p><%= t('.price', default: "Price") %> <%= @lead.price %> €</p>
+    <%= f.submit :submit, class: "btn btn-primary" %>
+  </div>
+<% end %>

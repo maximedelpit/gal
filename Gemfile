@@ -16,6 +16,14 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
+gem "select2-rails"
+
+
+gem 'acts-as-taggable-on', '~> 4.0'
+
+# Admin
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
 group :development, :test do
   gem 'pry-byebug'
