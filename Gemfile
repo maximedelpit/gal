@@ -21,6 +21,8 @@ gem 'rails-assets-select2', source: 'https://rails-assets.org'
 
 
 gem 'acts-as-taggable-on', '~> 4.0'
+gem 'omniauth-linkedin-oauth2'
+
 
 # Admin
 gem 'activeadmin', github: 'activeadmin/activeadmin'

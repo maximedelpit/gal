@@ -1,0 +1,20 @@
+.form-wrapper {
+  background: white;
+  border-radius: 4px;
+  form {
+    overflow: overlay;
+    padding: 10px 5px;
+
+    .form-control:focus, .select2.select2-container.select2-container--bootstrap .selection:focus {
+      border-color: lighten($blue, 20%);
+      outline: 0;
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $purple;
+    }
+  }
+  .form-title  {
+    background: $blue-gray;
+    color: $light-gray;
+    border-radius: 4px 4px 0 0;
+    padding: 5px 10px;
+  }
+}

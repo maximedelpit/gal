@@ -1,4 +1,6 @@
-.select2.select2-container.select2-container--bootstrap .selection {
-  @extend .form-control;
+.select2.select2-container.select2-container--bootstrap{
+  width: 100% !important;
+  .selection {
+    @extend .form-control;
+  }
 }
-
