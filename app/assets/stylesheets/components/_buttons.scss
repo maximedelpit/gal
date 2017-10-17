@@ -1,0 +1,14 @@
+.btn-linkedin {
+  background-image: image-url("linkedin_connect_default.png");
+  transition: 0.2s ease;
+  background-position: center;
+  background-size: cover;
+  width: 198px;
+  height: 40px;
+  &:active {
+    background-image: image-url("linkedin_connect_active.png");
+  }
+  &:hover {
+    background-image: image-url("linkedin_connect_hover.png");
+  }
+}
