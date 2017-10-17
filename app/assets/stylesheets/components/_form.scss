@@ -1,9 +1,18 @@
 .form-wrapper {
   background: white;
-  border-radius: 4px;
+  border-radius: 8px;
+  border: 1px solid #F4F4F4;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
+
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+
   form {
     overflow: overlay;
     padding: 10px 5px;
+    border: 1px solid $light-gray;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
 
     .form-control:focus, .select2.select2-container.select2-container--bootstrap .selection:focus {
       border-color: lighten($blue, 20%);
@@ -14,7 +23,9 @@
   .form-title  {
     background: $blue-gray;
     color: $light-gray;
-    border-radius: 4px 4px 0 0;
+    border-radius: 8px 8px 0 0;
     padding: 5px 10px;
+    border: 1px solid $blue-gray;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
   }
 }
