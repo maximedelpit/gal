@@ -1,9 +1,11 @@
-.form-wrapper {
-  background: white;
-  border-radius: 8px;
-  border: 1px solid #F4F4F4;
-  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
+.my-container {
+  height: calc(100vh - 140px);
+  display: flex;
+  align-content: center;
+  align-items: center;
+}
 
+.form-wrapper {
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
   }
@@ -13,19 +15,30 @@
     padding: 10px 5px;
     border: 1px solid $light-gray;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
+    background: white;
+    border-radius: 0 0 8px 8px;
+    border: 1px solid #F4F4F4;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
 
+    .form-control {
+      transition: all 0.5s ease-out;
+      border-width: 1px 0px 0px 1px; // TEST
+      box-shadow: none;
+    }
     .form-control:focus, .select2.select2-container.select2-container--bootstrap .selection:focus {
-      border-color: lighten($blue, 20%);
+      border: none;
+      border-bottom: 1px solid;
+      border-color: lighten($red, 20%);
       outline: 0;
-      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px $purple;
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0), 2px 1px 2px 0px #FF5D3B;
     }
   }
   .form-title  {
-    background: $blue-gray;
+    background: $darker-blue-gray;
     color: $light-gray;
     border-radius: 8px 8px 0 0;
     padding: 5px 10px;
-    border: 1px solid $blue-gray;
+    border: 1px solid $darker-blue-gray;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
   }
 }

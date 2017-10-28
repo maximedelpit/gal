@@ -12,10 +12,10 @@ $font-size-base: 14px;
 // Colors
 $gray-base:       $gray;
 $brand-primary:   $blue;
-$brand-success:   $green;
-$brand-info:      $pink;
-$brand-danger:    $purple;
-$brand-warning:   $purple;
+$brand-success:   $red;
+$brand-info:      $yellow;
+$brand-danger:    $gray-blue;
+$brand-warning:   $yellow;
 
 // Buttons & inputs' radius
 $border-radius-base:  2px;
@@ -23,3 +23,6 @@ $border-radius-large: 2px;
 $border-radius-small: 2px;
 
 // Override other variables below!
+.btn-primary:hover {
+  // background-color: lighten($brand-primary, 20%) !important;
+}

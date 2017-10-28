@@ -11,9 +11,13 @@
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class="container">
+    <div class='my-container'>
       <%= yield %>
+     </div>
+    <div class="oblique-wrapper">
+      <div class="oblique-bg"></div>
     </div>
+    <footer></footer>
     <%= javascript_include_tag 'application' %>
     <%= yield(:after_js) %>
   </body>
