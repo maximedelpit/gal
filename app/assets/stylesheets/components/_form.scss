@@ -1,8 +1,8 @@
 .my-container {
   height: calc(100vh - 140px);
-  display: flex;
-  align-content: center;
-  align-items: center;
+  //display: flex;
+  //align-content: center;
+  //align-items: center;
 }
 
 .form-wrapper {
@@ -13,7 +13,7 @@
   form {
     overflow: overlay;
     padding: 10px 5px;
-    border: 1px solid $light-gray;
+    border: 1px solid $lighter-gray;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
     background: white;
     border-radius: 0 0 8px 8px;
@@ -35,7 +35,7 @@
   }
   .form-title  {
     background: $darker-blue-gray;
-    color: $light-gray;
+    color: $lighter-gray;
     border-radius: 8px 8px 0 0;
     padding: 5px 10px;
     border: 1px solid $darker-blue-gray;
