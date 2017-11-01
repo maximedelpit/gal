@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171016214047) do
+ActiveRecord::Schema.define(version: 20171101112224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,20 @@ ActiveRecord::Schema.define(version: 20171016214047) do
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
   end
 
+  create_table "industries", force: :cascade do |t|
+    t.string "name"
+    t.string "linkedin_code"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "industry_subcategories", force: :cascade do |t|
+    t.string "name"
+    t.string "validated"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "leads", force: :cascade do |t|
     t.string "first_name"
     t.string "last_name"
@@ -39,12 +53,48 @@ ActiveRecord::Schema.define(version: 20171016214047) do
     t.string "phone"
     t.string "mail"
     t.string "linkedin_url"
+    t.string "nature"
+    t.string "state"
+    t.date "deadline"
+    t.date "within"
     t.text "description"
     t.bigint "user_id"
     t.float "price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_leads_on_user_id"
+  end
+
+  create_table "propositions", force: :cascade do |t|
+    t.string "mail"
+    t.string "state"
+    t.boolean "click_to_buy"
+    t.boolean "private", default: false
+    t.bigint "user_id"
+    t.bigint "lead_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lead_id"], name: "index_propositions_on_lead_id"
+    t.index ["user_id"], name: "index_propositions_on_user_id"
+  end
+
+  create_table "prospect_areas", force: :cascade do |t|
+    t.string "country"
+    t.string "region"
+    t.string "zipcode"
+    t.string "city"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "subcategories", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "industry_subcategory_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["industry_subcategory_id"], name: "index_subcategories_on_industry_subcategory_id"
+    t.index ["user_id"], name: "index_subcategories_on_user_id"
   end
 
   create_table "taggings", force: :cascade do |t|
@@ -90,18 +140,43 @@ ActiveRecord::Schema.define(version: 20171016214047) do
     t.string "first_name"
     t.string "last_name"
     t.string "location"
-    t.string "industry"
-    t.string "position"
+    t.string "job_title"
     t.string "phone_number"
+    t.string "company"
+    t.string "state"
+    t.string "language"
+    t.bigint "industry_id"
+    t.bigint "subcategory_id"
     t.boolean "admin", default: false, null: false
+    t.string "linkedin_email"
     t.string "provider"
+    t.string "picture_url"
     t.string "uid"
-    t.string "lkdn_picture_url"
-    t.string "token"
+    t.string "linkedin_url"
     t.datetime "token_expiry"
+    t.string "token"
     t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["industry_id"], name: "index_users_on_industry_id"
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+    t.index ["subcategory_id"], name: "index_users_on_subcategory_id"
+  end
+
+  create_table "zones", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "prospect_area_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prospect_area_id"], name: "index_zones_on_prospect_area_id"
+    t.index ["user_id"], name: "index_zones_on_user_id"
   end
 
   add_foreign_key "leads", "users"
+  add_foreign_key "propositions", "leads"
+  add_foreign_key "propositions", "users"
+  add_foreign_key "subcategories", "industry_subcategories"
+  add_foreign_key "subcategories", "users"
+  add_foreign_key "users", "industries"
+  add_foreign_key "users", "subcategories"
+  add_foreign_key "zones", "prospect_areas"
+  add_foreign_key "zones", "users"
 end
