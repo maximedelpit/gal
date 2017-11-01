@@ -13,6 +13,7 @@
     overflow: hidden;
     transform: skewY(-12deg);
     transform-origin: 0;
-    background: linear-gradient(-270deg, $green 0%, $blue 100%);
+    // background: linear-gradient(-270deg, $green 0%, $blue 100%);
+    background: linear-gradient(-270deg, #30cfd0 0%, #2196FF 28%, #2176FF 100%);
   }
 }

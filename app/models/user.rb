@@ -4,36 +4,62 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:linkedin]
+  belongs_to :industry
+  has_many :subcategories
+  has_many :industry_subcategories, through: :subcategories
   has_many :leads
+  has_many :zones
+  has_many :prospect_areas, through: :zones
   acts_as_taggable
+
+  alias_method :subies, :subcategories
+  alias_method :industry_subies, :industry_subcategories
+  delegate :name, to: :industry, prefix: true, allow_nil: true
+
+
 
   def full_name
     return "#{first_name} #{last_name}"
   end
 
-
-  def self.find_for_linkedin_oauth(auth)
-    user_params = auth.slice(:provider, :uid)
-    user_params.merge! auth.info.slice(:email, :first_name, :last_name)
-    user_params[:lkdn_picture_url] = auth.info.image
-    user_params[:location] = auth.info.location.name
-    user_params[:position] = auth.info.description
-    user_params[:industry] = auth.extra.raw_info.industry
-    user_params[:token] = auth.credentials.token
-    user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
-    user_params = user_params.to_h
-
+  def self.find_for_linkedin_oauth(auth, override=false)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
     user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
     if user
-      user.update(user_params)
+      user.assign_attributes(linkedin_params(auth))
+      user.reject_linkedin_changes unless override
     else
-      user = User.new(user_params)
+      user = User.new(linkedin_params(auth))
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
-      user.save
     end
-
+    user.email = user.linkedin_email if user.email.blank?
+    user.save
     return user
   end
 
+  def self.linkedin_params(auth)
+    user_params = auth.slice(:provider, :uid)
+    user_params.merge! auth.info.slice(:first_name, :last_name)
+    user_params[:token] = auth.credentials.token
+    user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
+    user_params[:linkedin_email] = auth.info.email
+    user_params[:picture_url] = auth.info.image
+    user_params[:linkedin_url] = auth.info.urls.public_profile
+    user_params[:location] = auth.info.location.name # "#{auth.info.location.name} (auth.info.location.country.code)"
+    user_params[:language] = auth.info.location.country.code
+    most_recent_position = auth.extra.raw_info.positions['values'].max_by {|p| Date.new(p.startDate.year,p.startDate.month, 1)}
+    user_params[:job_title] = most_recent_position.title
+    user_params[:company] = most_recent_position.company.name
+    user_params[:industry] = Industry.where(name: auth.extra.raw_info.industry).first_or_create
+    # Language
+    return user_params.to_h
+  end
+
+  def reject_linkedin_changes
+    # The purpose of the method is to avoid overwriting fields user has manually changed
+    # TO DO
+    # whitelist attributes that changed while value was previously set => TBD
+    attrs_to_restore = changes.select {|attr_, v| v[0].present? && v[1] != v[0]}.reject {|attr_| %w(token token_expiry).include?(attr_)}
+    restore_attributes(attrs_to_restore.keys)
+  end
 end
