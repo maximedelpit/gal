@@ -5,5 +5,5 @@ class IndustrySubcategory < ApplicationRecord
 
   validates :name, presence: true
 
-  alias_method :subies, :industry_subcategories
+  alias_method :subies, :subcategories
 end
