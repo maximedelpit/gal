@@ -17,3 +17,13 @@
     background: linear-gradient(-270deg, #30cfd0 0%, #2196FF 28%, #2176FF 100%);
   }
 }
+.oblique-opposite-wrapper {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: 180%;
+  height: 180%;
+  transform: skewY(-12deg);
+  // background: #F9F6E6;
+  background: linear-gradient(-270deg, #30cfd0 0%, #2196FF 28%, #2176FF 100%);
+}
