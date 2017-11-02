@@ -19,10 +19,11 @@ gem 'uglifier'
 gem 'rails-assets-select2', source: 'https://rails-assets.org'
 
 
-
+# Business Operations Gems
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'omniauth-linkedin-oauth2'
 gem 'linkedin', '~> 1.1'
+gem 'mailjet'
 
 
 # Admin
