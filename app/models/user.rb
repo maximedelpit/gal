@@ -17,7 +17,6 @@ class User < ApplicationRecord
   delegate :name, to: :industry, prefix: true, allow_nil: true
 
 
-
   def full_name
     return "#{first_name} #{last_name}"
   end
@@ -31,6 +30,7 @@ class User < ApplicationRecord
     else
       user = User.new(linkedin_params(auth))
       user.password = Devise.friendly_token[0,20]  # Fake password for validation
+      user.state = :linkedin_ok
     end
     user.email = user.linkedin_email if user.email.blank?
     user.save

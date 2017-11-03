@@ -1,25 +1,54 @@
 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
   <div class="form-wrapper">
     <h3 class='form-title text-center'><%= t('.new_title', default: "Create your lead") %></h3>
-    <%= simple_form_for @lead do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :last_name, label: false, placeholder: t('.last_name', default: "Last Name"), wrapper_html: {class: 'col-xs-6 col-sm-6'} %>
-      <%= f.input :first_name, label: false, placeholder: t('.first_name', default: "First Name"), wrapper_html: {class: 'col-xs-6 col-sm-6'} %>
-      <%= f.input :company, label: false, placeholder: t('.company', default: "Company"), wrapper_html: {class: 'col-xs-6 col-sm-6'} %>
-      <%= f.input :job_title, label: false, placeholder: t('.job_title', default: "Job title"), wrapper_html: {class: 'col-xs-6 col-sm-6'} %>
-      <%= f.input :phone, label: false, placeholder: t('.phone', default: "Phone"), wrapper_html: {class: 'col-xs-6 col-sm-6'} %>
-      <%= f.input :linkedin_url, label: false, placeholder: t('.linkedin_url', default: "Linkedin"), wrapper_html: {class: 'col-xs-6 col-sm-6'} %>
-      <%= f.input :mail, label: false, placeholder: t('.mail', default: "Mail"), wrapper_html: {class: 'col-xs-6 col-sm-6'} %>
-      <%= f.input :company_size, collection: Lead::COMPANY_SIZES, label: false, include_blank: t('.company_size', default: "Company size"),  wrapper_html: {class: 'col-xs-6 col-sm-6'} %>
-      <%= f.input :location, label: false, placeholder: t('.location', default: "Location"), wrapper_html: {class: 'col-xs-6 col-sm-6'} %>
+    <%= simple_form_for @lead, html: {}.merge(make_it_bot?) do |f| %>
+      <div class="inside-form" cf-context>
+        <%= f.error_notification %>
+        <%= f.input :last_name, label: false, placeholder: t('.last_name', default: "Last Name"), wrapper_html: {class: 'col-xs-6 col-sm-6'},
+            input_html: {"cf-questions" => "#{lead_intro_message}&&#{field_message(:last_name)}"}
+        %>
+        <%= f.input :first_name, label: false, placeholder: t('.first_name', default: "First Name"), wrapper_html: {class: 'col-xs-6 col-sm-6'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:first_name)}"}
+        %>
+        <%= f.input :company, label: false, placeholder: t('.company', default: "Company"), wrapper_html: {class: 'col-xs-6 col-sm-6'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:company)}"}
+        %>
+        <%= f.input :job_title, label: false, placeholder: t('.job_title', default: "Job title"), wrapper_html: {class: 'col-xs-6 col-sm-6'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:job_title, {first_name: '{lead_first_name}', last_name: '{lead_last_name}'})}"}
+        %>
+        <%= f.input :phone, label: false, placeholder: t('.phone', default: "Phone"), wrapper_html: {class: 'col-xs-6 col-sm-6'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:phone, {first_name: '{lead_first_name}', last_name: '{lead_last_name}'})}"}
+        %>
+        <%= f.input :linkedin_url, label: false, placeholder: t('.linkedin_url', default: "Linkedin"), wrapper_html: {class: 'col-xs-6 col-sm-6'},
+            input_html: {"cf-questions" => "#{field_message(:linkedin_url)}"}
+        %>
+        <%= f.input :mail, label: false, placeholder: t('.mail', default: "Mail"), wrapper_html: {class: 'col-xs-6 col-sm-6'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:mail, {first_name: '{lead_first_name}', last_name: '{lead_last_name}', company: '{lead_company}'})}"}
+        %>
+        <%= f.input :company_size, collection: Lead::COMPANY_SIZES, label: false, include_blank: t('.company_size', default: "Company size"),  wrapper_html: {class: 'col-xs-6 col-sm-6'},
+            input_html: {"cf-questions" => "#{field_message(:company_size, {company: '{lead_company}'})}"}
+        %>
+        <%= f.input :location, label: false, placeholder: t('.location', default: "Location"), wrapper_html: {class: 'col-xs-6 col-sm-6'},
+            input_html: {"cf-questions" => "#{field_message(:location, {company: '{lead_company}'})}"}
+        %>
 
-      <%= f.input :description, label: false, placeholder: t('.description', default: "Lead Description"), wrapper_html: {class: 'col-xs-12'} %>
+        <%= f.input :description, label: false, placeholder: t('.description', default: "Lead Description"), wrapper_html: {class: 'col-xs-12'},
+            input_html: {"cf-questions" => "#{field_message(:recap_contact, {key: ''})}&&#{field_message(:description)}"}
+        %>
 
-      <%= f.input :tag_list, collection: ActsAsTaggableOn::Tag.all, label: false, include_blank: t('.tag_list', default: "Lead Keywords"), wrapper_html: { multiple: true, class: 'col-xs-12' }, input_html: {class: 'select2', multiple: true} %>
-      <div class="col-xs-12 text-right">
-        <p><%= t('.price', default: "Price") %> <%= @lead.price %> €</p>
-        <%= f.submit :submit, class: "btn btn-primary", id:'btn-lead-create' %>
+        <%= f.input :tag_list, collection: ActsAsTaggableOn::Tag.all, label: false, include_blank: t('.tag_list', default: "Lead Keywords"), wrapper_html: { multiple: true, class: 'col-xs-12' },
+            input_html: {class: 'select2', multiple: true, "cf-questions" => "#{field_message(:tag_list)}"}
+        %>
+        <div class="col-xs-12 text-right">
+          <p><%= t('.price', default: "Price") %> <%= @lead.price %> €</p>
+          <%= f.submit :submit, class: "btn btn-primary", id:'btn-lead-create' %>
+        </div>
+      <% end %>
       </div>
-    <% end %>
   </div>
 </div>
+
+
+<%= content_for(:after_js) do %>
+  <script type="text/javascript" src="https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js" crossorigin></script>
+<% end %>

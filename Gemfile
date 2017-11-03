@@ -26,6 +26,9 @@ gem 'linkedin', '~> 1.1'
 gem 'mailjet'
 
 
+gem 'rails-i18n', '5.0.3'
+gem 'devise-i18n', '~> 1.2'
+
 # Admin
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
