@@ -4,3 +4,26 @@
     @extend .form-control;
   }
 }
+
+.select2-selection__rendered {
+  padding-left: 0 !important;
+  margin-bottom: 2px;
+  .select2-selection__choice {
+    display: inline-block;
+    background: $gray-blue;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    margin: 0 2px;
+    .select2-selection__choice__remove {
+      margin-right: 2px;
+    }
+  }
+  .select2-search.select2-search--inline {
+    float: right;
+    padding: 2px 4px;
+    font-size: 1.2rem;
+    margin: 0 2px;
+  }
+}
