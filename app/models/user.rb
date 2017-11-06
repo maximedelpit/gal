@@ -12,6 +12,8 @@ class User < ApplicationRecord
   has_many :prospect_areas, through: :zones
   acts_as_taggable
 
+  validates :accepts_term_of_sales, presence: true, acceptance: { accept: true }
+
   alias_method :subies, :subcategories
   alias_method :industry_subies, :industry_subcategories
   delegate :name, to: :industry, prefix: true, allow_nil: true

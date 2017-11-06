@@ -15,6 +15,6 @@ module LeadHelper
   end
 
   def make_it_bot?
-    return [true, false].sample ? {"cf-form" => 'test'} : {}
+    return [false].sample ? {"cf-form" => 'test'} : {}
   end
 end
