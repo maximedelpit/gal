@@ -16,7 +16,8 @@ gem 'jquery-rails'
 gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
-gem 'rails-assets-select2', source: 'https://rails-assets.org'
+# gem 'rails-assets-select2', source: 'https://rails-assets.org'
+gem "select2-rails"
 
 
 # Business Operations Gems
