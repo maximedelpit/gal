@@ -7,7 +7,8 @@
       <%- if devise_mapping.omniauthable? %>
         <%- resource_class.omniauth_providers.each do |provider| %><br />
           <div class='omniauth-btn-container text-center'>
-            <%= link_to omniauth_authorize_path(resource_name, provider, accepts_terms_of_sales: false, nl_subscription: false  ), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
+            <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
+            <%#= link_to omniauth_authorize_path(resource_name, provider, accepts_tos: false, nl_subscription: false  ), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
               <!-- <span class="fa fa-<%#= provider.to_s %>"></span> <%#= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %> -->
             <% end -%>
 
@@ -19,9 +20,7 @@
         <%#= f.input :email, required: true, autofocus: true %>
         <%#= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%#= f.input :password_confirmation, required: true %>
-        <%= f.input :nl_subscription %>
-        <%#= f.input :accepts_terms_of_sales %>
-        <p class='help-block col-xs-12' style='margin-top:-5px;'><%= t(".tos_aggreement_message") %></p>
+        <p class='help-block col-xs-12' style='margin-top:-5px;'><%= t(".tos_agreement_message") %></p>
       </div>
 
       <div class="form-actions col-xs-12">

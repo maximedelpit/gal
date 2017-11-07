@@ -22,17 +22,21 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
+    if current_user&.language
+      { locale: current_user.language }
+    else
+      { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
+    end
   end
 
   protected
 
     def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:sign_up, keys: [:nl_subscriptions, :accepts_term_of_sales])
+      # devise_parameter_sanitizer.permit(:sign_up, keys: [:nl_subscriptions, :accepts_term_of_sales])
       devise_parameter_sanitizer.permit(:account_update, keys: [
         :email, :password, :password_confirmation, :current_password, :first_name,
         :last_name, :language, :location, :job_title, :phone_number, :company,
-        :industry, :subcategories, :tag_list
+        :industry_id, :subcategories, :tag_list, :nl_subscription, :accepts_tos
       ])
 
     end

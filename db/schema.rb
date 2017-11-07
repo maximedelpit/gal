@@ -56,7 +56,7 @@ ActiveRecord::Schema.define(version: 20171106101340) do
     t.string "nature"
     t.string "state"
     t.date "deadline"
-    t.date "within"
+    t.string "within"
     t.text "description"
     t.bigint "user_id"
     t.float "price"
@@ -155,7 +155,7 @@ ActiveRecord::Schema.define(version: 20171106101340) do
     t.string "linkedin_url"
     t.datetime "token_expiry"
     t.string "token"
-    t.boolean "accepts_terms_of_sales"
+    t.boolean "accepts_tos"
     t.boolean "nl_subscription"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["industry_id"], name: "index_users_on_industry_id"

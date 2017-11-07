@@ -30,7 +30,7 @@ en:
         nature: 'Nature souscription'
         state: 'Statut'
         deadline: 'Echéance'
-        within: 'Echéance sous'
+        within: 'Mise en oeuvre dans'
         description: 'Description'
         user: 'Vendeur'
         price: 'Prix'

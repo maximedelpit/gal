@@ -5,9 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-ind = Industry.create!(name: 'Internet')
-User.create!(admin: true, first_name: 'Admin', last_name: 'System', email: 'admin@gal.com', password: '123456', industry: ind)
 
+User.destroy_all
+Industry.destroy_all
 
 industry_data = [{name: 'Accounting', linkedin_code: '47'},
 {name: 'Airlines/Aviation', linkedin_code: '94'},
@@ -158,3 +158,6 @@ industry_data = [{name: 'Accounting', linkedin_code: '47'},
 {name: 'Writing & Editing', linkedin_code: '103'}]
 
 industry_data.each {|ind| Industry.create!(ind)}
+
+
+User.create!(admin: true, first_name: 'Admin', last_name: 'System', email: 'admin@gal.com', password: '123456', industry: Industry.first, state: 'registered')

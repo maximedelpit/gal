@@ -5,12 +5,20 @@
 .alert {
   margin: 0;
   text-align: center;
-  color: white;
+  color: $brand-success;
+  background-color: $lighter-gray;
+  border-color: $brand-success;
+
+  .close:hover, .close:focus {
+    color: $brand-success;
+    opacity: 1;
+  }
 }
+
+// .alert-danger, .alert-warning, .alert-info{
+// }
+
+
 .alert-info {
-  background: $brand-success;
-  color: white;
-}
-.alert-warning {
-  background: white;
+  border: none;
 }

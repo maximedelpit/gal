@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   STATE = %w(linkedin_ok registered)
 
-  # validates :accepts_term_of_sales, presence: true, acceptance: { accept: true }
+  validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
   validates :state, inclusion: { in: STATE,
    message: "%{value} is not a valid state" }
 
@@ -64,7 +64,6 @@ class User < ApplicationRecord
   end
 
   def mark_as_registered?
-    binding.pry
     if company.present? && industry_id.present? && tag_list.present? && zones.present? && state != 'registered'
       assign_attributes(state: 'registered')
     end

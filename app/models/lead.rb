@@ -3,8 +3,8 @@ class Lead < ApplicationRecord
   has_many :propositions
   has_many :targets, through: :propositions
 
-  COMPANY_SIZES = %w(0-10 11-25 26-100 1001-250 500+)
-  WITHIN = ['1 month', '3 months', '6 months', '12 months' '> 12 months']
+  COMPANY_SIZES = %w(0-10 11-25 26-100 101-250 500+)
+  WITHIN = ['1 month', '3 months', '6 months', '12 months', '> 12 months']
   STATE = %w(created confirmed to_requalify rejected proposed sold)
 
   validates :last_name, :company, :company_size, :location,  :description, presence: true
