@@ -54,7 +54,11 @@
           </div>
 
         <div id='creds'>
-          <p><%= t('.author') %> : <%= @lead.user.full_name %>, <%= t('.created_at') %> <%= l(@lead.created_at, format: :short) %></p>
+          <p>
+            <% if current_user.admin %>
+              <%= t('.author') %> : <%= @lead.user.full_name %>,
+            <% end %>
+            <%= t('.created_at') %> <%= l(@lead.created_at, format: :short) %></p>
         </span>
 
         </div>

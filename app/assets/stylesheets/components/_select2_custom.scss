@@ -26,16 +26,14 @@
   }
 
 }
+
 .select2-container {
   .select2-selection--multiple, .select2-selection--single {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
     outline: none;
     background-color: transparent;
     border: none;
     border-radius: 0;
+    min-height: 100%;
   }
 }
 
@@ -63,3 +61,17 @@
     margin-right: 2px;
   }
 }
+
+
+.form-control, .select2.select2-container .selection {
+  height: 100%;
+  min-height: 34px;
+}
+
+.select2-container .select2-selection--multiple .select2-selection__rendered {
+  height: 100%;
+  min-height: 23px;
+}
+
+
+
