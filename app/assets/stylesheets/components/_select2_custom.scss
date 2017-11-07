@@ -1,4 +1,4 @@
-.select2.select2-container.select2-container--bootstrap{
+.select2.select2-container{
   width: 100% !important;
   .selection {
     @extend .form-control;
@@ -8,20 +8,14 @@
 .select2-selection__rendered {
   padding-left: 0 !important;
   margin-bottom: 2px;
+  color: $gray;
   .select2-selection__choice {
-    display: inline-block;
-    background: $gray-blue;
-    color: white;
-    padding: 2px 4px;
-    border-radius: 6px;
-    font-size: 1.2rem;
-    margin: 0 2px;
+
     .select2-selection__choice__remove {
       margin-right: 2px;
     }
   }
   .select2-search.select2-search--inline {
-    float: right;
     padding: 2px 4px;
     font-size: 1.2rem;
     margin: 0 2px;
@@ -39,5 +33,33 @@
     left: 0;
     right: 0;
     outline: none;
+    background-color: transparent;
+    border: none;
+    border-radius: 0;
+  }
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  color: $gray;
+}
+
+.select2-container--default.select2-container--focus .select2-selection--multiple {
+  border: none;
+  border-bottom: 1px solid $brand-primary;
+}
+
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  display: inline-block;
+  background: $gray-blue;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  margin: 0 2px;
+
+  .select2-selection__choice__remove {
+    color: white;
+    margin-right: 2px;
   }
 }
