@@ -4,11 +4,11 @@
 @import "config/bootstrap_variables";
 
 // External libraries
+@import 'select2';
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'select2';
 
 // Your CSS partials
 @import "layouts/index";

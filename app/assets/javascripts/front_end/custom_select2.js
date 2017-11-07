@@ -1,5 +1,8 @@
 $('.select2').select2({
-  theme: "bootstrap",
+  closeOnSelect: false,
+  debug: true,
+  allowClear: true,
+  placeholder: '',
   tags: true,
   tokenSeparators: [",", " "]
 }).on("change", function(e) {
