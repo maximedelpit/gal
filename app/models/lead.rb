@@ -3,7 +3,10 @@ class Lead < ApplicationRecord
   has_many :propositions
   has_many :targets, through: :propositions
 
-  COMPANY_SIZES = %w(0-10 10-25 25-100 100-250 250-1000 >1000)
+  COMPANY_SIZES = %w(0-10 11-25 26-100 101-250 500+)
+  WITHIN = ['1 month', '3 months', '6 months', '12 months', '> 12 months']
+  STATE = %w(created confirmed to_requalify rejected proposed sold)
+
   validates :last_name, :company, :company_size, :location,  :description, presence: true
   validates :description, length: {
     in: 10..300,
@@ -12,6 +15,10 @@ class Lead < ApplicationRecord
   }
   validates :company_size, inclusion: { in: COMPANY_SIZES,
      message: "%{value} is not a valid size" }
+  validates :within, inclusion: { in: WITHIN,
+   message: "%{value} is not a valid implementation period" }
+  validates :state, inclusion: { in: STATE,
+   message: "%{value} is not a valid state" }
   acts_as_taggable
 
   alias_method :seller, :user

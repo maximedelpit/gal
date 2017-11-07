@@ -13,7 +13,7 @@ class CreateLeads < ActiveRecord::Migration[5.1]
       t.string :nature
       t.string :state
       t.date :deadline
-      t.date :within
+      t.string :within
       t.text :description
       t.references :user, foreign_key: true
       t.float :price

@@ -7,12 +7,17 @@
   transition: 0.2s ease;
   background-position: center;
   background-size: cover;
-  width: 160px;
-  height: 33px;
+  width: 215px;
+  height: 36px;
+
   &:active {
     background-image: image-url("linkedin_connect_active.png");
   }
   &:hover {
     background-image: image-url("linkedin_connect_hover.png");
   }
+}
+
+.omniauth-btn-container {
+
 }
