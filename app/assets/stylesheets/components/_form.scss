@@ -64,10 +64,17 @@
   }
 
   .form-actions {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
+    // display: flex;
+    // justify-content: flex-end;
+    // align-items: center;
+    // width: 100%;
+
+    // * {
+    //   margin: 0 2px;
+    // }
+    input[type="submit"].btn {
+      float:right;
+    }
   }
 }
 

@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   STATE = %w(linkedin_ok registered)
 
-  validates :email, :language, :zones, :subacategories, presence: true
+  validates :email, :language, :zones, :subcategories, presence: true, on: :update
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
   validates :state, inclusion: { in: STATE,
    message: "%{value} is not a valid state" }
