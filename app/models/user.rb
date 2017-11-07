@@ -16,6 +16,7 @@ class User < ApplicationRecord
 
   STATE = %w(linkedin_ok registered)
 
+  validates :email, :language, :zones, :subacategories, presence: true
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
   validates :state, inclusion: { in: STATE,
    message: "%{value} is not a valid state" }
@@ -54,7 +55,7 @@ class User < ApplicationRecord
     user_params[:picture_url] = auth.info.image
     user_params[:linkedin_url] = auth.info.urls.public_profile
     user_params[:location] = auth.info.location.name # "#{auth.info.location.name} (auth.info.location.country.code)"
-    user_params[:language] = auth.info.location.country.code
+    user_params[:language] = auth.info.location.country.code.downcase == 'fr' ? 'fr' : 'en'
     most_recent_position = auth.extra.raw_info.positions['values'].max_by {|p| Date.new(p.startDate.year,p.startDate.month, 1)}
     user_params[:job_title] = most_recent_position.title
     user_params[:company] = most_recent_position.company.name
@@ -64,7 +65,7 @@ class User < ApplicationRecord
   end
 
   def mark_as_registered?
-    if company.present? && industry_id.present? && tag_list.present? && zones.present? && state != 'registered'
+    if state != 'registered' && email.present? && language.present? && subcategories.present? && zones.present?
       assign_attributes(state: 'registered')
     end
   end
