@@ -4,19 +4,32 @@
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'card-content'}) do |f| %>
       <%= f.error_notification %>
-      <%- if devise_mapping.omniauthable? %>
-        <%- resource_class.omniauth_providers.each do |provider| %><br />
-          <div class='omniauth-btn-container text-center'>
-            <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
-            <%#= link_to omniauth_authorize_path(resource_name, provider, accepts_tos: false, nl_subscription: false  ), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
-              <!-- <span class="fa fa-<%#= provider.to_s %>"></span> <%#= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %> -->
-            <% end -%>
-
-          </div>
-        <% end -%>
-      <% end -%>
-      <br>
       <div class="form-inputs">
+        <div class="row">
+          <h4 class='card-sub-titles col-xs-12 text-center'><%= t('.welcome') %></h4>
+          <p class='col-xs-12 text-center'><%= t('.signup_guidelines') %></p>
+        </div><br>
+
+        <div class="row">
+          <%- if devise_mapping.omniauthable? %>
+            <%- resource_class.omniauth_providers.each do |provider| %>
+              <div class='omniauth-btn-container text-center col-xs-12'>
+                <%#= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
+                <%#= link_to omniauth_authorize_path(resource_name, provider, accepts_tos: false, nl_subscription: false  ), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
+                  <!-- <span class="fa fa-<%#= provider.to_s %>"></span> <%#= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %> -->
+                <%# end -%>
+                <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
+                  <i class="fa fa-<%= provider.to_s %>"></i> <span class='text'><%= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %></span>
+                <% end %>
+              </div>
+            <% end -%>
+          <% end -%>
+        </div><br>
+
+        <div class="row">
+          <h4 class='card-sub-titles col-xs-12 text-center'><%= t('.why_linkedin_title') %></h4>
+          <p class='col-xs-12 text-center'><%= t('.why_linkedin') %></p>
+        </div>
         <%#= f.input :email, required: true, autofocus: true %>
         <%#= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
         <%#= f.input :password_confirmation, required: true %>

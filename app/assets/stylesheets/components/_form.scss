@@ -1,5 +1,5 @@
 .my-container {
-  // height: calc(100vh - 140px);
+  height: calc(100vh - 50px);
   padding-top: 5vh;
   margin-bottom: 5vh;
   display: flex;
@@ -46,7 +46,7 @@
     }
 
     .control-label, .help-block {
-      font-size: 1.1rem;
+      @extend .xs-sz
     }
   }
   .card-title  {
@@ -65,7 +65,7 @@
 
   .form-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     width: 100%;
   }
