@@ -1,7 +1,7 @@
 
 var nl = document.getElementById("user_nl_subscription")
 if(nl) {
-  nl.addEventListener('click', (event) => {
+  nl.addEventListener('click', function(event){
     debugger;
     var lkdn_btn = document.getElementById('btn-user-linkedin-connect-signup');
     href = lkdn_btn.href
@@ -12,7 +12,7 @@ if(nl) {
 }
 
 var tos = document.getElementById("user_accepts_tos")
-if(tos){tos.addEventListener('click', (event) => {
+if(tos){tos.addEventListener('click', function(event){
   var lkdn_btn = document.getElementById('btn-user-linkedin-connect-signup');
   href = lkdn_btn.href
   var regex = /(.+)(accepts_tos=(true|false))(&)(nl_subscription=(true|false))/;
