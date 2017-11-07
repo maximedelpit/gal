@@ -1,21 +1,41 @@
-.btn-primary, .btn-succes, .btn-danger {
+.btn-primary, .btn-success, .btn-danger {
   color: white;
 }
 
-.btn-linkedin {
-  background-image: image-url("linkedin_connect_default.png");
-  transition: 0.2s ease;
-  background-position: center;
-  background-size: cover;
-  width: 215px;
-  height: 36px;
+.btn-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .fa {
+    font-size: 3rem;
+    margin-right: 6px;
+    height: 30px;
+  }
+  .text {
+    font-size: 1.5rem;
+    margin-left: 6px;
+    margin-top: 7px
+  }
+}
 
-  &:active {
-    background-image: image-url("linkedin_connect_active.png");
+.btn-linkedin {
+  // background-image: image-url("linkedin_connect_default.png");
+  // background-position: center;
+  // background-size: cover;
+  // width: 215px;
+  // height: 36px;
+  transition: 0.2s ease;
+  background: #3377B0;
+  color: white;
+
+  &:active, &:hover, &:focus {
+    // background-image: image-url("linkedin_connect_active.png");
+    background: #2D699B;
+    color: white !important;
   }
-  &:hover {
-    background-image: image-url("linkedin_connect_hover.png");
-  }
+  // &:hover {
+  //   background-image: image-url("linkedin_connect_hover.png");
+  // }
 }
 
 .omniauth-btn-container {

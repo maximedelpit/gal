@@ -2,17 +2,18 @@ class LeadsController < ApplicationController
 
   def new
     @lead = Lead.new(price: 30)
+    authorize @lead
   end
 
   def create
-    binding.pry
     @lead = Lead.new(lead_params)
+    authorize @lead
     @lead.user = current_user
-    @lead.user.tag_list = params[:lead][:tag_list]
+    # @lead.tag_list = params[:lead][:tag_list].reject {|t| t.blank?}
     @lead.price ||= 30
     @lead.state ||= 'created'
     if @lead.save
-      redirect_to success_lead_path(@lead)
+      redirect_to lead_path(@lead), success: 'Congrats!'
     else
       render :new
     end
@@ -20,6 +21,7 @@ class LeadsController < ApplicationController
 
   def show
     @lead = Lead.find(params[:id])
+    authorize @lead
   end
 
   private

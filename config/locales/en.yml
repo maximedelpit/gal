@@ -104,3 +104,9 @@ en:
       grant1: "Super!"
       grant2: "Merci %{name}"
       grant3: "Poursuivons..."
+    show:
+      author: 'Post by'
+      created_at: 'at'
+      congrats_title: 'Congrats, your lead is under review!'
+      contact_title: 'Contact'
+      infos_title: 'Lead content'

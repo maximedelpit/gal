@@ -6,6 +6,10 @@ module LeadHelper
     return t(".#{field_name}#{key}", options.merge(default: t(".#{field_name}1")))
   end
 
+  def format_phone(raw_phone)
+    return raw_phone
+  end
+
   def grant?
     "#{field_message('grant', {name: current_user&.first_name})}&&" if [true, false].sample
   end
@@ -17,4 +21,6 @@ module LeadHelper
   def make_it_bot?
     return [false].sample ? {"cf-form" => 'test'} : {}
   end
+
+
 end

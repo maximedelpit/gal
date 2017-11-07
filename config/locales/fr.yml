@@ -104,3 +104,9 @@ fr:
       grant1: "Super!"
       grant2: "Merci %{name}"
       grant3: "Poursuivons..."
+    show:
+      author: 'Posté par'
+      created_at: 'le'
+      congrats_title: "Bravo, votre lead va être revu!"
+      contact_title: 'Contact'
+      infos_title: 'Contenu de la mission'

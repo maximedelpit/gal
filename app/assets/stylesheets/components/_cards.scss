@@ -1,0 +1,41 @@
+.attr-val {
+  margin-bottom: 2px;
+  i.fa {
+    margin-right: 4px;
+  }
+}
+.attr-value-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.tags {
+  background: $gray-blue;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  margin: 0 2px;
+}
+
+
+.card-content {
+  h1, h2, h3, h4, h5, h6 {
+    margin: 6px 0px 4px 0px;
+  }
+
+  .contact-card, .lead-card {
+    margin-bottom: 20px;
+  }
+
+  #tags {
+    margin-top: 20px;
+  }
+
+  #creds {
+    float: right;
+    font-size: 1.1rem;
+    color: $light-gray;
+  }
+}

@@ -1,8 +1,8 @@
 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-  <div class="form-wrapper">
-    <h2 class='form-title'><%= t(".resend_confirmation_instructions") %></h2>
+  <div class="card-wrapper">
+    <h2 class='card-title'><%= t(".resend_confirmation_instructions") %></h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post, class: 'card-content' }) do |f| %>
       <%= f.error_notification %>
       <%= f.full_error :confirmation_token %>
 

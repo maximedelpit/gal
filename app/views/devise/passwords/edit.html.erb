@@ -1,8 +1,8 @@
 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
-  <div class="form-wrapper">
-    <h2 class='form-title'><%= t(".change_your_password") %></h2>
+  <div class="card-wrapper">
+    <h2 class='card-title'><%= t(".change_your_password") %></h2>
 
-    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, class: 'card-content' }) do |f| %>
       <%= f.error_notification %>
 
       <%= f.input :reset_password_token, as: :hidden %>
