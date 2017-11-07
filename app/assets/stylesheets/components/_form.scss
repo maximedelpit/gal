@@ -10,12 +10,12 @@
   //align-items: center;
 }
 
-.form-wrapper {
+.card-wrapper {
   h1, h2, h3, h4, h5, h6 {
     margin: 0;
   }
 
-  form {
+  .card-content {
     position: relative;
     overflow: overlay;
     padding: 2rem;
@@ -25,13 +25,13 @@
     border-radius: 0 0 8px 8px;
     border: 1px solid #F4F4F4;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
-    .inside-form {
+    .inside-card {
       position: initial !important;
     }
     .form-control {
       transition: all 0.5s ease-out;
       border: none;
-      border-bottom: 1px solid #D9D9D9;
+      border-bottom: 1px solid $light-gray;
       box-shadow: none;
       padding: 0;
       border-radius: 0px;
@@ -49,16 +49,16 @@
       font-size: 1.1rem;
     }
   }
-  .form-title  {
+  .card-title  {
     background: $darker-blue-gray;
     color: $lighter-gray;
     border-radius: 8px 8px 0 0;
-    padding: 5px 10px;
+    padding: 10px;
     border: 1px solid $darker-blue-gray;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
   }
 
-  .form-sub-titles {
+  .card-sub-titles {
     color: $brand-primary;
     margin: 5px 0px
   }

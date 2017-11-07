@@ -19,12 +19,17 @@ class Lead < ApplicationRecord
    message: "%{value} is not a valid implementation period" }
   validates :state, inclusion: { in: STATE,
    message: "%{value} is not a valid state" }
+
   acts_as_taggable
 
   alias_method :seller, :user
 
   def buyer
     # TO DO => use proposition state...
+  end
+
+  def contact_fullname
+    "#{first_name.capitalize} #{last_name.capitalize}"
   end
 
   def private_fields
