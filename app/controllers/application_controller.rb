@@ -10,7 +10,11 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    edit_user_registration_path if resource.state != 'registered'
+    if resource.state != 'registered'
+      edit_user_registration_path
+    else
+      new_lead_path
+    end
   end
 
   def set_locale
@@ -25,6 +29,11 @@ class ApplicationController < ActionController::Base
 
     def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys: [:nl_subscriptions, :accepts_term_of_sales])
-      devise_parameter_sanitizer.permit(:account_update, keys: [:email, :first_name, :last_name, :location, :industry, :position, :phone_number])
+      devise_parameter_sanitizer.permit(:account_update, keys: [
+        :email, :password, :password_confirmation, :current_password, :first_name,
+        :last_name, :language, :location, :job_title, :phone_number, :company,
+        :industry, :subcategories, :tag_list
+      ])
+
     end
 end

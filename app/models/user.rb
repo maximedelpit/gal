@@ -12,7 +12,13 @@ class User < ApplicationRecord
   has_many :prospect_areas, through: :zones
   acts_as_taggable
 
-  validates :accepts_term_of_sales, presence: true, acceptance: { accept: true }
+  before_update :mark_as_registered?
+
+  STATE = %w(linkedin_ok registered)
+
+  # validates :accepts_term_of_sales, presence: true, acceptance: { accept: true }
+  validates :state, inclusion: { in: STATE,
+   message: "%{value} is not a valid state" }
 
   alias_method :subies, :subcategories
   alias_method :industry_subies, :industry_subcategories
@@ -55,6 +61,13 @@ class User < ApplicationRecord
     user_params[:industry] = Industry.where(name: auth.extra.raw_info.industry).first_or_create
     # Language
     return user_params.to_h
+  end
+
+  def mark_as_registered?
+    binding.pry
+    if company.present? && industry_id.present? && tag_list.present? && zones.present? && state != 'registered'
+      assign_attributes(state: 'registered')
+    end
   end
 
   def reject_linkedin_changes

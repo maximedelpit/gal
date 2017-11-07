@@ -15,19 +15,22 @@
         <%= f.input :password, autocomplete: "off", required: false, wrapper_html: {class: 'col-xs-6'} %>
         <%= f.input :password_confirmation, required: false,  wrapper_html: {class: 'col-xs-6'} %>
         <p class='help-block col-xs-12' style='margin-top:-5px;'><%= t(".leave_blank_if_you_don_t_want_to_change_it") %></p>
-        <%= f.input :current_password, hint: t(".we_need_your_current_password_to_confirm_your_changes"), required: true, wrapper_html: {class: 'col-xs-12'} %>
+        <% if resource.state == 'registered' %>
+          <%= f.input :current_password, hint: t(".we_need_your_current_password_to_confirm_your_changes"), required: true, wrapper_html: {class: 'col-xs-12'} %>
+        <% end %>
       </div>
 
       <h4 class='form-sub-titles col-xs-12'><%= t('.profile_basics') %></h4>
       <div class="form-inputs">
         <%= f.input :first_name, wrapper_html: {class: 'col-xs-6'} %>
         <%= f.input :last_name, wrapper_html: {class: 'col-xs-6'} %>
-        <%= f.input :language, collection: [['English', 'en'], ['French', 'fr']], wrapper_html: {class: 'col-xs-6'} %>
+        <%= f.input :language, collection: [['English', 'en'], ['French', 'fr']], wrapper_html: {class: 'col-xs-6'},  input_html: {class: ''} %>
         <%= f.input :location, wrapper_html: {class: 'col-xs-6'} %>
         <%= f.input :job_title, wrapper_html: {class: 'col-xs-6'} %>
         <%= f.input :phone_number, wrapper_html: {class: 'col-xs-6'} %>
         <%= f.input :company, wrapper_html: {class: 'col-xs-6'} %>
-        <%= f.association :industry, collection: Industry.all.order(:name), wrapper_html: {class: 'col-xs-6'} %>
+
+        <%= f.association :industry, collection: Industry.all.order(:name), wrapper_html: {class: 'col-xs-6'}, input_html: {class: 'select2'} %>
         <%= f.association :subcategories, collection: IndustrySubcategory.pluck(:name, :id), wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
         <%= f.input :tag_list, collection: ActsAsTaggableOn::Tag.all, wrapper_html: { class: 'col-xs-12' }, input_html: {class: 'select2', multiple: true} %>
           <div class="col-xs-12 text-right">
