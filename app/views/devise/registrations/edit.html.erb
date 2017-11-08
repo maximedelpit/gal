@@ -31,8 +31,8 @@
           <%= f.association :industry, collection: Industry.all.order(:name), wrapper_html: {class: 'col-xs-6'}, input_html: {class: 'select2'} %>
         <% end %>
           <%= f.input :prospect_area_ids, required: true, collection: ProspectArea.all, label_method: :to_s, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
-          <%= f.input :industry_subcategory_ids, required: true, collection: IndustrySubcategory.all, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
-          <%= f.input :tag_ids, required: true, collection: ActsAsTaggableOn::Tag.all, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
+          <%= f.input :industry_subcategory_ids, required: true, collection: IndustrySubcategory.where(validated: true).all, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
+          <%= f.input :tag_ids, required: true, collection: ActsAsTaggableOn::Tagging.where(taggable_type: 'IndustrySubcategory').all, as: :grouped_select, group_method: :ta, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
 
       </div>
       <div class="form-inputs col-xs-12">

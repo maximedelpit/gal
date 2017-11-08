@@ -5,5 +5,7 @@ class IndustrySubcategory < ApplicationRecord
 
   validates :name, presence: true
 
+  acts_as_taggable
+
   alias_method :subies, :subcategories
 end
