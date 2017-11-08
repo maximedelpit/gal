@@ -34,6 +34,7 @@ fr:
         description: 'Description'
         user: 'Vendeur'
         price: 'Prix'
+        tag_ids: "Mots clés"
       proposition:
         mail: 'Email destinataire'
         state: 'Statut'
@@ -63,6 +64,9 @@ fr:
         linkedin_email: 'Email Linkedin'
         picture_url: 'Url image de profil'
         linkedin_url: 'Lien du profil Linkedin'
+        industry_subcategory_ids: "Secteurs d'activités"
+        prospect_area_ids: "Zones de chalandise"
+        tag_ids: "Centres d'intérêt"
   leads:
     new:
       intro1: "Bonjour %{name},\n Créons un nouveau lead ensemble!"

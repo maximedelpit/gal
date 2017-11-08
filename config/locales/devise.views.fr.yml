@@ -96,8 +96,18 @@ fr:
         update: Modifier
         submit: Valider
         we_need_your_current_password_to_confirm_your_changes: nous avons besoin de votre mot de passe actuel pour valider ces modifications
+        title_linkedin_ok: "Finaliser l'inscription" #custom
+        title_register: "Edition du profil" #custom
+        nl_subscription_message: 'I want to receive the newsletter' #custom
+        profile_settings: 'Login & security' #custom
+        profile_basics: 'Basic informations' #custom
+        tos_agreement_message: 'By registering you accept terms & conditions' #custom
       new:
         sign_up: Inscription
+        welcome: "Merci de rejoindre Get a Lead !" #custom
+        signup_guidelines: "Get a Lead est un produit à destination des professionnels, afin de faciliter l'onboarding, inscrivez-vous via Linkedin." #custom
+        why_linkedin_title: "Pourquoi Linkedin ?" #custom
+        why_linkedin: "Pour gagner du temps, en un clic nous n'utiliserons que les informations essentiels pour vous permettre de recevoir et générer des leads" #custom
       signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
       signed_up_but_inactive: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte n’a pas encore été activé.
       signed_up_but_locked: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte est verrouillé.
