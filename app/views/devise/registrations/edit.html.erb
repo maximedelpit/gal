@@ -13,8 +13,7 @@
             <p><%= t(".currently_waiting_confirmation_for_email", email: resource.unconfirmed_email) %></p>
           <% end %>
 
-            <%= f.input :password, autocomplete: "off", required: false, wrapper_html: {class: 'col-xs-6'} %>
-            <p class='help-block col-xs-12' style='margin-top:-5px;'><%= t(".leave_blank_if_you_don_t_want_to_change_it") %></p>
+            <%= f.input :password, autocomplete: "off", required: false, hint: t(".leave_blank_if_you_don_t_want_to_change_it"), wrapper_html: {class: 'col-xs-6'} %>
             <%= f.input :password_confirmation, required: false,  wrapper_html: {class: 'col-xs-6'} %>
             <%= f.input :current_password, hint: t(".we_need_your_current_password_to_confirm_your_changes"), required: true, wrapper_html: {class: 'col-xs-12'} %>
         <% end %>
@@ -31,7 +30,7 @@
           <%= f.input :company, wrapper_html: {class: 'col-xs-6'} %>
           <%= f.association :industry, collection: Industry.all.order(:name), wrapper_html: {class: 'col-xs-6'}, input_html: {class: 'select2'} %>
         <% end %>
-          <%= f.input :prospect_area_ids, required: true, collection: ProspectArea.all, label_method: :name, value_method: :to_s, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
+          <%= f.input :prospect_area_ids, required: true, collection: ProspectArea.all, label_method: :to_s, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
           <%= f.input :industry_subcategory_ids, required: true, collection: IndustrySubcategory.all, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
           <%= f.input :tag_ids, required: true, collection: ActsAsTaggableOn::Tag.all, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
 

@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'uglifier'
 # gem 'rails-assets-select2', source: 'https://rails-assets.org'
 gem "select2-rails"
+gem 'country_select'
 
 
 # Business Operations Gems

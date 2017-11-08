@@ -1,3 +1,12 @@
 ActiveAdmin.register ProspectArea do
-  permit_params :country, :region, :zipcode, :city, :category
+
+  permit_params :region, :zipcode, :city, :category
+
+  controller do
+    # clear blank attr on save
+    def save_resource(object)
+      permitted_params[object.class.name.underscore].select {|k, v| v.blank?}.keys.each {|a| object.send("#{a}=", nil)}
+      super
+    end
+  end
 end

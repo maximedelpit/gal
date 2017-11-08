@@ -3,7 +3,6 @@ class RegistrationsController < Devise::RegistrationsController
   protected
 
   def update_resource(resource, params)
-    binding.pry
     if resource.state == 'registered'
       super
     else
