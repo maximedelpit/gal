@@ -7,16 +7,17 @@ class User < ApplicationRecord
   belongs_to :industry
   has_many :subcategories
   has_many :industry_subcategories, through: :subcategories
-  has_many :leads
   has_many :zones
   has_many :prospect_areas, through: :zones
+  has_many :leads
   acts_as_taggable
+
 
   before_update :mark_as_registered?
 
   STATE = %w(linkedin_ok registered)
 
-  validates :email, :language, :zones, :subcategories, presence: true, on: :update
+  # validates :email, :language, :zones, :subcategories, presence: true, on: :update
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
   validates :state, inclusion: { in: STATE,
    message: "%{value} is not a valid state" }
@@ -25,6 +26,8 @@ class User < ApplicationRecord
   alias_method :industry_subies, :industry_subcategories
   delegate :name, to: :industry, prefix: true, allow_nil: true
 
+
+  # attr_accessor :industry_subcategory_ids, :prospect_area_ids
 
   def full_name
     return "#{first_name} #{last_name}"

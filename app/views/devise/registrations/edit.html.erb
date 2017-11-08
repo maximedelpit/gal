@@ -31,9 +31,9 @@
           <%= f.input :company, wrapper_html: {class: 'col-xs-6'} %>
           <%= f.association :industry, collection: Industry.all.order(:name), wrapper_html: {class: 'col-xs-6'}, input_html: {class: 'select2'} %>
         <% end %>
-        <%= f.association :zones, required: true, collection: Zone.all, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
-        <%= f.association :subcategories, required: true, collection: IndustrySubcategory.pluck(:name, :id), wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
-        <%= f.input :tag_list, collection: ActsAsTaggableOn::Tag.all, wrapper_html: { class: 'col-xs-12' }, input_html: {class: 'select2', multiple: true} %>
+          <%= f.input :prospect_area_ids, required: true, collection: ProspectArea.all, label_method: :name, value_method: :to_s, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
+          <%= f.input :industry_subcategory_ids, required: true, collection: IndustrySubcategory.all, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
+          <%= f.input :tag_ids, required: true, collection: ActsAsTaggableOn::Tag.all, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
 
       </div>
       <div class="form-inputs col-xs-12">

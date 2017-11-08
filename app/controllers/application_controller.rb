@@ -42,13 +42,26 @@ class ApplicationController < ActionController::Base
 
   protected
 
+    # def configure_permitted_parameters
+    #   # devise_parameter_sanitizer.permit(:sign_up, keys: [:nl_subscriptions, :accepts_term_of_sales])
+    #   binding.pry
+    #   devise_parameter_sanitizer.permit(:account_update, keys: [
+    #     :email, :password, :password_confirmation, :current_password, :first_name,
+    #     :last_name, :language, :location, :job_title, :phone_number, :company,
+    #     :industry_id, :nl_subscription, :accepts_tos, :tag_list,
+    #     :industry_subcategory_ids, :prospect_area_ids
+    #   ])
+    # end
+
     def configure_permitted_parameters
-      # devise_parameter_sanitizer.permit(:sign_up, keys: [:nl_subscriptions, :accepts_term_of_sales])
-      devise_parameter_sanitizer.permit(:account_update, keys: [
-        :email, :password, :password_confirmation, :current_password, :first_name,
-        :last_name, :language, :location, :job_title, :phone_number, :company,
-        :industry_id, :subcategories, :tag_list, :nl_subscription, :accepts_tos
-      ])
+      devise_parameter_sanitizer.permit(:account_update) do |user_params|
+        user_params.permit(
+          :email, :password, :password_confirmation, :current_password, :first_name,
+          :last_name, :language, :location, :job_title, :phone_number, :company,
+          :industry_id, :nl_subscription, :accepts_tos,
+          {prospect_area_ids: [], industry_subcategory_ids: [], tag_ids: []}
+        )
+      end
     end
 
     def skip_pundit?
