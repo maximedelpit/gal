@@ -160,4 +160,5 @@ industry_data = [{name: 'Accounting', linkedin_code: '47'},
 industry_data.each {|ind| Industry.create!(ind)}
 
 
-User.create!(admin: true, first_name: 'Admin', last_name: 'System', email: 'admin@gal.com', password: '123456', industry: Industry.first, state: 'registered')
+admin = User.new(admin: true, first_name: 'Admin', last_name: 'System', email: 'admin@gal.com', password: '123456', industry: Industry.first, state: 'registered', language: 'fr')
+admin.save(validate: false)

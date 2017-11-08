@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 20171106101340) do
 
   create_table "industry_subcategories", force: :cascade do |t|
     t.string "name"
-    t.string "validated"
+    t.boolean "validated"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

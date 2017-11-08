@@ -9,7 +9,7 @@ en:
       tag: 'Mot Clé'
       tagging: 'Mot Clé'
       user: 'Utilisateur'
-      zone: 'Zone de chalandise'
+      zone: 'Zone utilisateur'
     attributes:
       industry:
         linkedin_code: "Code Linkedin"
