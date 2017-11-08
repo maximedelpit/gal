@@ -12,6 +12,9 @@
         <% if current_user.state == 'registered' %>
           <%= link_to t(".new_lead", default: "New Lead"), new_lead_path, class: "btn btn-success", id: 'btn-lead-new-navbar' %>
         <% end %>
+        <% if current_user.admin %>
+          <%= link_to t(".admin", default: "Admin"), admin_root_path, class: "btn btn-info" %>
+        <% end %>
         <!-- Avatar with dropdown menu -->
         <div class="navbar-wagon-item">
           <div class="dropdown">
@@ -41,6 +44,9 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <% if current_user.state == 'registered' %>
               <li><%= link_to t(".new_lead", default: "New Lead"), new_lead_path, id: 'btn-lead-new-navbar-mobile' %></li>
+            <% end %>
+            <% if current_user.admin %>
+              <li><%= link_to t(".admin", default: "Admin"), admin_root_path %></li>
             <% end %>
             <li><%= link_to t(".profile", default: "Profile"), edit_user_registration_path, id: 'btn-user-edit-navbar-mobile' %></li>
             <li><%= link_to t(".logout", default: "Logout"), destroy_user_session_path, method: :delete, id: 'btn-user-edit-navbar-mobile' %></li>

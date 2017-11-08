@@ -1,7 +1,7 @@
 class Lead < ApplicationRecord
   belongs_to :user
   has_many :propositions
-  has_many :targets, through: :propositions
+  # has_many :targets, through: :propositions, class_name: "User",  foreign_key: :user_id
 
   COMPANY_SIZES = %w(0-10 11-25 26-100 101-250 500+)
   WITHIN = ['1 month', '3 months', '6 months', '12 months', '> 12 months']
