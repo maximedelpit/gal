@@ -26,11 +26,11 @@ fr:
         job_title: 'Fonction'
         phone: 'Téléphone'
         mail: 'Email'
-        linkedin_url: 'Linkedin url'
+        linkedin_url: 'Lien profil Linkedin'
         nature: 'Nature souscription'
         state: 'Statut'
         deadline: 'Echéance'
-        within: 'Implémentation'
+        within: 'Mise en oeuvre dans'
         description: 'Description'
         user: 'Vendeur'
         price: 'Prix'
@@ -64,11 +64,12 @@ fr:
         linkedin_email: 'Email Linkedin'
         picture_url: 'Url image de profil'
         linkedin_url: 'Lien du profil Linkedin'
-        industry_subcategory_ids: "Secteurs d'activités"
-        prospect_area_ids: "Zones de chalandise"
-        tag_ids: "Centres d'intérêt"
+        industry_subcategory_ids: "Mon industrie"
+        prospect_area_ids: "Mes zones de prospection"
+        tag_ids: "Je propose des solutions de type... "
   leads:
     new:
+      new_title: "Créer un nouveu Lead"
       intro1: "Bonjour %{name},\n Créons un nouveau lead ensemble!"
       intro2: "Un nouveau lead ensemble a proposer %{name}?\n Super! Allons-y"
       intro3: "Bonjour %{name}! Je vais vous aider à créer votre lead"
@@ -111,9 +112,9 @@ fr:
     show:
       author: 'Posté par'
       created_at: 'le'
-      congrats_title: "Bravo, votre lead va être revu!"
-      contact_title: 'Contact'
-      infos_title: 'Contenu de la mission'
+      congrats_title: "Merci! Votre lead est en cours de validation..."
+      contact_title: 'Décideur'
+      infos_title: 'Besoin exprimé'
   pages:
     home:
       buy_lead: 'Acheter un lead'

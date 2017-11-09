@@ -26,11 +26,11 @@ en:
         job_title: 'Fonction'
         phone: 'Téléphone'
         mail: 'Email'
-        linkedin_url: 'Linkedin url'
+        linkedin_url: 'Lien profil Linkedin'
         nature: 'Nature souscription'
         state: 'Statut'
         deadline: 'Echéance'
-        within: 'Implementation'
+        within: 'Mise en oeuvre dans'
         description: 'Description'
         user: 'Vendeur'
         price: 'Prix'
@@ -69,6 +69,7 @@ en:
         tag_ids: "Centres d'intérêt"
   leads:
     new:
+      new_title: "Create a new Lead"
       intro1: "Bonjour %{name},\n Créons un nouveau lead ensemble!"
       intro2: "Un nouveau lead ensemble a proposer %{name}?\n Super! Allons-y"
       intro3: "Bonjour %{name}! Je vais vous aider à créer votre lead"
