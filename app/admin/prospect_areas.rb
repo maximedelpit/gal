@@ -1,6 +1,6 @@
 ActiveAdmin.register ProspectArea do
 
-  permit_params :region, :zipcode, :city, :category
+  permit_params :region, :zipcode, :departement, :category
 
   controller do
     # clear blank attr on save

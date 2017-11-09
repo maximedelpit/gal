@@ -5,12 +5,12 @@ class ProspectArea < ApplicationRecord
   validate :one_of_them
 
   def to_s
-    [country, region, city, zipcode].compact.join(', ')
+    [country, region, "#{zipcode} - #{departement}"].compact.join(', ')
   end
 
   def one_of_them
-    if [country, region, city, zipcode].compact.blank?
-      errors.add :country, "Must have at least a country, region city or zipcode"
+    if [country, region, departement, zipcode].compact.blank?
+      errors.add :country, "Must have at least a country, region, department or zipcode"
     end
   end
 end
