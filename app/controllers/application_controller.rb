@@ -19,7 +19,8 @@ class ApplicationController < ActionController::Base
     if resource.state != 'registered'
       edit_user_path
     else
-      new_lead_path
+      root_path
+      # new_lead_path
     end
   end
 

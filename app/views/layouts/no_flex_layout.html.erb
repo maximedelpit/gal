@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>GAL</title>
+    <%= csrf_meta_tags %>
+    <%= render 'shared/google_tag_manager_script' %>
+    <%= action_cable_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+  </head>
+  <body>
+    <%= render 'shared/google_tag_manager_body' %>
+    <%= render 'shared/navbar' %>
+    <%= render 'shared/flashes' %>
+    <div class='my-container no-flex'>
+      <%= yield %>
+     </div>
+    <div class="oblique-wrapper">
+      <div class="oblique-bg"></div>
+    </div>
+    <!-- <footer></footer> -->
+    <%= javascript_include_tag 'application' %>
+    <%= yield(:after_js) %>
+  </body>
+</html>

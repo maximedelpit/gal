@@ -38,4 +38,10 @@
     font-size: 1.1rem;
     color: $light-gray;
   }
+
+  #description {
+    p {
+      word-break:break-all;
+    }
+  }
 }

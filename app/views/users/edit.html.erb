@@ -4,11 +4,11 @@
 
     <%= simple_form_for(@user, url: update_password_user_path, html: { method: :put, class: 'card-content' }) do |f| %>
       <%= f.error_notification %>
-      <%= f.input :language, required: true, collection: [['En', 'en'], ['Fr', 'fr']], label: false, wrapper_html: {class: 'col-xs-2 col-xs-offset-10'},  input_html: {class: ''} %>
+      <%= f.input :language, required: true, collection: [['En', 'en'], ['Fr', 'fr']], label: false, wrapper_html: {id:'language'}, input_html: {class: ''} %>
       <h4 class='card-sub-titles col-xs-12'><%= t('devise.registrations.edit.profile_settings') %></h4>
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true,  wrapper_html: {class: 'col-xs-12'} %>
-        <%= f.input :password, autocomplete: "off", required: password_required?(@user), hint: t("devise.registrations.edit.leave_blank_if_you_don_t_want_to_change_it"), wrapper_html: {class: 'col-xs-6'} %>
+        <%= f.input :password, autocomplete: "off", required: password_required?(@user), wrapper_html: {class: 'col-xs-6'} %>
         <%= f.input :password_confirmation, required: password_required?(@user),  wrapper_html: {class: 'col-xs-6'} %>
         <% if @user.state == 'registered' %>
           <% if devise_mapping.confirmable? && @user.pending_reconfirmation? %>

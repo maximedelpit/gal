@@ -19,6 +19,8 @@ gem 'uglifier'
 # gem 'rails-assets-select2', source: 'https://rails-assets.org'
 gem "select2-rails"
 gem 'country_select'
+gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
+gem 'sweet-alert2-rails'
 
 
 # Business Operations Gems

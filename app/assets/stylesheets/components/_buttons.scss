@@ -38,6 +38,10 @@
   // }
 }
 
-.omniauth-btn-container {
-
+.user-funnel-cta {
+  display: flex;
+  justify-content: center;
+  * {
+    margin: 0 4px;
+  }
 }

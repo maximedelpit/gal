@@ -1,7 +1,15 @@
 <div class="text-center" style='color:white;'>
-  <h1>Welcome on GAL</h1>
-  <h2>Ze site of Leads</h2>
+  <h1>Partagez. Recevez</h1>
+  <h3>Certaines informations que vous récoltez au quotidien ne vous intéressent pas mais peuvent avoir de la valeur pour d'autres. Partagez les et recevez-en !</h3>
 
 
-  <p>HOME PAGE TO DO</p>
+  <div class="col-xs-12 user-funnel-cta">
+    <div class="text-center">
+      <%= link_to t('.create_lead'), new_lead_path, class: 'btn btn-success', id: 'home-sell-lead' %>
+    </div>
+    <div class="text-center">
+      <%= link_to t('.buy_lead'), "#", class: 'btn btn-success', data: buyer_sweet_data, id: 'home-buy-lead' %>
+    </div>
+  </div>
+
 </div>

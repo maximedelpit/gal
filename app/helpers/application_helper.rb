@@ -26,4 +26,21 @@ module ApplicationHelper
   def user_tags_collection
     return ActsAsTaggableOn::Tag.joins(:taggings).where(taggings: {taggable_type: 'IndustrySubcategory'}).order(:name)
   end
+
+  def buyer_sweet_data
+    data = {
+      imageUrl: 'https://unsplash.it/400/200',
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: 'Buy a lead with Get a Lead',
+      animation: false,
+      confirm: t('.buyer_alert_title'),
+      text: t('.buyer_alert_text')
+    }
+    if user_signed_in?
+      data.merge!({confirmButtonText: 'Connect'})
+    end
+    return data
+  end
+
 end

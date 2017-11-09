@@ -26,11 +26,11 @@ en:
         job_title: 'Fonction'
         phone: 'Téléphone'
         mail: 'Email'
-        linkedin_url: 'Lien profil Linkedin'
+        linkedin_url: 'Linkedin url'
         nature: 'Nature souscription'
         state: 'Statut'
         deadline: 'Echéance'
-        within: 'Mise en oeuvre dans'
+        within: 'Implementation'
         description: 'Description'
         user: 'Vendeur'
         price: 'Prix'
@@ -114,3 +114,10 @@ en:
       congrats_title: 'Congrats, your lead is under review!'
       contact_title: 'Contact'
       infos_title: 'Lead content'
+  pages:
+    home:
+      buy_lead: 'Buy a lead'
+      buyer_alert_title: 'Coming soon!'
+      buyer_alert_text: "We' re in Beta, we will contact you by mail to send you relevant leads!"
+      create_lead: 'Sell your lead'
+

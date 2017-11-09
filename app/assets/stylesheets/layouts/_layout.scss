@@ -1,3 +1,30 @@
 body {
   color: grey
 }
+
+
+.my-container {
+  height: calc(100vh - 50px);
+  padding-top: 5vh;
+  margin-bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  //display: flex;
+  //align-content: center;
+  //align-items: center;
+  &.no-flex {
+    display: block;
+
+  }
+}
+
+
+footer {
+  min-height: 70px;
+  background: $darker-gray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}

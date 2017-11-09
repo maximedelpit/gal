@@ -4,11 +4,4 @@
 // @import "profile";
 // @import "map";
 
-footer {
-  min-height: 70px;
-  background: $darker-gray;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
+@import "layout";
