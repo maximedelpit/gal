@@ -1,12 +1,14 @@
 class Lead < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
   has_many :propositions
+
   # has_many :targets, through: :propositions, class_name: "User",  foreign_key: :user_id
 
   COMPANY_SIZES = %w(0-10 11-25 26-100 101-250 500+)
   WITHIN = ['1 month', '3 months', '6 months', '12 months', '> 12 months']
   STATE = %w(created confirmed to_requalify rejected proposed sold)
 
+  validates :user_id, presence: true, on: :create
   validates :last_name, :company, :company_size, :location,  :description, presence: true
   validates :description, length: {
     in: 10..300,

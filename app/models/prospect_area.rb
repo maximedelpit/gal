@@ -1,11 +1,11 @@
 class ProspectArea < ApplicationRecord
-  has_many :zones
+  has_many :zones, dependent: :destroy
   has_many :users, through: :zones
 
   validate :one_of_them
 
   def to_s
-    [country, region, "#{zipcode} - #{departement}"].compact.join(', ')
+    [country, region, departement, zipcode].compact.join(', ')
   end
 
   def one_of_them

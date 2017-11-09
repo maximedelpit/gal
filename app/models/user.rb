@@ -5,11 +5,11 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:linkedin]
   belongs_to :industry
-  has_many :subcategories
+  has_many :subcategories, dependent: :destroy
   has_many :industry_subcategories, through: :subcategories
-  has_many :zones
+  has_many :zones, dependent: :destroy
   has_many :prospect_areas, through: :zones
-  has_many :leads
+  has_many :leads, dependent: :nullify
   acts_as_taggable
 
 
@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   STATE = %w(linkedin_ok registered)
 
-  # validates :email, :language, :zones, :subcategories, presence: true, on: :update
+  validates :email, :language, :zones, :subcategories, presence: true, on: :update
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
   validates :state, inclusion: { in: STATE,
    message: "%{value} is not a valid state" }
