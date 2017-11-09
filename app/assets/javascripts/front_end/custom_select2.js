@@ -1,10 +1,11 @@
 $('.select2').select2({
-  closeOnSelect: false,
+  closeOnSelect: true,
   debug: true,
-  allowClear: true,
+  allowClear: false,
   placeholder: '',
   tags: true,
-  tokenSeparators: [",", " "],
+  minimumInputLength: 1,
+  tokenSeparators: [","],
   createSearchChoice: function(term) {
     return {
       id: term,
@@ -21,3 +22,4 @@ $('.select2').select2({
 //     // });
 //   }
 // });
+

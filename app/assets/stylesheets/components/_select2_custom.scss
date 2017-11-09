@@ -78,4 +78,15 @@
   right: 0;
 }
 
+.select2-results__option.select2-results__message {
+  display: none;
+}
 
+.select2-dropdown {
+  border: none;
+}
+
+
+.select2-results__options {
+  border: 1px solid $gray-light;
+}
