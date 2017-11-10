@@ -101,7 +101,7 @@ en:
         profile_basics: 'Basic informations' #custom
         tos_agreement_message: 'By registering you accept terms & conditions' #custom
         title_linkedin_ok: "Confirm registration" #custom
-        title_register: "Edit profile" #custom
+        title_registered: "Edit profile" #custom
       new:
         sign_up: Register
         welcome: "Merci de rejoindre Get a Lead !" #custom

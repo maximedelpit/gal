@@ -57,7 +57,7 @@ fr:
       reset_password_instructions:
         action: Changer mon mot de passe
         greeting: Bonjour %{recipient}!
-        instruction: Quelqu''un a demandé un lien pour changer votre mot de passe, le voici :'
+        instruction: 'Quelqu''un a demandé un lien pour changer votre mot de passe, le voici :'
         instruction_2: Si vous n'avez pas émis cette demande, merci d'ignorer ce email.
         instruction_3: Votre mot de passe ne changera pas tant que vous n'aurez pas cliqué sur ce lien et renseigné un nouveau mot de passe.
         subject: Instructions pour changer le mot de passe
@@ -97,7 +97,7 @@ fr:
         submit: Valider
         we_need_your_current_password_to_confirm_your_changes: nous avons besoin de votre mot de passe actuel pour valider ces modifications
         title_linkedin_ok: "Finaliser mon inscription" #custom
-        title_register: "Edition du profil" #custom
+        title_registered: "Edition du profil" #custom
         nl_subscription_message: 'Je souhaite recevoir la Newsletter Get a Lead' #custom
         profile_settings: 'Identifiant et mot de passe' #custom
         profile_basics: 'Basic informations' #custom

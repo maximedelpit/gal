@@ -69,7 +69,7 @@ fr:
         tag_ids: "Je propose des solutions de type... "
   leads:
     new:
-      new_title: "Créer un nouveu Lead"
+      new_title: "Créer un nouveau Lead"
       intro1: "Bonjour %{name},\n Créons un nouveau lead ensemble!"
       intro2: "Un nouveau lead ensemble a proposer %{name}?\n Super! Allons-y"
       intro3: "Bonjour %{name}! Je vais vous aider à créer votre lead"

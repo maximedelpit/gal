@@ -13,12 +13,12 @@
     <%= render 'shared/google_tag_manager_body' %>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <div class='my-container no-flex'>
-      <%= yield %>
-     </div>
     <div class="oblique-wrapper">
       <div class="oblique-bg"></div>
     </div>
+    <div class='container'>
+      <%= yield %>
+     </div>
     <!-- <footer></footer> -->
     <%= javascript_include_tag 'application' %>
     <%= yield(:after_js) %>

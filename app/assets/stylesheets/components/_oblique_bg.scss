@@ -27,3 +27,29 @@
   // background: #F9F6E6;
   background: linear-gradient(-270deg, #30cfd0 0%, #2196FF 28%, #2176FF 100%);
 }
+
+.oblique-block {
+  color: white;
+  padding-top: 5vh;
+  .text {
+    font-size: 1.8rem;
+  }
+}
+
+
+#lead-img.oblique-object {
+  box-shadow: 0 6px 7px -6px #777;
+  max-width: 100%;
+  height: auto;
+  position: absolute;
+  right: 4vw;
+  top: 17vw;
+}
+@media (max-width: 768px) {
+  #lead-img.oblique-object {
+  right: 2vw;
+  top: 41vw;
+  width: 50%;
+}
+}
+
