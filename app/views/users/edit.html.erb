@@ -19,9 +19,9 @@
         <% end %>
       </div>
 
-      <h4 class='card-sub-titles col-xs-12'><%= t('devise.registrations.edit.profile_basics') %></h4>
-      <div class="form-inputs">
-        <% if @user.state == 'registered' %>
+      <% if @user.state == 'registered' %>
+        <h4 class='card-sub-titles col-xs-12'><%= t('devise.registrations.edit.profile_basics') %></h4>
+        <div class="form-inputs">
           <%= f.input :first_name, wrapper_html: {class: 'col-xs-6'} %>
           <%= f.input :last_name, wrapper_html: {class: 'col-xs-6'} %>
           <%= f.input :location, wrapper_html: {class: 'col-xs-6'} %>
@@ -29,12 +29,22 @@
           <%= f.input :phone_number, wrapper_html: {class: 'col-xs-6'} %>
           <%= f.input :company, wrapper_html: {class: 'col-xs-6'} %>
           <%= f.association :industry, collection: Industry.all.order(:name), wrapper_html: {class: 'col-xs-6'}, input_html: {class: 'select2'} %>
-        <% end %>
-          <%= f.input :prospect_area_ids, required: true, collection: ProspectArea.all, label_method: :to_s, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
-          <%= f.input :industry_subcategory_ids, required: true, collection: IndustrySubcategory.where(validated: true).all, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
-          <%= f.input :tag_ids, collection: user_tags_collection, label_method: :name, value_method: :id, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
+        </div>
+      <% end %>
 
+      <h4 class='card-sub-titles col-xs-12'><%= User.human_attribute_name('prospect_area_ids').capitalize %></h4>
+      <div class="form-inputs">
+        <%= f.input :prospect_area_ids, required: true, collection: ProspectArea.all, label_method: :to_s, value_method: :id, label: false, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
       </div>
+      <h4 class='card-sub-titles col-xs-12'><%= User.human_attribute_name('industry_subcategory_ids').capitalize %></h4>
+      <div class="form-inputs">
+        <%= f.input :industry_subcategory_ids, required: true, collection: IndustrySubcategory.where(validated: true).all, label_method: :name, value_method: :id, label: false, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
+      </div>
+      <h4 class='card-sub-titles col-xs-12'><%= User.human_attribute_name('tag_ids').capitalize %></h4>
+      <div class="form-inputs">
+        <%= f.input :tag_ids, collection: user_tags_collection, label_method: :name, value_method: :id, label: false, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true} %>
+      </div>
+
       <div class="form-inputs col-xs-12">
         <%= f.input :nl_subscription, label: t('devise.registrations.edit.nl_subscription_message'), required: false, wrapper_html: { class: 'xs-sz' } %>
         <%= f.input :accepts_tos, label: t('devise.registrations.edit.tos_agreement_message'), required: true, wrapper_html: { class: 'xs-sz' } %>
