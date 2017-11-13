@@ -7,6 +7,7 @@ $('.select2').select2({
   minimumInputLength: 1,
   tokenSeparators: [","],
   createSearchChoice: function(term) {
+    debugger;
     return {
       id: term,
       name: term + ' (new)'

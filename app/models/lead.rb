@@ -10,7 +10,7 @@ class Lead < ApplicationRecord
 
   validates :user_id, presence: true, on: :create
   validates :last_name, :company, :company_size, :location,
-            :description, :job_description, :email,  presence: true
+            :description, :job_title, :mail,  presence: true
   validates :description, length: {
     in: 10..300,
     too_short: "%{count} characters is the minimum allowed",

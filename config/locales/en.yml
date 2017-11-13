@@ -124,7 +124,7 @@ en:
       grant1: "Super!"
       grant2: "Merci %{name}"
       grant3: "Poursuivons..."
-      submit: 'Submit'
+      submit: "Submit"
     show:
       author: 'Post by'
       created_at: 'at'
@@ -135,7 +135,7 @@ en:
     home:
       buy_lead: 'Acheter un lead'
       buyer_alert_title: 'Coming soon!'
-      buyer_alert_text: "Nous sommes en Beta, nous vous contacterons par mail pour vous envoyer les leads les plus pertinents!"
+      buyer_alert_text: "We are still in Beta-Phase, nous vous contacterons par mail pour vous envoyer les leads les plus pertinents!"
       create_lead: 'Vendre un lead'
       content_html: "<p>Certaines informations que vous récoltez au quotidien ne vous intéressent pas mais peuvent avoir de la valeur pour d'autres. Partagez les et recevez-en !</p><br>
           <p>Plus vous générez de leads qualifiés, plus vous en recevrez.</p>"
