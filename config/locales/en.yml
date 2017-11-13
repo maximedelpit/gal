@@ -35,6 +35,7 @@ en:
         user: 'Vendeur'
         price: 'Prix'
         tag_ids: "Mots clés"
+
       proposition:
         mail: 'Email destinataire'
         state: 'Statut'
@@ -67,6 +68,20 @@ en:
         industry_subcategory_ids: "Secteurs d'activités"
         prospect_area_ids: "Zones de chalandise"
         tag_ids: "Centres d'intérêt"
+  lead:
+    STATES:
+      created: "Created"
+      confirmed: "Confirmed"
+      to_requalify: "To requalify"
+      rejected: 'Rejected'
+      proposed: 'Proposed'
+      sold: 'Sold'
+    WITHIN:
+      1_month: "1 month"
+      3_months: "3 months"
+      6_months: "6 months"
+      12_months: "12 months"
+      over_12_months: "> 12 months"
   leads:
     new:
       new_title: "Create a new Lead"
@@ -117,8 +132,9 @@ en:
       infos_title: 'Lead content'
   pages:
     home:
-      buy_lead: 'Buy a lead'
+      buy_lead: 'Acheter un lead'
       buyer_alert_title: 'Coming soon!'
-      buyer_alert_text: "We' re in Beta, we will contact you by mail to send you relevant leads!"
-      create_lead: 'Sell your lead'
-
+      buyer_alert_text: "Nous sommes en Beta, nous vous contacterons par mail pour vous envoyer les leads les plus pertinents!"
+      create_lead: 'Vendre un lead'
+      content_html: "<p>Certaines informations que vous récoltez au quotidien ne vous intéressent pas mais peuvent avoir de la valeur pour d'autres. Partagez les et recevez-en !</p><br>
+          <p>Plus vous générez de leads qualifiés, plus vous en recevrez.</p>"

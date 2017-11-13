@@ -1,10 +1,14 @@
 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
   <div class="card-wrapper">
-    <h3 class='card-title'><%= t(".sign_up") %></h3>
+    <!-- <h3 class='card-title'><%#= t(".sign_up") %></h3> -->
 
-    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'card-content'}) do |f| %>
+    <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: {class: 'card-content no-title'}) do |f| %>
       <%= f.error_notification %>
       <div class="form-inputs">
+        <div class="row text-center">
+          <%= image_tag 'logo_beta.svg', class: 'img-responsive', alt: 'logo get a lead', id:'logo' %>
+        </div>
+
         <div class="row">
           <h4 class='card-sub-titles col-xs-12 text-center'><%= t('.welcome') %></h4>
           <p class='col-xs-12 text-center'><%= t('.signup_guidelines') %></p>
@@ -16,10 +20,10 @@
               <div class='omniauth-btn-container text-center col-xs-12'>
                 <%#= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
                 <%#= link_to omniauth_authorize_path(resource_name, provider, accepts_tos: false, nl_subscription: false  ), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
-                  <!-- <span class="fa fa-<%#= provider.to_s %>"></span> <%#= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %> -->
+                  <!-- <span class="fa fa-<%#= provider.to_s %>"></span> <%#= t('devise.shared.links.sign_in_with_provider', provider: "#{OmniAuth::Utils.camelize(provider)}") %> -->
                 <%# end -%>
                 <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
-                  <i class="fa fa-<%= provider.to_s %>"></i> <span class='text'><%= "Sign in with #{OmniAuth::Utils.camelize(provider)}" %></span>
+                  <i class="fa fa-<%= provider.to_s %>"></i> <span class='text'><%= t('devise.shared.links.sign_in_with_provider', provider: "#{OmniAuth::Utils.camelize(provider)}") %></span>
                 <% end %>
               </div>
             <% end -%>

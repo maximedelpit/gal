@@ -15,11 +15,11 @@ class User < ApplicationRecord
 
   before_update :mark_as_registered?
 
-  STATE = %w(linkedin_ok registered)
+  STATES = %w(linkedin_ok registered)
 
   validates :email, :language, :zones, :subcategories, presence: true, on: :update
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
-  validates :state, inclusion: { in: STATE,
+  validates :state, inclusion: { in: STATES,
    message: "%{value} is not a valid state" }
 
   alias_method :subies, :subcategories

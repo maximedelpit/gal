@@ -31,7 +31,7 @@
         <%= f.input :location, wrapper_html: {class: 'col-xs-6 col-sm-6'},
             input_html: {"cf-questions" => "#{field_message(:location, {company: '{lead_company}'})}"}
         %>
-        <%= f.input :within, collection: Lead::WITHIN,  wrapper_html: {class: 'col-xs-6 col-sm-6'},
+        <%= f.input :within, collection: t(Lead::WITHIN, scope: 'lead.WITHIN'),  wrapper_html: {class: 'col-xs-6 col-sm-6'},
             input_html: {"cf-questions" => "#{field_message(:company_size, {company: '{lead_company}'})}"}
         %>
 

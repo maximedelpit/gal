@@ -5,11 +5,12 @@ class Lead < ApplicationRecord
   # has_many :targets, through: :propositions, class_name: "User",  foreign_key: :user_id
 
   COMPANY_SIZES = %w(0-10 11-25 26-100 101-250 500+)
-  WITHIN = ['1 month', '3 months', '6 months', '12 months', '> 12 months']
-  STATE = %w(created confirmed to_requalify rejected proposed sold)
+  WITHIN = ['1_month', '3_months', '6_months', '12_months', 'over_12_months']
+  STATES = %w(created confirmed to_requalify rejected proposed sold)
 
   validates :user_id, presence: true, on: :create
-  validates :last_name, :company, :company_size, :location,  :description, presence: true
+  validates :last_name, :company, :company_size, :location,
+            :description, :job_description, :email,  presence: true
   validates :description, length: {
     in: 10..300,
     too_short: "%{count} characters is the minimum allowed",
@@ -19,7 +20,7 @@ class Lead < ApplicationRecord
      message: "%{value} is not a valid size" }
   validates :within, inclusion: { in: WITHIN,
    message: "%{value} is not a valid implementation period" }
-  validates :state, inclusion: { in: STATE,
+  validates :state, inclusion: { in: STATES,
    message: "%{value} is not a valid state" }
 
   acts_as_taggable

@@ -49,7 +49,7 @@ fr:
         city: 'Ville'
         category: 'Type'
       user:
-        email: 'Email'
+        email: 'Email professionnel'
         first_name: 'Prénom'
         last_name: 'Nom'
         location: 'Localisation'
@@ -67,6 +67,20 @@ fr:
         industry_subcategory_ids: "Mon industrie"
         prospect_area_ids: "Mes zones de prospection"
         tag_ids: "Je propose des solutions de type... "
+  lead:
+    STATES:
+      created: "Créé"
+      confirmed: "Confirmé"
+      to_requalify: "A requalifier"
+      rejected: 'Rejeté'
+      proposed: 'Proposé'
+      sold: 'Vendu'
+    WITHIN:
+      1_month: "1 mois"
+      3_months: "3 mois"
+      6_months: "6 mois"
+      12_months: "12 mois"
+      over_12_months: "> 12 mois"
   leads:
     new:
       new_title: "Créer un nouveau Lead"
@@ -112,7 +126,7 @@ fr:
     show:
       author: 'Posté par'
       created_at: 'le'
-      congrats_title: "Merci! Votre lead est en cours de validation..."
+      congrats_title: "Merci ! Votre lead est en cours de validation..."
       contact_title: 'Décideur'
       infos_title: 'Besoin exprimé'
   pages:
@@ -121,4 +135,5 @@ fr:
       buyer_alert_title: 'Coming soon!'
       buyer_alert_text: "Nous sommes en Beta, nous vous contacterons par mail pour vous envoyer les leads les plus pertinents!"
       create_lead: 'Vendre un lead'
-
+      content_html: "<p>Certaines informations que vous récoltez au quotidien ne vous intéressent pas mais peuvent avoir de la valeur pour d'autres. Partagez les et recevez-en !</p><br>
+          <p>Plus vous générez de leads qualifiés, plus vous en recevrez.</p>"

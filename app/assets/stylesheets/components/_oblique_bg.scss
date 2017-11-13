@@ -37,13 +37,15 @@
 }
 
 
+.oblique-object {
+  position: absolute;
+  right: 4vw;
+  top: 17vw;
+}
 #lead-img.oblique-object {
   box-shadow: 0 6px 7px -6px #777;
   max-width: 100%;
   height: auto;
-  position: absolute;
-  right: 4vw;
-  top: 17vw;
 }
 @media (max-width: 768px) {
   #lead-img.oblique-object {

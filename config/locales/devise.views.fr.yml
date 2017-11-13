@@ -77,18 +77,19 @@ fr:
         confirm_new_password: Confirmez votre nouveau mot de passe
         new_password: Nouveau mot de passe
       new:
+        message: "Aucun problème. Entrez votre adresse email, et nous vous enverrons un lien pour réinitialiser votre mot de passe."
         forgot_your_password: Mot de passe oublié ?
-        send_me_reset_password_instructions: Envoyez-moi des instructions pour réinitialiser mon mot de passe
+        send_me_reset_password_instructions: Réinitialiser
       no_token: Vous ne pouvez pas accéder à cette page si vous n’y accédez pas depuis un email de réinitialisation de mot de passe. Si vous venez en effet d’un tel email, vérifiez que vous avez copié l’adresse URL en entier.
       send_instructions: Vous allez recevoir sous quelques minutes un email vous indiquant comment réinitialiser votre mot de passe.
       send_paranoid_instructions: Si votre email existe dans notre base de données, vous recevrez un lien vous permettant de récupérer votre mot de passe.
       updated: Votre mot de passe a été modifié avec succès. Vous êtes maintenant connecté(e).
       updated_not_active: Votre mot de passe a été modifié avec succès.
     registrations:
-      destroyed: Au revoir ! Votre compte a été annulé avec succès. Nous espérons vous revoir bientôt.
+      destroyed: Au revoir ! Votre compte a été supprimé avec succès. Nous espérons vous revoir bientôt.
       edit:
         are_you_sure: "Êtes-vous sûr ?"
-        cancel_my_account: Supprimer mon compte
+        cancel_my_account: "Supprimer mon compte"
         currently_waiting_confirmation_for_email: 'Confirmation en attente pour: %{email}'
         leave_blank_if_you_don_t_want_to_change_it: laissez ce champ vide pour le laisser inchangé
         title: "Éditer %{resource}"
@@ -96,18 +97,18 @@ fr:
         update: Modifier
         submit: Valider
         we_need_your_current_password_to_confirm_your_changes: nous avons besoin de votre mot de passe actuel pour valider ces modifications
-        title_linkedin_ok: "Finaliser mon inscription" #custom
-        title_registered: "Edition du profil" #custom
-        nl_subscription_message: 'Je souhaite recevoir la Newsletter Get a Lead' #custom
-        profile_settings: 'Identifiant et mot de passe' #custom
-        profile_basics: 'Basic informations' #custom
-        tos_agreement_message: 'Je reconnais avoir lu et accepté les FAQ du service' #custom
+        title_linkedin_ok: "Inscription - Vous y êtes presque !"
+        title_register: "Edition du profil"
+        nl_subscription_message: 'Je souhaite recevoir la Newsletter Get a Lead'
+        profile_settings: 'Email et mot de passe'
+        profile_basics: 'Basic informations'
+        tos_agreement_message: "Je reconnais avoir lu et j'accepte les conditions générales du service"
       new:
-        sign_up: Inscription #is it possible to center it ?
-        welcome: "Rejoignez l'aventure Get a Lead !" #custom
-        signup_guidelines: "Pour notre phase de lancement nous avons choisi une inscription via linkedin: il vous suffit de renseigner vos identifiants Linkedin lors de la prochaine étape nous récupèrerons automatiquement votre nom, prénom, entreprise..." #custom
-        why_linkedin_title: "Pourquoi Linkedin ?" #custom
-        why_linkedin: "Pour vous faciliter la vie : un clic et vous êtes prêts à générer et recevoir des leads !" #custom
+        sign_up: "M'inscrire"
+        welcome: "Rejoignez l'aventure Get a Lead !"
+        signup_guidelines: "Pour notre phase de lancement nous avons choisi une inscription via linkedin: il vous suffit de renseigner vos identifiants Linkedin lors de la prochaine étape nous récupèrerons automatiquement votre nom, prénom, entreprise..."
+        why_linkedin_title: "Pourquoi Linkedin ?"
+        why_linkedin: "Pour vous faciliter la vie : un clic et vous êtes prêts à générer et recevoir des leads !"
       signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
       signed_up_but_inactive: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte n’a pas encore été activé.
       signed_up_but_locked: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte est verrouillé.

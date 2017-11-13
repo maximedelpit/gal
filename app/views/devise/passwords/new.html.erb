@@ -6,11 +6,12 @@
       <%= f.error_notification %>
 
       <div class="form-inputs">
+        <p><%= t(".message") %></p>
         <%= f.input :email, required: true, autofocus: true %>
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, t(".send_me_reset_password_instructions"), id: 'btn-send-pwd' %>
+        <%= f.button :submit, t(".send_me_reset_password_instructions"), id: 'btn-send-pwd', class:'btn-round btn-success' %>
         <%= render "devise/shared/links" %>
       </div>
     <% end %>

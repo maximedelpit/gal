@@ -77,8 +77,9 @@ en:
         confirm_new_password: Confirm new password
         new_password: New password
       new:
+        message: "No worries. Entrez votre adresse email, et nous vous enverrons un lien pour réinitialiser votre mot de passe."
         forgot_your_password: Forgot your password?
-        send_me_reset_password_instructions: Send me reset password instructions
+        send_me_reset_password_instructions: Reset
       no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
       send_instructions: You will receive an email with instructions on how to reset your password in a few minutes.
       send_paranoid_instructions: If your email address exists in our database, you will receive a password recovery link at your email address in a few minutes.
@@ -101,7 +102,7 @@ en:
         profile_basics: 'Basic informations' #custom
         tos_agreement_message: 'By registering you accept terms & conditions' #custom
         title_linkedin_ok: "Confirm registration" #custom
-        title_registered: "Edit profile" #custom
+        title_register: "Edit profile" #custom
       new:
         sign_up: Register
         welcome: "Merci de rejoindre Get a Lead !" #custom

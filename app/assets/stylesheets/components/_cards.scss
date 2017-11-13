@@ -22,7 +22,7 @@
 
 .card-content {
   h1, h2, h3, h4, h5, h6 {
-    margin: 6px 0px 4px 0px;
+    margin: 10px 0px 5px 0px;
   }
 
   .contact-card, .lead-card {
@@ -41,7 +41,11 @@
 
   #description {
     p {
-      word-break:break-all;
+      word-break: break-word;
     }
+  }
+
+  #logo {
+    margin: 2rem auto 4rem auto;
   }
 }
