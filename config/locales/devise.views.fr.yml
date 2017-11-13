@@ -103,6 +103,9 @@ fr:
         profile_settings: 'Email et mot de passe'
         profile_basics: 'Basic informations'
         tos_agreement_message: "Je reconnais avoir lu et j'accepte les conditions générales du service"
+        prospect_areas_placeholder: 'Saisissez vos zones'
+        subcategories_placeholder: 'Saisissez vos industries'
+        tags_placeholder: 'Saisissez vos mots clés de référence'
       new:
         sign_up: "M'inscrire"
         welcome: "Rejoignez l'aventure Get a Lead !"

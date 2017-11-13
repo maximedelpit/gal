@@ -90,3 +90,12 @@
 .select2-results__options {
   border: 1px solid $gray-light;
 }
+
+.select2-search__field::placeholder {
+  color: lighten($gray, 20%);
+  font-style: italic;
+}
+
+.select2-search__field:focus::placeholder {
+  opacity: 0;
+}

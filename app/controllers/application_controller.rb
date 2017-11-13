@@ -25,15 +25,19 @@ class ApplicationController < ActionController::Base
   end
 
   def default_url_options
-    if current_user&.language
-      { locale: current_user.language }
-    else
-      { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
-    end
+    { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
   def set_locale
-    I18n.locale = params.fetch(:locale, I18n.default_locale).to_sym
+    if current_user&.language
+      loc = current_user.language
+    elsif request.env['HTTP_ACCEPT_LANGUAGE'].present?
+      first_browser_loc = request.env['HTTP_ACCEPT_LANGUAGE'].split(',').first.split('-').first
+      loc = first_browser_loc == 'fr' ? 'fr' : 'en'
+    else
+      loc = I18n.default_locale
+    end
+    I18n.locale = params.fetch(:locale, loc).to_sym
   end
 
   def user_not_authorized

@@ -22,7 +22,7 @@
                 <%#= link_to omniauth_authorize_path(resource_name, provider, accepts_tos: false, nl_subscription: false  ), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
                   <!-- <span class="fa fa-<%#= provider.to_s %>"></span> <%#= t('devise.shared.links.sign_in_with_provider', provider: "#{OmniAuth::Utils.camelize(provider)}") %> -->
                 <%# end -%>
-                <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
+                <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider} btn-round", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
                   <i class="fa fa-<%= provider.to_s %>"></i> <span class='text'><%= t('devise.shared.links.sign_in_with_provider', provider: "#{OmniAuth::Utils.camelize(provider)}") %></span>
                 <% end %>
               </div>
