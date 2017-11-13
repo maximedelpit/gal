@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   STATES = %w(linkedin_ok registered)
 
-  validates :email, :language, :zones, :subcategories, presence: true, on: :update
+  validates :email, :language, :zones, :subcategories, :taggings, presence: true, on: :update
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
   validates :state, inclusion: { in: STATES,
    message: "%{value} is not a valid state" }
@@ -26,6 +26,7 @@ class User < ApplicationRecord
   alias_method :industry_subies, :industry_subcategories
   delegate :name, to: :industry, prefix: true, allow_nil: true
 
+  before_update :subscribe_to_mailjet?
 
   # attr_accessor :industry_subcategory_ids, :prospect_area_ids
 
@@ -68,7 +69,7 @@ class User < ApplicationRecord
   end
 
   def mark_as_registered?
-    if state != 'registered' && email.present? && language.present? && subcategories.present? && zones.present?
+    if state != 'registered' && email.present? && language.present? && subcategories.present? && zones.present? && taggings.present?
       assign_attributes(state: 'registered')
     end
   end
@@ -79,5 +80,19 @@ class User < ApplicationRecord
     # whitelist attributes that changed while value was previously set => TBD
     attrs_to_restore = changes.select {|attr_, v| v[0].present? && v[1] != v[0]}.reject {|attr_| %w(token token_expiry).include?(attr_)}
     restore_attributes(attrs_to_restore.keys)
+  end
+
+  def subscribe_to_mailjet?
+    if changed_attributes[:nl_subscription] #&& nl_subscription
+      Mailjet::Contactslist_managecontact.create(id: ENV['MAILJET_LIST_ID'], action: "addforce", email: email, name: full_name,
+        properties: {
+          first_name: first_name,
+          last_name: last_name,
+          company: company,
+          job_title: job_title,
+          language: language,
+          newsletter_sub: nl_subscription
+      })
+    end
   end
 end

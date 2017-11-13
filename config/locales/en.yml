@@ -124,6 +124,7 @@ en:
       grant1: "Super!"
       grant2: "Merci %{name}"
       grant3: "Poursuivons..."
+      submit: 'Submit'
     show:
       author: 'Post by'
       created_at: 'at'

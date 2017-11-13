@@ -109,7 +109,7 @@ fr:
       new:
         sign_up: "M'inscrire"
         welcome: "Rejoignez l'aventure Get a Lead !"
-        signup_guidelines: "Pour notre phase de lancement nous avons choisi une inscription via linkedin: il vous suffit de renseigner vos identifiants Linkedin lors de la prochaine étape nous récupèrerons automatiquement votre nom, prénom, entreprise..."
+        signup_guidelines: "Get a Lead est une plateforme réservée aux professionels, inscrivez-vous via Linkedin +"
         why_linkedin_title: "Pourquoi Linkedin ?"
         why_linkedin: "Pour vous faciliter la vie : un clic et vous êtes prêts à générer et recevoir des leads !"
       signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.

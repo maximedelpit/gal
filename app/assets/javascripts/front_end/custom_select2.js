@@ -3,7 +3,7 @@ $('.select2').select2({
   debug: true,
   allowClear: false,
   placeholder: '',
-  tags: true,
+  // tags: true,
   minimumInputLength: 1,
   tokenSeparators: [","],
   createSearchChoice: function(term) {

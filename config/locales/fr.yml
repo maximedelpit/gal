@@ -123,6 +123,7 @@ fr:
       grant1: "Super!"
       grant2: "Merci %{name}"
       grant3: "Poursuivons..."
+      submit: 'Valider'
     show:
       author: 'Posté par'
       created_at: 'le'
