@@ -29,8 +29,9 @@ class ApplicationController < ActionController::Base
   end
 
   def sanitize_collection_params(key, associations=%i(industry_subcategory_ids prospect_area_ids tag_ids))
+    return if key.nil?
     associations.each do |as|
-      params[key][as].map! do |v|
+      params[key][as]&.map! do |v|
         if v.to_i == 0 && v.present?
           klass = as.to_s.classify.gsub(/^(.+)(Id)$/, '\1')
           klass = "ActsAsTaggableOn::Tag" if klass == 'Tag'
