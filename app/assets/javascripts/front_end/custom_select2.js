@@ -3,16 +3,16 @@ $('.select2').select2({
   debug: true,
   allowClear: false,
   placeholder: '',
-  // tags: true,
+  tags: true,
   minimumInputLength: 1,
-  tokenSeparators: [","],
-  createSearchChoice: function(term) {
-    debugger;
-    return {
-      id: term,
-      name: term + ' (new)'
-    };
-  }
+  tokenSeparators: [","]//,
+  // createSearchChoice: function(term) {
+  //   debugger;
+  //   return {
+  //     id: null,
+  //     name: term + ' (new)'
+  //   };
+  // }
 })
 // .on("change", function(e) {
 //   var isNew = $(this).find('[data-select2-tag="true"]');

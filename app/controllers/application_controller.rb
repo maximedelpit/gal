@@ -28,6 +28,21 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
+  def sanitize_collection_params(key, associations=%i(industry_subcategory_ids prospect_area_ids tag_ids))
+    associations.each do |as|
+      params[key][as].map! do |v|
+        if v.to_i == 0 && v.present?
+          klass = as.to_s.classify.gsub(/^(.+)(Id)$/, '\1')
+          klass = "ActsAsTaggableOn::Tag" if klass == 'Tag'
+          klass.constantize.where(name: v.capitalize.singularize).first_or_create(validated: false).id
+        else
+          v
+        end
+      end
+    end
+    return params
+  end
+
   def set_locale
     if current_user&.language
       loc = current_user.language
@@ -47,18 +62,19 @@ class ApplicationController < ActionController::Base
 
   protected
 
-    def configure_permitted_parameters
-      devise_parameter_sanitizer.permit(:account_update) do |user_params|
-        user_params.permit(
-          :email, :password, :password_confirmation, :current_password, :first_name,
-          :last_name, :language, :location, :job_title, :phone_number, :company,
-          :industry_id, :nl_subscription, :accepts_tos,
-          {prospect_area_ids: [], industry_subcategory_ids: [], tag_ids: []}
-        )
-      end
+  def configure_permitted_parameters
+    sanitize_collection_params(:user) if %w(update create).include?(params[:action])
+    devise_parameter_sanitizer.permit(:account_update) do |user_params|
+      user_params.permit(
+        :email, :password, :password_confirmation, :current_password, :first_name,
+        :last_name, :language, :location, :job_title, :phone_number, :company,
+        :industry_id, :nl_subscription, :accepts_tos,
+        {prospect_area_ids: [], industry_subcategory_ids: [], tag_ids: []}
+      )
     end
+  end
 
-    def skip_pundit?
-      devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
-    end
+  def skip_pundit?
+    devise_controller? || params[:controller] =~ /(^(rails_)?admin)|(^pages$)/
+  end
 end

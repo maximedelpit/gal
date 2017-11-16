@@ -23,8 +23,31 @@ module ApplicationHelper
     current_user.state == 'registered' ? edit_user_registration_path :  edit_user_path
   end
 
+  def industry_subies_collection
+    return IndustrySubcategory.left_outer_joins(:subcategories).select(:name, :id).where(%Q(
+      industry_subcategories.validated = 'true' OR
+      (industry_subcategories.validated = 'false' AND subcategories.user_id = #{current_user.id})
+    )).distinct(:name).order(:name)
+    # (IndustrySubcategory.where(validated: true) || current_user.industry_subies.where(validated: false))
+  end
+
+  def prospect_areas_collection
+    return ProspectArea.left_outer_joins(:zones).select(:name, :id).where(%Q(
+      prospect_areas.validated = 'true' OR
+      (prospect_areas.validated = 'false' AND zones.user_id = #{current_user.id})
+    )).distinct(:name).order(:name)
+    # (ProspectArea.where(validated: true) || current_user.prospect_areas.where(validated: false))
+  end
+
   def user_tags_collection
-    return ActsAsTaggableOn::Tag.joins(:taggings).where(taggings: {taggable_type: 'IndustrySubcategory'}).order(:name)
+    return ActsAsTaggableOn::Tag.left_outer_joins(:taggings).where(%Q(
+      tags.validated = 'true' OR
+      (tags.validated = 'false' AND taggings.taggable_id = #{current_user.id} AND taggings.taggable_type = 'User')
+    )).distinct(:name).order(:name)
+    # tag_ids = ActsAsTaggableOn::Tagging.where(taggable_type: 'IndustrySubcategory').or(
+    #   ActsAsTaggableOn::Tagging.where(taggable_type: 'User', taggable_id: current_user.id)
+    # ).distinct(:tag_id).pluck(:tag_id)
+    # return ActsAsTaggableOn::Tag.where(id: tag_ids)
   end
 
   def buyer_sweet_data

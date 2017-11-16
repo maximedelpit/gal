@@ -38,6 +38,10 @@
       background-color: #F9F9F9;
     }
 
+    textarea {
+      resize: none;
+    }
+
     .form-control:focus, .select2.select2-container.select2-container--bootstrap .selection:focus {
       border: none;
       border-bottom: 1px solid $brand-primary;

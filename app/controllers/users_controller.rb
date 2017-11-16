@@ -11,6 +11,7 @@ class UsersController < ApplicationController
     authorize @user
     check_password
     if @user.update(user_params)
+      binding.pry
       # Sign in the user by passing validation in case their password changed
       bypass_sign_in(@user)
       redirect_to root_path
@@ -21,15 +22,6 @@ class UsersController < ApplicationController
 
   private
 
-  def user_params
-    # NOTE: Using `strong_parameters` gem
-    params.require(:user).permit(
-          :email, :password, :password_confirmation, :current_password, :first_name,
-          :last_name, :language, :location, :job_title, :phone_number, :company,
-          :industry_id, :nl_subscription, :accepts_tos,
-          {prospect_area_ids: [], industry_subcategory_ids: [], tag_ids: []}
-    )
-  end
 
   def check_password
     if params[:password].present? && params[:password] != params[:password_confirmation]
@@ -37,5 +29,16 @@ class UsersController < ApplicationController
     else
       @user.errors.add :password, "You must set your own password"
     end
+  end
+
+  def user_params
+    # NOTE: Using `strong_parameters` gem
+    sanitize_collection_params(:user)
+    params.require(:user).permit(
+          :email, :password, :password_confirmation, :current_password, :first_name,
+          :last_name, :language, :location, :job_title, :phone_number, :company,
+          :industry_id, :nl_subscription, :accepts_tos,
+          {prospect_area_ids: [], industry_subcategory_ids: [], tag_ids: []}
+    )
   end
 end

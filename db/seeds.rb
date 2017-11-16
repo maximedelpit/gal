@@ -420,9 +420,9 @@ prospect_areas = [
   {country: "France", region: "Auvergne-Rhône-Alpes", departement: "1 - Ain", category: "Department"},
   {country: "France", region: "Hauts-de-France", departement: "2 - Aisne", category: "Department"},
   {country: "France", region: "Auvergne-Rhône-Alpes", departement: "3 - Allier", category: "Department"},
-  {country: "France", region: "Provence-Alpes-Côte d'Azur", departement: "Alpes-de-Haute-4 - Provence", category: "Department"},
-  {country: "France", region: "Provence-Alpes-Côte d'Azur", departement: "Hautes-5 - Alpes", category: "Department"},
-  {country: "France", region: "Provence-Alpes-Côte d'Azur", departement: "Alpes-6 - Maritimes", category: "Department"},
+  {country: "France", region: "Provence-Alpes-Côte d'Azur", departement: "4 - Alpes-de-Haute-Provence", category: "Department"},
+  {country: "France", region: "Provence-Alpes-Côte d'Azur", departement: "5 - Hautes-Alpes", category: "Department"},
+  {country: "France", region: "Provence-Alpes-Côte d'Azur", departement: "6 - Alpes-Maritimes", category: "Department"},
   {country: "France", region: "Auvergne-Rhône-Alpes", departement: "7 - Ardèche", category: "Department"},
   {country: "France", region: "Grand Est", departement: "8 - Ardennes", category: "Department"},
   {country: "France", region: "Occitanie", departement: "9 - Ariège", category: "Department"},
@@ -466,7 +466,7 @@ prospect_areas = [
   {country: "France", region: "Occitanie", departement: "46 - Lot", category: "Department"},
   {country: "France", region: "Nouvelle-Aquitaine", departement: "47 - Lot-et-Garonne", category: "Department"},
   {country: "France", region: "Occitanie", departement: "48 - Lozère", category: "Department"},
-  {country: "France", region: "Pays de la Loire", departement: "Maine-et-49 - Loire", category: "Department"},
+  {country: "France", region: "Pays de la Loire", departement: "49 - Maine-et-Loire", category: "Department"},
   {country: "France", region: "Normandie", departement: "50 - Manche", category: "Department"},
   {country: "France", region: "Grand Est", departement: "51 - Marne", category: "Department"},
   {country: "France", region: "Grand Est", departement: "52 - Haute-Marne", category: "Department"},
@@ -516,12 +516,12 @@ prospect_areas = [
   {country: "France", region: "Guadeloupe", departement: "971 - Guadeloupe", category: "Department"},
   {country: "France", region: "Martinique", departement: "972 - Martinique", category: "Department"},
   {country: "France", region: "Guyane", departement: "973 - Guyane", category: "Department"},
-  {country: "France", region: "La Réunion", departement: "La 974 - Réunion", category: "Department"},
+  {country: "France", region: "La Réunion", departement: "974 - La Réunion", category: "Department"},
   {country: "France", region: "La Réunion", departement: "976 - Mayotte", category: "Department"}
 ]
 
 prospect_areas.each do |attr_|
-  ProspectArea.create!(attr_)
+  ProspectArea.create!(attr_.merge(validated: true))
 end
 puts 'ProspectArea created'
 

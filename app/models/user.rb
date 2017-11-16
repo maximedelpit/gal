@@ -95,4 +95,15 @@ class User < ApplicationRecord
       })
     end
   end
+
+  # def prospect_areas_ids=(values)
+  # end
+
+  # def industry_subcategory_ids=(values)
+  #   self.industry_subcategory_ids =
+  # end
+
+  # def tag_ids=(values)
+  #   self.tag_ids = values.map {|v| v.to_i == 0 ? ActsAsTaggableOn::Tag.create(name: v.singularize.capitalize).id : v}
+  # end
 end
