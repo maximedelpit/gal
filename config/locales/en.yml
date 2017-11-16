@@ -1,73 +1,72 @@
 en:
   activerecord:
     models:
-      industry: 'Industrie'
-      industry_subcategory: "Sous-catégorie d'industrie"
+      industry: 'Industry'
+      industry_subcategory: "Subcategory of industry"
       lead: 'Lead'
       proposition: 'Proposition'
-      prospect_area: 'Zone de chalandise'
-      tag: 'Mot Clé'
-      tagging: 'Mot Clé'
-      user: 'Utilisateur'
-      zone: 'Zone utilisateur'
+      prospect_area: 'Prospect area'
+      tag: 'Keyword'
+      tagging: 'Keyword'
+      user: 'User'
+      zone: 'User area'
     attributes:
       industry:
         linkedin_code: "Code Linkedin"
-        name: "Nom"
+        name: "Name"
       industry_subcategory:
-        name: "Nom"
-        validated: 'validé ?'
+        name: "Name"
+        validated: 'valid?'
       lead:
-        first_name: 'Prénom'
-        last_name: 'Nom'
-        company: 'Société'
-        company_size: 'Taille Société'
-        location: "Localisation"
-        job_title: 'Fonction'
-        phone: 'Téléphone'
+        first_name: 'First Name'
+        last_name: 'Name'
+        company: 'Company'
+        company_size: 'Company Size'
+        location: "Location"
+        job_title: 'Job title'
+        phone: 'Mobile phone'
         mail: 'Email'
-        linkedin_url: 'Lien profil Linkedin'
-        nature: 'Nature souscription'
-        state: 'Statut'
-        deadline: 'Echéance'
-        within: 'Mise en oeuvre dans'
+        linkedin_url: 'Link of the Linkedin profile'
+        nature: 'Subscription nature'
+        state: 'State'
+        deadline: 'Deadline'
+        within: 'Implementation in'
         description: 'Description'
-        user: 'Vendeur'
-        price: 'Prix'
-        tag_ids: "Mots clés"
-
+        user: 'Seller'
+        price: 'Price'
+        tag_ids: "Keywords"
       proposition:
-        mail: 'Email destinataire'
-        state: 'Statut'
+        mail: 'Recepient email'
+        state: 'Status'
         click_to_buy: 'Click to buy'
-        private: 'Privé ?'
-        user: 'Acheteur'
+        private: 'Private?'
+        user: 'Buyer'
         lead: 'Lead'
       prospect_area:
-        country: 'Pays'
-        region: 'Région'
-        zipcode: 'Code postal'
-        city: 'Ville'
-        category: 'Type'
+        country: 'Country'
+        region: 'Region'
+        zipcode: 'zipcode'
+        city: 'City'
+        category: 'Category'
       user:
         email: 'Email'
-        first_name: 'Prénom'
-        last_name: 'Nom'
-        location: 'Localisation'
-        job_title: 'Fonction'
-        phone_number: 'Téléphone'
-        company: 'Société'
-        state: 'Statut'
-        language: 'Préférence de langue'
-        industry: 'Industrie'
-        subcategory: "Sous-catégorie d'industrie"
+        first_name: 'First Name'
+        last_name: 'Name'
+        location: 'Location'
+        job_title: 'Job title'
+        phone_number: 'Mobile phone'
+        company: 'Company'
+        state: 'Status'
+        language: 'Language preference'
+        industry: 'Industry'
+        subcategory: "Subcategory of industry"
         admin: 'Admin'
         linkedin_email: 'Email Linkedin'
-        picture_url: 'Url image de profil'
-        linkedin_url: 'Lien du profil Linkedin'
-        industry_subcategory_ids: "Secteurs d'activités"
-        prospect_area_ids: "Zones de chalandise"
-        tag_ids: "Centres d'intérêt"
+        picture_url: 'Url profile picture'
+        linkedin_url: 'Link of Linkedin profile'
+        industry_subcategory_ids: "My industry"
+        prospect_area_ids: "My prospecting areas"
+        tag_ids: "I offer solutions in..."
   lead:
     STATES:
       created: "Created"
@@ -85,45 +84,45 @@ en:
   leads:
     new:
       new_title: "Create a new Lead"
-      intro1: "Bonjour %{name},\n Créons un nouveau lead ensemble!"
-      intro2: "Un nouveau lead ensemble a proposer %{name}?\n Super! Allons-y"
-      intro3: "Bonjour %{name}! Je vais vous aider à créer votre lead"
-      last_name1: "Quel est le nom de famille de votre contact?"
-      last_name2: "Quel est le nom de famille de la personne responsable du lead?"
-      last_name3: "Quel est le nom de famille du contact à l'origine du lead?"
-      first_name1: "Quel est son prénom?"
-      first_name2: "Comment s'appelle la personne?"
-      first_name3: "Pourriez-vous m'indiquer le prénom du contact?"
-      company1: "Quelle est l'entreprise concernée?"
-      company2: "La société en recherche s'appelle ?"
-      company3: "Quelle est l'entreprise ciblée par le lead?"
-      job_title1: "Quelle est la fonction de %{first_name} %{last_name}?"
-      job_title2: "Veuillez indiquer le métier de %{first_name} %{last_name}?"
-      job_title3: "Connaissez-vous la profession de %{first_name} %{last_name}?"
-      phone1: "Son numéro de téléphone?"
-      phone2: "Auriez vous son numéro de téléphone?"
-      phone3: "Quel est le numéro de {first_name} %{last_name}?"
-      linkedin_url1: "Voulez-vous nous transmettre son Linkedin? (veuillez coller l'url)"
-      linkedin_url2: "Lien du profil linkedin? (veuillez coller l'url)"
-      mail1: "Quel est l'email professionnel de %{first_name} %{last_name}"
-      mail2: "Quel est l'email de votre contact chez %{company}"
-      mail3: 'Veuillez nous indiquer son email'
-      company_size1: "Quelle est la taille de la société %{company} ?"
-      company_size2: "Quelle est la taille de l'entreprise ?"
-      company_size3:  "Combien d'employés travaillent chez %{company} ?"
-      location1: "Où est située l'entreprise ?"
-      location2: "Où se trouve {company} ?"
-      location3: "Où est-elle basée ?"
-      description1: "Passons à la description du lead. Pourriez-vous nous décrire l'objet de la mission ?"
-      description2: "Passons à la descritpion du lead! En quoi consiste-t-il?"
-      description3: "Veuillez décrire la mission"
-      tag_list1:  "Quels mots clés sont associés au lead?"
-      tag_list2:  "Afin de mieux cibler l'audience intéressée, pourriez-vous sélectionner les mots clés relatifs au lead ?"
-      tag_list3:  "Quelles mots clés associeriez vous à cette description ?"
-      recap_contact: 'Récap TO DO'
-      grant1: "Super!"
-      grant2: "Merci %{name}"
-      grant3: "Poursuivons..."
+      intro1: "Hello %{name},\n Let's create a new lead together!"
+      intro2: "Do you have a new lead to offer?\n Great! Let´s go"
+      intro3: "Hello %{name}! I will help you create your lead"
+      last_name1: "What is the last name of your contact?"
+      last_name2: "What is the last name of the person in charge of the lead?"
+      last_name3: "What is the last name of the contact that has generated this lead?"
+      first_name1: "What is the name of your contact?"
+      first_name2: "What is the name of the person?"
+      first_name3: "Could you tell me the name of the contact?"
+      company1: "What is the name of the company that has this need?"
+      company2: "What is the name of the company in charge?"
+      company3: "What is the company targeted by the lead?"
+      job_title1: "What is the job title of %{first_name} %{last_name}?"
+      job_title2: "Please indicate the job position of %{first_name} %{last_name}?"
+      job_title3: "Do you know the job title of %{first_name} %{last_name}?"
+      phone1: "Could you provide his phone number?"
+      phone2: "Would you have his phone number?"
+      phone3: "What is the phone number of {first_name} %{last_name}?"
+      linkedin_url1: "Do you want to send us the Linkedin of your contact? (please paste the url)"
+      linkedin_url2: "Linkedin profile link? (please paste the url)"
+      mail1: "What is the professional email of %{first_name} %{last_name}"
+      mail2: "What is the email of your contact at %{company}"
+      mail3: 'Could you tell us the professional email of your contact?'
+      company_size1: "How big is %{company}?"
+      company_size2: "How big is the firm?"
+      company_size3: "How many employees work at %{company}?"
+      location1: "Where is the company located?"
+      location2: "Where is %{company}?"
+      location3: "Where is %{company} based on?"
+      description1: "Let's go to the description of the lead. Could you describe the need?"
+      description2: "Let's go to the description of the lead! What does it consist on?"
+      description3: "Please describe the need"
+      tag_list1:  "Which are the keywords associated with the lead?"
+      tag_list2:  "To better target the interested audience, could you select keywords for the lead?"
+      tag_list3:  "Which Keywords would you associate to this description?"
+      recap_contact: 'to do Recap'
+      grant1: "Great!"
+      grant2: "Thank you %{name}"
+      grant3: "Continue..."
       submit: "Submit"
     show:
       author: 'Post by'
@@ -133,9 +132,9 @@ en:
       infos_title: 'Lead content'
   pages:
     home:
-      buy_lead: 'Acheter un lead'
+      buy_lead: 'Buy a lead'
       buyer_alert_title: 'Coming soon!'
-      buyer_alert_text: "We are still in Beta-Phase, nous vous contacterons par mail pour vous envoyer les leads les plus pertinents!"
-      create_lead: 'Vendre un lead'
-      content_html: "<p>Certaines informations que vous récoltez au quotidien ne vous intéressent pas mais peuvent avoir de la valeur pour d'autres. Partagez les et recevez-en !</p><br>
-          <p>Plus vous générez de leads qualifiés, plus vous en recevrez.</p>"
+      buyer_alert_text: "We are still in Beta-Phase, we will contact you by email to send you the most relevant leads!"
+      create_lead: 'Sell a lead'
+      content_html: "<p>Some of the information that you collect on a daily basis does not interest you but may have value for others. Share it and receive some!</p><br>
+          <p>The more qualified leads you generate, the more you will receive.</p>"

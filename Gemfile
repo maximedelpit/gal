@@ -38,6 +38,12 @@ gem 'devise-i18n', '~> 1.2'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
 
+
+# Monitoring
+group :production do
+  gem 'rollbar'
+  gem 'oj', '~> 2.16.1'
+end
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'

@@ -77,7 +77,7 @@ en:
         confirm_new_password: Confirm new password
         new_password: New password
       new:
-        message: "No worries. Entrez votre adresse email, et nous vous enverrons un lien pour réinitialiser votre mot de passe."
+        message: "No worries. Please, enter your email address, and we will send you a link to reset your password."
         forgot_your_password: Forgot your password?
         send_me_reset_password_instructions: Reset
       no_token: You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided.
@@ -109,10 +109,10 @@ en:
       new:
         sign_up: Register
         welcome: "Thanks for !" #custom
-        signup_guidelines: "Get a Lead est un produit à destination des professionnels, afin de faciliter l'onboarding, inscrivez-vous via Linkedin." #custom
-        why_linkedin_title: "Pourquoi Linkedin ?" #custom
-        why_linkedin: "Pour gagner du temps, en un clic nous n'utiliserons que les informations essentiels pour vous permettre de recevoir et générer des leads" #custom
-      signed_up: Welcome! You have signed up successfully.
+        signup_guidelines: "Get a Lead is a product for professionals. To facilitate the onboarding, please register via Linkedin." #custom
+        why_linkedin_title: "Why Linkedin?" #custom
+        why_linkedin: "To make it simple: in one click you will be ready you to generate and receive leads." #custom
+      signed_up: Welcome! You have registered successfully.
       signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
       signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.
       signed_up_but_unconfirmed: A message with a confirmation link has been sent to your email address. Please follow the link to activate your account.
@@ -121,9 +121,9 @@ en:
     sessions:
       already_signed_out: Signed out successfully.
       new:
-        sign_in: Log In
-      signed_in: Signed in successfully.
-      signed_out: Signed out successfully.
+        sign_in: Log in
+      signed_in: Successfully logged in.
+      signed_out: Successfully logged out.
     shared:
       links:
         back: Back
