@@ -54,17 +54,12 @@
   padding: 2px 4px;
   border-radius: 6px;
   font-size: 1.2rem;
-  margin: 2px;
+  margin: 6px 2px 0px 2px;
 
   .select2-selection__choice__remove {
     color: white;
     margin-right: 2px;
   }
-}
-
-
-.form-control, .select2.select2-container .selection {
-  // height: 100%;
 }
 
 .select2-container .select2-selection--multiple .select2-selection__rendered {
