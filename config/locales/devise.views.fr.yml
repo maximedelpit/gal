@@ -106,6 +106,8 @@ fr:
         prospect_areas_placeholder: 'Exemple: Paris ; Hauts-de-France ; Yvelines '
         subcategories_placeholder: 'Exemple: Marketing Digital'
         tags_placeholder: 'Exemple: SEA ; SEO ; Analytics'
+        registration_success: 'Vous avez été inscrit avec succès. Bienvenue chez Get-a-Lead !'
+        edit_success: 'Profil a bien été mis à jour'
       new:
         sign_up: "M'inscrire"
         welcome: "Rejoignez l'aventure Get a Lead !"

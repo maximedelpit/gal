@@ -106,6 +106,8 @@ en:
         prospect_areas_placeholder: 'Type your areas'
         subcategories_placeholder: 'Type your industries'
         tags_placeholder: 'Type your prefered keywords'
+        registration_success: 'Registration successful'
+        edit_success: 'Profile was updated successfully'
       new:
         sign_up: Register
         welcome: "Thanks for !" #custom

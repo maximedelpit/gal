@@ -12,9 +12,14 @@ class UsersController < ApplicationController
     check_password
     u_params = user_params
     u_params[:nl_subscription] = false if u_params[:nl_subscription].nil?
-    if @user.update(user_params)
+    if @user.update(u_params)
       # Sign in the user by passing validation in case their password changed
       bypass_sign_in(@user)
+      flash[:notice] = if @user.previous_changes["state"] == ["linkedin_ok", "registered"]
+        t('devise.registrations.edit.registration_success')
+      else
+        t('devise.registrations.edit.edit_success')
+      end
       redirect_to root_path
     else
       render "edit"
