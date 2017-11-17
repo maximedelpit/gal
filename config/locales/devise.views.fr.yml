@@ -131,7 +131,7 @@ fr:
         didn_t_receive_unlock_instructions: Vous n'avez pas reçu l'email de déblocage ?
         forgot_your_password: Mot de passe oublié ?
         sign_in: Connexion
-        sign_in_with_provider: Inscription avec mon compte %{provider}
+        sign_in_with_provider: Inscription avec %{provider}
         sign_up: Inscription
     unlocks:
       new:
