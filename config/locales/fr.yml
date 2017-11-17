@@ -1,7 +1,7 @@
 fr:
   activerecord:
     models:
-      industry: 'Industrie'
+      industry: 'Mon industrie'
       industry_subcategory: "Sous-catégorie d'industrie"
       lead: 'Lead'
       proposition: 'Proposition'
@@ -64,7 +64,7 @@ fr:
         linkedin_email: 'Email Linkedin'
         picture_url: 'Url image de profil'
         linkedin_url: 'Lien du profil Linkedin'
-        industry_subcategory_ids: "Mon industrie"
+        industry_subcategory_ids: "Mon secteur d'activité"
         prospect_area_ids: "Mes zones géographiques de prospection"
         tag_ids: "Je propose des solutions de type... "
   lead:

@@ -69,7 +69,7 @@ fr:
         subject: Instructions pour déverrouiller le compte
     omniauth_callbacks:
       failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
-      success: Autorisé avec succès par votre compte %{kind}.
+      success: Vous avez été inscrit avec succès via votre compte %{kind}.
     passwords:
       edit:
         change_my_password: Changer mon mot de passe
@@ -103,13 +103,13 @@ fr:
         profile_settings: 'Email et mot de passe'
         profile_basics: 'Basic informations'
         tos_agreement_message: "Je reconnais avoir lu et j'accepte les conditions générales du service"
-        prospect_areas_placeholder: 'Saisissez vos zones'
-        subcategories_placeholder: 'Saisissez vos industries'
-        tags_placeholder: 'Saisissez vos mots clés de référence'
+        prospect_areas_placeholder: 'Exemple: Paris ; Hauts-de-France ; Yvelines '
+        subcategories_placeholder: 'Exemple: Marketing Digital'
+        tags_placeholder: 'Exemple: SEA ; SEO ; Analytics'
       new:
         sign_up: "M'inscrire"
         welcome: "Rejoignez l'aventure Get a Lead !"
-        signup_guidelines: "Get a Lead est une plateforme réservée aux professionels, inscrivez-vous via Linkedin !"
+        signup_guidelines: "Get a Lead est une plateforme réservée aux professionels, inscrivez-vous via Linkedin!"
         why_linkedin_title: "Pourquoi Linkedin ?"
         why_linkedin: "Pour vous faciliter la vie : un clic et vous êtes prêts à générer et recevoir des leads !"
       signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
