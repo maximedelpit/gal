@@ -83,7 +83,7 @@ class User < ApplicationRecord
   end
 
   def subscribe_to_mailjet?
-    if changed_attributes[:nl_subscription] #&& nl_subscription
+    if changed_attributes[:nl_subscription] || state == :linkedin_ok #&& nl_subscription
       Mailjet::Contactslist_managecontact.create(id: ENV['MAILJET_LIST_ID'], action: "addforce", email: email, name: full_name,
         properties: {
           first_name: first_name,
