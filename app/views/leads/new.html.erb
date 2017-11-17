@@ -39,7 +39,7 @@
             input_html: {"cf-questions" => "#{field_message(:recap_contact, {key: ''})}&&#{field_message(:description)}"}
         %>
 
-        <%= f.input :tag_list, collection: ActsAsTaggableOn::Tag.all, include_blank: t('.tag_list', default: "Lead Keywords"), wrapper_html: { multiple: true, class: 'col-xs-12' },
+        <%= f.input :tag_list, collection: user_tags_collection.pluck(:name), include_blank: t('.tag_list', default: "Lead Keywords"), wrapper_html: { multiple: true, class: 'col-xs-12' },
             input_html: { value: params[:lead]&.send(:[], :tag_list), class: 'select2', multiple: true, "cf-questions" => "#{field_message(:tag_list)}" }
         %>
         <div class="col-xs-12 text-right">

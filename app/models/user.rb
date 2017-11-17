@@ -82,9 +82,9 @@ class User < ApplicationRecord
     restore_attributes(attrs_to_restore.keys)
   end
 
-  def subscribe_to_mailjet?
-    if changed_attributes[:nl_subscription] || state == :linkedin_ok #&& nl_subscription
 
+  def subscribe_to_mailjet?
+    if changes[:nl_subscription] #&& nl_subscription
       Mailjet::Contactslist_managecontact.create(id: ENV['MAILJET_LIST_ID'], action: "addforce", email: email, name: full_name,
         properties: {
           first_name: first_name,
@@ -94,7 +94,6 @@ class User < ApplicationRecord
           language: language,
           newsletter_sub: nl_subscription
       })
-    puts "SUBSCRIBEEEEEEEED"
     end
   end
 

@@ -10,6 +10,8 @@ class UsersController < ApplicationController
     @user = current_user
     authorize @user
     check_password
+    u_params = user_params
+    u_params[:nl_subscription] = false if u_params[:nl_subscription].nil?
     if @user.update(user_params)
       # Sign in the user by passing validation in case their password changed
       bypass_sign_in(@user)
