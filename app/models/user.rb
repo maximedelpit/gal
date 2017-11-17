@@ -93,6 +93,7 @@ class User < ApplicationRecord
           job_title: job_title,
           language: language,
           newsletter_sub: nl_subscription
+          state: state
       })
     end
   end
