@@ -7,11 +7,7 @@ function autosize(){
     el.style.cssText = 'height:' + el.scrollHeight + 'px';
   },0);
 }
-var textareas = document.querySelector('textarea');
-if(textareas.length > 1) {
-  textareas.forEach(function(textarea, index, array){
-    textarea.addEventListener('keydown', autosize);
-  });
-} else if (textareas.length === 1) {
-  extareas.addEventListener('keydown', autosize);
-}
+var textareas = document.querySelectorAll('textarea')
+textareas.forEach(function(textarea, index, array){
+  textarea.addEventListener('keydown', autosize);
+});
