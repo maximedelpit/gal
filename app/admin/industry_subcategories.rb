@@ -11,7 +11,6 @@ ActiveAdmin.register IndustrySubcategory do
     # clear blank attr on save
     def save_resource(object)
       permitted_params[object.class.name.underscore].select {|k, v| v.blank?}.keys.each {|a| object.send("#{a}=", nil)}
-      binding.pry
       super
     end
   end

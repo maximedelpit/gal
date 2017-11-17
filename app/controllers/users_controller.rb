@@ -11,7 +11,6 @@ class UsersController < ApplicationController
     authorize @user
     check_password
     if @user.update(user_params)
-      binding.pry
       # Sign in the user by passing validation in case their password changed
       bypass_sign_in(@user)
       redirect_to root_path
