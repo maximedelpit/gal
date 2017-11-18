@@ -1,0 +1,9 @@
+<%= render layout: 'form' do |f| %>
+  <!-- Company -->
+  <h4 class='card-sub-titles col-xs-12'><%= t('.company', default: 'Company Infos') %></h4>
+  <%= f.input :company, wrapper_html: {class: 'col-xs-12 col-sm-8'}, input_html: {} %>
+  <%= f.input :company_size, collection: Lead::COMPANY_SIZES, wrapper_html: {class: 'col-xs-12 col-sm-4'}, input_html: {} %>
+  <%= f.input :location, wrapper_html: {class: 'col-xs-12 col-sm-8'}, input_html: {} %>
+  <%= f.input :within, collection: t(Lead::WITHIN, scope: 'lead.WITHIN').zip(Lead::WITHIN),  wrapper_html: {class: 'col-xs-4'}, input_html: {} %>
+
+<% end %>

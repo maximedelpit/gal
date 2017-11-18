@@ -8,20 +8,38 @@ class Lead < ApplicationRecord
   WITHIN = ['1_month', '3_months', '6_months', '12_months', 'over_12_months']
   STATES = %w(created confirmed to_requalify rejected proposed sold)
 
-  validates :user_id, presence: true, on: :create
-  validates :last_name, :company, :company_size, :location,
-            :description, :job_title, :mail,  presence: true
+  # Global
+  validates :user_id, presence: true
+  validates :state, inclusion: { in: STATES, message: "%{value} is not a valid state" }, if: :active?
+
+  # Description step validation
+  validates :description, presence: true, if: -> {validation_for?(:description) || active?}
   validates :description, length: {
     in: 10..300,
     too_short: "%{count} characters is the minimum allowed",
     too_long: "%{count} characters is the maximum allowed"
-  }
+  }, if: -> {validation_for?(:description) || active?}
+
+  # Company step validation
+  validates :company, :company_size, :location, presence: true, if: -> {validation_for?(:company) || active?}
   validates :company_size, inclusion: { in: COMPANY_SIZES,
-     message: "%{value} is not a valid size" }
+     message: "%{value} is not a valid size" }, if: -> {validation_for?(:company) || active?}
   validates :within, inclusion: { in: WITHIN,
-   message: "%{value} is not a valid implementation period" }
-  validates :state, inclusion: { in: STATES,
-   message: "%{value} is not a valid state" }
+   message: "%{value} is not a valid implementation period" }, if: -> {validation_for?(:company) || active?}
+
+  # Contact step validation
+  validates :last_name, :job_title, :mail, presence: true, if: -> {validation_for?(:contact) || active?}
+
+
+  # validates :last_name, :job_title, :mail, :company, :company_size, :location,
+  #   :description, :job_title, :mail, presence: true if: :active?
+  # validates :description, length: {
+  #   in: 10..300,
+  #   too_short: "%{count} characters is the minimum allowed",
+  #   too_long: "%{count} characters is the maximum allowed"
+  # }, if: :active?
+  # validates :company_size, inclusion: { in: COMPANY_SIZES,
+  #    message: "%{value} is not a valid size" }, if: :active?
 
   acts_as_taggable
 
@@ -51,4 +69,11 @@ class Lead < ApplicationRecord
     return column_names.map(&:to_sym).reject{|c| private_fields.include?(c)}
   end
 
+  def active?
+    build_status == 'active'
+  end
+
+  def validation_for?(step_key)
+    return build_status == "#{step_key}"
+  end
 end

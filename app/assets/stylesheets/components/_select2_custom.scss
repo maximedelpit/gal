@@ -52,7 +52,7 @@
   background: $gray-blue;
   color: white;
   padding: 2px 4px;
-  border-radius: 6px;
+  border-radius: 4px;
   font-size: 1.2rem;
   margin: 6px 2px 0px 2px;
 
@@ -72,6 +72,10 @@
   min-height: 34px;
 }
 
+.form-control.select {
+  height: 34px;
+}
+
 .select2-container--default .select2-selection--multiple .select2-selection__clear {
   position: absolute;
   top: 0;
@@ -89,6 +93,11 @@
 
 .select2-results__options {
   border: 1px solid $gray-light;
+}
+
+.select2-results__option {
+  @extend .xs-sz;
+  padding: 3px 6px;
 }
 
 .select2-search__field::placeholder {

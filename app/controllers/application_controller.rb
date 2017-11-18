@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :set_locale
+  before_action :reset_lead_session
   include Pundit
 
   # Pundit: white-list approach.
@@ -42,6 +43,11 @@ class ApplicationController < ActionController::Base
       end
     end
     return params
+  end
+
+  def reset_lead_session
+    # always run unless on create_lead controller
+    session[:lead_id] = nil unless params[:controller] == 'create_lead_steps'
   end
 
   def set_locale

@@ -1,0 +1,63 @@
+<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+  <div class="card-wrapper">
+    <h3 class='card-title text-center'><%= @title %></h3>
+    <%= simple_form_for @lead, html: {}.merge(make_it_bot?).merge({class: 'card-content'}) do |f| %>
+      <div class="inside-card" cf-context>
+        <%= f.error_notification %>
+
+
+        <!-- Contact -->
+        <h4 class='card-sub-titles col-xs-12'><%= t('.contact', default: 'Contact') %></h4>
+        <%= f.input :last_name, wrapper_html: {class: 'col-xs-12 col-sm-6'},
+            input_html: {"cf-questions" => "#{lead_intro_message}&&#{field_message(:last_name)}"}
+        %>
+        <%= f.input :first_name, wrapper_html: {class: 'col-xs-12 col-sm-6'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:first_name)}"}
+        %>
+        <%= f.input :mail, wrapper_html: {class: 'col-xs-12 col-sm-6'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:mail, {first_name: '{lead_first_name}', last_name: '{lead_last_name}', company: '{lead_company}'})}"}
+        %>
+        <%= f.input :phone, wrapper_html: {class: 'col-xs-12 col-sm-6'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:phone, {first_name: '{lead_first_name}', last_name: '{lead_last_name}'})}"}
+        %>
+        <%= f.input :job_title, wrapper_html: {class: 'col-xs-12 col-sm-12'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:job_title, {first_name: '{lead_first_name}', last_name: '{lead_last_name}'})}"}
+        %>
+        <%#= f.input :linkedin_url, wrapper_html: {class: 'col-xs-12 col-sm-12'},
+            input_html: {"cf-questions" => "#{field_message(:linkedin_url)}"}
+        %>
+
+
+        <!-- Client & Lead description-->
+        <h4 class='card-sub-titles col-xs-12'><%= t('.description', default: 'Description') %></h4>
+        <%= f.input :company, wrapper_html: {class: 'col-xs-12 col-sm-8'},
+            input_html: {"cf-questions" => "#{grant?}#{field_message(:company)}"}
+        %>
+        <%= f.input :location, wrapper_html: {class: 'col-xs-12 col-sm-12'},
+            input_html: {"cf-questions" => "#{field_message(:location, {company: '{lead_company}'})}"}
+        %>
+        <%= f.input :description, wrapper_html: {class: 'col-xs-12'},
+            input_html: {rows: 6, "cf-questions" => "#{field_message(:recap_contact, {key: ''})}&&#{field_message(:description)}"}
+        %>
+        <%= f.input :company_size, collection: Lead::COMPANY_SIZES, wrapper_html: {class: 'col-xs-12 col-sm-6'},
+            input_html: {"cf-questions" => "#{field_message(:company_size, {company: '{lead_company}'})}"}
+        %>
+        <%= f.input :within, collection: t(Lead::WITHIN, scope: 'lead.WITHIN').zip(Lead::WITHIN),  wrapper_html: {class: 'col-xs-12 col-sm-6'},
+            input_html: {"cf-questions" => "#{field_message(:company_size, {company: '{lead_company}'})}"}
+        %>
+        <%= f.input :tag_list, collection: user_tags_collection.pluck(:name), include_blank: t('.tag_list', default: "Lead Keywords"), wrapper_html: { multiple: true, class: 'col-xs-12' },
+            input_html: { value: params[:lead]&.send(:[], :tag_list), class: 'select2', multiple: true, "cf-questions" => "#{field_message(:tag_list)}" }
+        %>
+        <div class="col-xs-12 text-right">
+          <p><%= t('.price', default: "Price") %> <%= @lead.price %> €</p>
+          <%= f.submit t('.submit', default: 'Submit'), class: "btn btn-success", id:'btn-lead-create' %>
+        </div>
+      <% end %>
+      </div>
+  </div>
+</div>
+
+
+<%= content_for(:after_js) do %>
+  <script type="text/javascript" src="https://cf-4053.kxcdn.com/conversational-form/0.9.6/conversational-form.min.js" crossorigin></script>
+<% end %>

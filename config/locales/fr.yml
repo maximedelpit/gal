@@ -30,10 +30,11 @@ fr:
         nature: 'Nature souscription'
         state: 'Statut'
         deadline: 'Echéance'
-        within: 'Mise en oeuvre dans'
+        within: "A livrer d'ici"
         description: 'Description'
         user: 'Vendeur'
         price: 'Prix'
+        tag_list: "Mots clés"
         tag_ids: "Mots clés"
       proposition:
         mail: 'Email destinataire'
@@ -82,8 +83,7 @@ fr:
       12_months: "12 mois"
       over_12_months: "> 12 mois"
   leads:
-    new:
-      new_title: "Créer un nouveau Lead"
+    form:
       intro1: "Bonjour %{name},\n Créons un nouveau lead ensemble!"
       intro2: "Un nouveau lead ensemble a proposer %{name}?\n Super! Allons-y"
       intro3: "Bonjour %{name}! Je vais vous aider à créer votre lead"
@@ -119,11 +119,15 @@ fr:
       tag_list1:  "Quels mots clés sont associés au lead?"
       tag_list2:  "Afin de mieux cibler l'audience intéressée, pourriez-vous sélectionner les mots clés relatifs au lead ?"
       tag_list3:  "Quelles mots clés associeriez vous à cette description ?"
-      recap_contact: 'Récap TO DO'
       grant1: "Super!"
       grant2: "Merci %{name}"
       grant3: "Poursuivons..."
+      contact: 'Personne à contacter'
+      description: 'Description de la mission'
+      recap_contact: 'Récap TO DO'
       submit: "Valider"
+    new:
+      new_title: "Créer un nouveau Lead"
     show:
       author: 'Posté par'
       created_at: 'le'

@@ -1,7 +1,6 @@
 class LeadsController < ApplicationController
-
   def new
-    @lead = Lead.new(price: 30)
+    @lead = Lead.new(price: 30, user: current_user, build_status: 'active')
     authorize @lead
   end
 
@@ -13,7 +12,7 @@ class LeadsController < ApplicationController
     @lead.price ||= 30
     @lead.state ||= 'created'
     if @lead.save
-      redirect_to lead_path(@lead), success: 'Congrats!'
+      redirect_to create_lead_step_path(lead_id: @lead.id), success: 'Congrats!'
     else
       render :new
     end

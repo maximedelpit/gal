@@ -34,6 +34,7 @@ en:
         description: 'Description'
         user: 'Seller'
         price: 'Price'
+        tag_list: "Keywords"
         tag_ids: "Keywords"
       proposition:
         mail: 'Recepient email'
@@ -82,8 +83,7 @@ en:
       12_months: "12 months"
       over_12_months: "> 12 months"
   leads:
-    new:
-      new_title: "Create a new Lead"
+    form:
       intro1: "Hello %{name},\n Let's create a new lead together!"
       intro2: "Do you have a new lead to offer?\n Great! Let´s go"
       intro3: "Hello %{name}! I will help you create your lead"
@@ -119,11 +119,15 @@ en:
       tag_list1:  "Which are the keywords associated with the lead?"
       tag_list2:  "To better target the interested audience, could you select keywords for the lead?"
       tag_list3:  "Which Keywords would you associate to this description?"
-      recap_contact: 'to do Recap'
       grant1: "Great!"
       grant2: "Thank you %{name}"
       grant3: "Continue..."
+      contact: 'Lead contact'
+      description: 'Lead description'
+      recap_contact: 'to do Recap'
       submit: "Submit"
+    new:
+      new_title: "Create a new Lead"
     show:
       author: 'Post by'
       created_at: 'at'

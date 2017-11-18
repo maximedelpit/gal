@@ -21,11 +21,11 @@
     }
 
     #language.form-group {
-      position: absolute;
-      top: 15px;
-      right: 10px;
-      width: 40px;
-      z-index: 10000;
+      // position: absolute;
+      // top: 15px;
+      // right: 10px;
+      // width: 40px;
+      // z-index: 10000;
     }
 
     .form-control {
@@ -66,7 +66,7 @@
 
   .card-sub-titles {
     color: $brand-primary;
-    margin: 15px 0px 5px 0px
+    margin: 25px 0px 10px 0px
   }
 
   .form-actions {
@@ -81,6 +81,12 @@
     input[type="submit"].btn {
       float:right;
     }
+  }
+}
+
+@media (max-width: 425px) {
+  .card-wrapper .card-content {
+    padding: 2rem 0 !important;
   }
 }
 

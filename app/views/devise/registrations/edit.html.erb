@@ -3,8 +3,8 @@
     <h3 class='card-title'><%= t(".title_#{resource.state}") %></h3>
 
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'card-content' }) do |f| %>
-      <%= f.error_notification %>
-      <%= f.input :language, required: true, collection: [['En', 'en'], ['Fr', 'fr']], label: false,  wrapper_html: {id:'language'}, input_html: {class: ''} %>
+      <%= f.input :language, collection: [['En', 'en'], ['Fr', 'fr']], include_blank: false, label: false,  wrapper_html: {id:'language', class: 'col-xs-4 col-xs-offset-8 col-sm-3 col-sm-offset-9 col-md-2 col-md-offset-10 col-xxl-1 col-xxl-offset-11'}, input_html: {} %>
+      <div class="col-xs-12"><%= f.error_notification %></div>
       <h4 class='card-sub-titles col-xs-12'><%= t('.profile_settings') %></h4>
       <div class="form-inputs">
         <%= f.input :email, required: true, autofocus: true,  wrapper_html: {class: 'col-xs-12'} %>
