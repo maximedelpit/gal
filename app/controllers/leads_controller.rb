@@ -12,7 +12,8 @@ class LeadsController < ApplicationController
     @lead.price ||= 30
     @lead.state ||= 'created'
     if @lead.save
-      redirect_to create_lead_step_path(lead_id: @lead.id), success: 'Congrats!'
+      # redirect_to create_lead_step_path(lead_id: @lead.id), success: 'Congrats!'
+      redirect_to lead_path(lead_id: @lead.id), success: 'Congrats!'
     else
       render :new
     end
