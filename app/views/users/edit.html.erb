@@ -3,7 +3,7 @@
     <h3 class='card-title'><%= t("devise.registrations.edit.title_#{@user.state}") %></h3>
 
     <%= simple_form_for(@user, url: update_password_user_path, html: { method: :put, class: 'card-content' }) do |f| %>
-      <%= f.input :language, required: true, collection: [['En', 'en'], ['Fr', 'fr']], include_blank: false, label: false, wrapper_html: {id:'language', class: 'col-xs-3 col-xs-offset-9'}, input_html: {} %>
+      <%= f.input :language, collection: [['En', 'en'], ['Fr', 'fr']], include_blank: false, label: false, wrapper_html: {id:'language', class: 'col-xs-3 col-xs-offset-9'}, input_html: {} %>
       <div class="col-xs-12"><%= f.error_notification %></div>
       <h4 class='card-sub-titles col-xs-12'><%= t('devise.registrations.edit.profile_settings') %></h4>
       <div class="form-inputs">
