@@ -1,4 +1,4 @@
-<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+`<div class="col-xs-12 col-sm-6 col-sm-offset-3">
   <div class="card-wrapper">
     <!-- <h3 class='card-title text-center'><%#= t('.congrats_title', default: "Partagez. Recevez") %></h3> -->
     <div class="card-content text-center no-title">
@@ -12,11 +12,10 @@
           </div>
           <div class="col-xs-12 user-funnel-cta" style='margin: 4rem 0px;'>
             <div class="text-center">
-              <!-- "#{create_lead_steps_path}/description" -->
-              <%= link_to t('.create_lead'), new_lead_path , class: 'btn btn-success btn-round', id: 'home-sell-lead' %>
+              <%= link_to t('.create_lead'),  "#{create_lead_steps_path}/description", class: 'btn btn-success btn-round', id: 'btn-home-sell-lead' %>
             </div>
             <div class="text-center">
-              <%= link_to t('.buy_lead'), "#", class: 'btn btn-success btn-round', data: buyer_sweet_data, id: 'home-buy-lead' %>
+              <%= link_to t('.buy_lead'), "#", class: 'btn btn-success btn-round', data: buyer_sweet_data, id: 'btn-home-buy-lead' %>
             </div>
           </div>
         </div>

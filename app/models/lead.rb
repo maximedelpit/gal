@@ -10,10 +10,10 @@ class Lead < ApplicationRecord
 
   # Global
   validates :user_id, presence: true
-  validates :state, inclusion: { in: STATES, message: "%{value} is not a valid state" }#, if: :active?
+  validates :state, inclusion: { in: STATES, message: "%{value} is not a valid state" }, if: :active?
 
   # Description step validation
-  validates :description, presence: true#, if: -> {validation_for?(:description) || active?}
+  validates :description, presence: true, if: -> {validation_for?(:description) || active?}
   validates :description, length: {
     in: 10..300,
     too_short: "%{count} characters is the minimum allowed",
@@ -21,14 +21,14 @@ class Lead < ApplicationRecord
   }, if: -> {validation_for?(:description) || active?}
 
   # Company step validation
-  validates :company, :company_size, :location, presence: true#, if: -> {validation_for?(:company) || active?}
+  validates :company, :company_size, :location, presence: true, if: -> {validation_for?(:company) || active?}
   validates :company_size, inclusion: { in: COMPANY_SIZES,
-     message: "%{value} is not a valid size" }#, if: -> {validation_for?(:company) || active?}
+     message: "%{value} is not a valid size" }, if: -> {validation_for?(:company) || active?}
   validates :within, inclusion: { in: WITHIN,
-   message: "%{value} is not a valid implementation period" }#, if: -> {validation_for?(:company) || active?}
+   message: "%{value} is not a valid implementation period" }, if: -> {validation_for?(:company) || active?}
 
   # Contact step validation
-  validates :last_name, :job_title, :mail, presence: true#, if: -> {validation_for?(:contact) || active?}
+  validates :last_name, :job_title, :mail, presence: true, if: -> {validation_for?(:contact) || active?}
 
 
   # validates :last_name, :job_title, :mail, :company, :company_size, :location,
