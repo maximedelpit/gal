@@ -6,7 +6,7 @@
       <%= f.input :language, collection: [['En', 'en'], ['Fr', 'fr']], include_blank: false, label: false,  wrapper_html: {id:'language', class: 'col-xs-4 col-xs-offset-8 col-sm-3 col-sm-offset-9 col-md-2 col-md-offset-10 col-xxl-1 col-xxl-offset-11'}, input_html: {} %>
       <div class="col-xs-12"><%= f.error_notification %></div>
       <h4 class='card-sub-titles col-xs-12'><%= t('.profile_settings') %></h4>
-      <div class="form-inputs">
+      <div class="form-inputs row">
         <%= f.input :email, required: true, autofocus: true,  wrapper_html: {class: 'col-xs-12'} %>
         <%= f.input :password, autocomplete: "off", required: password_required?(resource), hint: t(".leave_blank_if_you_don_t_want_to_change_it"), wrapper_html: {class: 'col-xs-6'} %>
         <%= f.input :password_confirmation, required: password_required?(resource),  wrapper_html: {class: 'col-xs-6'} %>
@@ -21,7 +21,7 @@
 
       <% if @user.state == 'registered' %>
         <h4 class='card-sub-titles col-xs-12'><%= t('devise.registrations.edit.profile_basics') %></h4>
-        <div class="form-inputs">
+        <div class="form-inputs row">
           <%= f.input :first_name, wrapper_html: {class: 'col-xs-6'} %>
           <%= f.input :last_name, wrapper_html: {class: 'col-xs-6'} %>
           <%= f.input :location, wrapper_html: {class: 'col-xs-6'} %>
@@ -33,28 +33,30 @@
       <% end %>
 
       <h4 class='card-sub-titles col-xs-12'><%= User.human_attribute_name('prospect_area_ids').capitalize %></h4>
-      <div class="form-inputs">
+      <div class="form-inputs row">
         <%= f.input :prospect_area_ids, required: true, collection: prospect_areas_collection, label_method: :name, value_method: :id, label: false, place_holder: 'coucou', wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true, "data-placeholder" => t('devise.registrations.edit.prospect_areas_placeholder')} %>
       </div>
       <h4 class='card-sub-titles col-xs-12'><%= User.human_attribute_name('industry_subcategory_ids').capitalize %></h4>
-      <div class="form-inputs">
+      <div class="form-inputs row">
         <%= f.input :industry_subcategory_ids, required: true, collection: industry_subies_collection, label_method: :name, value_method: :id, label: false, place_holder: 'couco', wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true, "data-placeholder" => t('devise.registrations.edit.subcategories_placeholder')} %>
       </div>
       <h4 class='card-sub-titles col-xs-12'><%= User.human_attribute_name('tag_ids').capitalize %></h4>
-      <div class="form-inputs">
+      <div class="form-inputs row">
         <%= f.input :tag_ids, collection: user_tags_collection, label_method: :name, value_method: :id, label: false, wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true, "data-placeholder" => t('devise.registrations.edit.tags_placeholder')} %>
       </div>
 
-      <div class="form-inputs col-xs-12">
-        <%= f.input :nl_subscription, label: t('.nl_subscription_message'), required: false, wrapper_html: { class: 'xs-sz' } %>
-        <%= f.input :accepts_tos, label: t('.tos_agreement_message'), required: true, wrapper_html: { class: 'xs-sz' } %>
+      <div class="form-inputs row">
+        <%= f.input :nl_subscription, label: t('.nl_subscription_message'), required: false, wrapper_html: { class: 'xs-sz col-xs-12' } %>
+        <%= f.input :accepts_tos, label: t('.tos_agreement_message'), required: true, wrapper_html: { class: 'xs-sz col-xs-12' } %>
       </div>
-      <div class="form-actions col-xs-12">
-        <%= f.button :submit, t(".submit"), id: 'btn-user-update', class: 'btn-success' %>
-        <% if current_user.state == 'registered' %>
-          <p><%#= t(".unhappy") %><%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, id: 'btn-user-destroy', class: 'xs-sz' %></p>
-          <%= link_to t("devise.shared.links.back"), :back, class: 'xs-sz' %>
-        <% end %>
+      <div class="form-actions row">
+        <div class="col-xs-12">
+          <%= f.button :submit, t(".submit"), id: 'btn-user-update', class: 'btn-success' %>
+          <% if current_user.state == 'registered' %>
+            <p><%#= t(".unhappy") %><%= link_to t(".cancel_my_account"), registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, id: 'btn-user-destroy', class: 'xs-sz' %></p>
+            <%= link_to t("devise.shared.links.back"), :back, class: 'xs-sz' %>
+          <% end %>
+        </div>
       </div>
     <% end %>
 

@@ -4,34 +4,40 @@
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: {class: 'card-content'}) do |f| %>
       <%- if devise_mapping.omniauthable? %>
          <%- resource_class.omniauth_providers.each do |provider| %>
-           <div class='omniauth-btn-container text-center col-xs-12'>
-             <%#= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
-             <%#= link_to omniauth_authorize_path(resource_name, provider, accepts_tos: false, nl_subscription: false  ), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
-               <!-- <span class="fa fa-<%#= provider.to_s %>"></span> <%#= t('devise.shared.links.sign_in_with_provider', provider: "#{OmniAuth::Utils.camelize(provider)}") %> -->
-             <%# end -%>
-             <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider} btn-round", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
-               <i class="fa fa-<%= provider.to_s %>"></i> <span class='text'><%= t('devise.shared.links.sign_in_with_provider', provider: "#{OmniAuth::Utils.camelize(provider)}") %></span>
-             <% end %>
-           </div>
+            <div class='omniauth-btn-container text-center row'>
+              <div class="col-xs-12">
+                <%#= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
+                <%#= link_to omniauth_authorize_path(resource_name, provider, accepts_tos: false, nl_subscription: false  ), class: "btn btn-social btn-#{provider}", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
+                <!-- <span class="fa fa-<%#= provider.to_s %>"></span> <%#= t('devise.shared.links.sign_in_with_provider', provider: "#{OmniAuth::Utils.camelize(provider)}") %> -->
+                <%# end -%>
+                <%= link_to omniauth_authorize_path(resource_name, provider), class: "btn btn-social btn-#{provider} btn-round", id: "btn-user-#{provider}-connect#{gtm_suffix_link}" do %>
+                <i class="fa fa-<%= provider.to_s %>"></i> <span class='text'><%= t('devise.shared.links.sign_in_with_provider', provider: "#{OmniAuth::Utils.camelize(provider)}") %></span>
+                <% end %>
+              </div>
+            </div>
          <% end -%>
        <% end -%>
-      <br><br><br><br>
-      <div class="line-breaker col-xs-12">
-        <div class="left-line"></div>
-        OR
-        <div class="right-line"></div>
+      <br><br>
+      <div class="line-breaker row">
+        <!-- <div class="col-xs-12"> -->
+          <div class="left-line"></div>
+          OR
+          <div class="right-line"></div>
+        <!-- </div> -->
       </div>
       <br>
       <br>
-      <div class="form-inputs">
+      <div class="form-inputs row">
         <%= f.input :email, required: false, autofocus: true, wrapper_html: {class: 'col-xs-12'} %>
         <%= f.input :password, required: false, wrapper_html: {class: 'col-xs-12'} %>
         <%= f.input :remember_me, as: :boolean, wrapper_html: {class: 'col-xs-12 xs-sz'} if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions col-xs-12">
-        <%= f.button :submit, t(".sign_in"), id: 'btn-user-login', class: 'btn-success' %>
-        <%= render "devise/shared/links" %>
+      <div class="form-actions row">
+        <div class="col-xs-12">
+          <%= f.button :submit, t(".sign_in"), id: 'btn-user-login', class: 'btn-success' %>
+          <%= render "devise/shared/links" %>
+        </div>
       </div>
     <% end %>
   </div>
