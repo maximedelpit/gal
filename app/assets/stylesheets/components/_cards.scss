@@ -25,24 +25,8 @@
     margin: 10px 0px 5px 0px;
   }
 
-  .contact-card, .lead-card {
+  .contact-card {
     margin-bottom: 20px;
-  }
-
-  #tags {
-    margin-top: 20px;
-  }
-
-  #creds {
-    float: right;
-    font-size: 1.1rem;
-    color: $light-gray;
-  }
-
-  #description {
-    p {
-      word-break: break-word;
-    }
   }
 
   #logo {
@@ -56,3 +40,62 @@
     margin-top: 0;
   }
 }
+
+.lead-card {
+  .card-block {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px 8px 0px 0px;
+    width: 100%;
+    #description {
+      p {
+        color: $darker-blue-gray;
+        word-break: break-word;
+        font-size: 16px;
+        line-height: 1.8;
+      }
+    }
+
+    #price {
+      width: 80px;
+      height: 80px;
+      /* margin: auto; */
+      background: #E1CE7A;
+      border-radius: 50%;
+      position: absolute;
+      top: -3vh;
+      right: -3vh;
+      color: white;
+      /* padding: 1rem; */
+      font-size: 34px;
+      text-align: center;
+      vertical-align: middle;
+    }
+  }
+
+  .card-footer {
+    background: $darker-blue-gray;
+    color: #F2F2F2;
+    padding: 1rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: 0 0 8px 8px;
+
+    .blured {
+      filter: blur(3px)
+    }
+  }
+}
+
+#tags {
+  margin-top: 20px;
+}
+
+#creds {
+  float: right;
+  font-size: 1.1rem;
+  color: $light-gray;
+}
+
