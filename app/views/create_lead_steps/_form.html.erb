@@ -2,7 +2,7 @@
   <div class="card-wrapper">
     <h3 class='card-title text-center'><%= t('.new_title', default: "Create your lead") %></h3>
     <%= simple_form_for @lead, url: wizard_path(@step, {lead_id: @lead.id}), method: :put, html: {class: 'card-content'} do |f| %>
-      <div class="inside-card" cf-context>
+      <div class="inside-card row" cf-context>
         <%= f.error_notification %>
         <%= yield f %>
       <div class="col-xs-12 text-right">
