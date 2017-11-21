@@ -1,8 +1,8 @@
 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
   <div class="card-wrapper">
-    <h3 class='card-title text-center'><%= @title %></h3>
+    <h3 class='card-title text-center'><%= t('.new_title', default: "Create your lead") %></h3>
     <%= simple_form_for @lead, html: {}.merge(make_it_bot?).merge({class: 'card-content'}) do |f| %>
-      <div class="inside-card" cf-context>
+      <div class="inside-card row" cf-context>
         <%= f.error_notification %>
 
 
