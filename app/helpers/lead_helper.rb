@@ -25,6 +25,5 @@ module LeadHelper
 
   def should_blur?
     @lead.user == current_user || @lead.admin ? '' : 'blurred'
-    return 'blurred'
   end
 end
