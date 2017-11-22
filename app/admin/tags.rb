@@ -1,5 +1,15 @@
 ActiveAdmin.register  ActsAsTaggableOn::Tag do
-  permit_params :name, :validated
+  active_admin_import(
+    csv_options: { col_sep: ';'},
+    validate: false,
+    on_duplicate_key_update: {conflict_target: [:name ], columns: [ :validated ]},
+    template_object: ActiveAdminImport::Model.new(
+      force_encoding: :auto,
+      hint: "Le csv doit comporter les champs: id, name, validated (laisser id vide si creation)",
+    )
+  )
+
+  permit_params :id, :name, :validated
 
   batch_action :validate_selected do |ids|
     batch_action_collection.find(ids).each do |resource|

@@ -1,4 +1,13 @@
 ActiveAdmin.register IndustrySubcategory do
+  active_admin_import(
+    csv_options: { col_sep: ';'},
+    validate: false,
+    on_duplicate_key_update: {conflict_target: [:name], columns: [ :validated ]},
+    template_object: ActiveAdminImport::Model.new(
+      force_encoding: :auto,
+      hint: "Le csv doit comporter les champs: id, name, validated (laisser id vide si creation)",
+    )
+  )
 
   permit_params :name, :validated, :tag_ids
 
