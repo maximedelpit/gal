@@ -1,33 +1,5 @@
 .card-wrapper {
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-  }
-
   .card-content {
-    position: relative;
-    overflow: overlay;
-    padding: 2rem;
-    border: 1px solid $lighter-gray;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
-    background: white;
-    border-radius: 0 0 8px 8px;
-    border: 1px solid #F4F4F4;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
-    &.no-title {
-      border-radius: 8px;
-    }
-    .inside-card row {
-      position: initial !important;
-    }
-
-    #language.form-group {
-      // position: absolute;
-      // top: 15px;
-      // right: 10px;
-      // width: 40px;
-      // z-index: 10000;
-    }
-
     .form-control {
       transition: all 0.5s ease-out;
       border: none;
@@ -55,23 +27,6 @@
       @extend .xs-sz
     }
   }
-  .card-title  {
-    background: $darker-blue-gray;
-    color: $lighter-gray;
-    border-radius: 8px 8px 0 0;
-    padding: 10px;
-    border: 1px solid $darker-blue-gray;
-    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.11);
-  }
-
-  .card-sub-titles {
-    color: $brand-primary;
-    margin: 25px 0px 10px 0px
-  }
-
-  .card-sub-titles.red-text {
-    color: $brand-success;
-  }
 
   .form-actions {
     // display: flex;
@@ -85,12 +40,6 @@
     input[type="submit"].btn {
       float:right;
     }
-  }
-}
-
-@media (max-width: 425px) {
-  .card-wrapper .card-content {
-    padding: 2rem 0 !important;
   }
 }
 
