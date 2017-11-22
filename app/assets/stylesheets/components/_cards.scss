@@ -32,6 +32,15 @@
   #logo {
     margin: 2rem auto 4rem auto;
   }
+
+  .flex-title {
+    display: flex;
+    align-content: center;
+    align-items: baseline;
+    justify-content: space-between;
+    width: 100%;
+    flex-wrap: wrap;
+  }
 }
 
 
