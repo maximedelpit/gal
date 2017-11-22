@@ -6,14 +6,14 @@ ActiveAdmin.register ProspectArea do
     batch_action_collection.find(ids).each do |resource|
       resource.validate!
     end
-    redirect_to collection_path, alert: "The posts have been flagged."
+    redirect_to collection_path, alert: "Resource marked as valid"
   end
 
   batch_action :unvalidate_selected do |ids|
     batch_action_collection.find(ids).each do |resource|
       resource.unvalidate!
     end
-    redirect_to collection_path, alert: "The posts have been flagged."
+    redirect_to collection_path, alert: "Resource marked as invalid"
   end
 
 

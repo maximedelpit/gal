@@ -1,6 +1,5 @@
-ActiveAdmin.register IndustrySubcategory do
-
-  permit_params :name, :validated, :tag_ids
+ActiveAdmin.register  ActsAsTaggableOn::Tag do
+  permit_params :name, :validated
 
   batch_action :validate_selected do |ids|
     batch_action_collection.find(ids).each do |resource|
@@ -20,12 +19,8 @@ ActiveAdmin.register IndustrySubcategory do
   controller do
     # clear blank attr on save
     def save_resource(object)
-      permitted_params[object.class.name.underscore].select {|k, v| v.blank?}.keys.each {|a| object.send("#{a}=", nil)}
+      permitted_params[object.class.name.underscore.gsub('/', '_')].select {|k, v| v.blank?}.keys.each {|a| object.send("#{a}=", nil)}
       super
     end
-  end
-  form do |f|
-    f.inputs :name, :validated, :tag_ids
-    f.button 'OK'
   end
 end
