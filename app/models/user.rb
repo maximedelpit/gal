@@ -34,10 +34,22 @@ class User < ApplicationRecord
     return "#{first_name} #{last_name}"
   end
 
+  def self.add_lkdn_to_logs(auth)
+    logger.debug auth
+    logger.debug auth.slice(:provider, :uid)
+    logger.debug auth.info.slice(:first_name, :last_name)
+    logger.debug auth.credentials.token
+    logger.debug auth.credentials.expires_at
+    logger.debug auth.info&.email
+    logger.debug auth.info&.image
+    logger.debug auth.info&.urls&.public_profile
+    logger.debug auth.info&.location&.name
+    logger.debug auth.info&.location&.country&.code&.downcase
+    logger.debug auth&.extra&.raw_info&.industry
+  end
   def self.find_for_linkedin_oauth(auth, override=false)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
     user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
-    binding.pry
     if user
       user.assign_attributes(linkedin_params(auth))
       user.reject_linkedin_changes unless override
@@ -75,7 +87,7 @@ class User < ApplicationRecord
     user_params[:job_title] = most_recent_position&.title
     user_params[:company] = most_recent_position&.company&.name
     user_params[:industry] = Industry.where(name: auth&.extra&.raw_info&.industry).first_or_create
-    # Language
+    add_lkdn_to_logs
     return user_params.to_h
   end
 
