@@ -1,6 +1,5 @@
 $('.select2').select2({
   closeOnSelect: true,
-  debug: true,
   allowClear: false,
   placeholder: '',
   tags: true,

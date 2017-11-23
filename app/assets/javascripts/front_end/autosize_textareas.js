@@ -7,9 +7,9 @@ function autosize(){
     el.style.cssText = 'height:' + el.scrollHeight + 'px';
   },0);
 }
-// var textareas = document.querySelectorAll('textarea')
-// if (textareas) {
-//   textareas.forEach(function(textarea, index, array){
-//     textarea.addEventListener('keydown', autosize);
-//   });
-// }
+var textareas = document.querySelectorAll('textarea')
+if (textareas) {
+  textareas.forEach(function(textarea, index, array){
+    textarea.addEventListener('keydown', autosize);
+  });
+}
