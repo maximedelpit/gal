@@ -37,6 +37,7 @@ class User < ApplicationRecord
   def self.find_for_linkedin_oauth(auth, override=false)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
     user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
+    binding.pry
     if user
       user.assign_attributes(linkedin_params(auth))
       user.reject_linkedin_changes unless override
@@ -50,20 +51,30 @@ class User < ApplicationRecord
     return user
   end
 
+  def self.get_position(auth)
+    if auth&.extra&.raw_info&.positions['values']&.is_a?(Array)
+      return auth.extra.raw_info.positions['values']&.max_by {|p| Date.new(p.startDate.year,p.startDate.month, 1)}
+    elsif auth&.extra&.raw_info&.positions['values']&.is_a?(String)
+      return auth.extra.raw_info.positions['values']
+    else
+      return nil
+    end
+  end
+
   def self.linkedin_params(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:first_name, :last_name)
     user_params[:token] = auth.credentials.token
     user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
-    user_params[:linkedin_email] = auth.info.email
-    user_params[:picture_url] = auth.info.image
-    user_params[:linkedin_url] = auth.info.urls.public_profile
-    user_params[:location] = auth.info.location.name # "#{auth.info.location.name} (auth.info.location.country.code)"
-    user_params[:language] = auth.info.location.country.code.downcase == 'fr' ? 'fr' : 'en'
-    most_recent_position = auth.extra.raw_info.positions['values'].max_by {|p| Date.new(p.startDate.year,p.startDate.month, 1)}
-    user_params[:job_title] = most_recent_position.title
-    user_params[:company] = most_recent_position.company.name
-    user_params[:industry] = Industry.where(name: auth.extra.raw_info.industry).first_or_create
+    user_params[:linkedin_email] = auth.info&.email
+    user_params[:picture_url] = auth.info&.image
+    user_params[:linkedin_url] = auth.info&.urls&.public_profile
+    user_params[:location] = auth.info&.location&.name # "#{auth.info.location.name} (auth.info.location.country.code)"
+    user_params[:language] = auth.info&.location&.country&.code&.downcase == 'fr' ? 'fr' : 'en'
+    most_recent_position = get_position(auth)
+    user_params[:job_title] = most_recent_position&.title
+    user_params[:company] = most_recent_position&.company&.name
+    user_params[:industry] = Industry.where(name: auth&.extra&.raw_info&.industry).first_or_create
     # Language
     return user_params.to_h
   end
