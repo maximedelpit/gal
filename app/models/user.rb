@@ -75,7 +75,7 @@ class User < ApplicationRecord
 
   def self.get_position(auth)
     if auth&.extra&.raw_info&.positions['values']&.is_a?(Array)
-      return auth.extra.raw_info.positions['values']&.max_by {|p| Date.new(p.startDate.year,p.startDate.month, 1)}
+      return auth.extra.raw_info.positions['values']&.max_by {|p| Date.new(p.startDate.year, p.startDate.month, 1)}
     elsif auth&.extra&.raw_info&.positions['values']&.is_a?(String)
       return auth.extra.raw_info.positions['values']
     else
@@ -84,6 +84,7 @@ class User < ApplicationRecord
   end
 
   def self.linkedin_params(auth)
+    add_lkdn_to_logs(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:first_name, :last_name)
     user_params[:token] = auth.credentials.token
@@ -97,7 +98,6 @@ class User < ApplicationRecord
     user_params[:job_title] = most_recent_position&.title
     user_params[:company] = most_recent_position&.company&.name
     user_params[:industry] = Industry.where(name: auth&.extra&.raw_info&.industry).first_or_create
-    add_lkdn_to_logs(auth)
     return user_params.to_h
   end
 
