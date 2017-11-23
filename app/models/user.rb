@@ -56,7 +56,9 @@ class User < ApplicationRecord
     puts "\n"
     logger.tagged("LKDN_AUTH_10") { logger.debug auth&.extra&.raw_info&.industry }
     puts "\n"
+    logger.tagged("LKDN_AUTH_11") { logger.debug auth&.extra&.raw_info&.positions }
   end
+
   def self.find_for_linkedin_oauth(auth, override=false)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
     user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
@@ -75,7 +77,7 @@ class User < ApplicationRecord
 
   def self.get_position(auth)
     if auth&.extra&.raw_info&.positions['values']&.is_a?(Array)
-      return auth.extra.raw_info.positions['values']&.max_by {|p| Date.new(p.startDate.year, p.startDate.month, 1)}
+      return auth&.extra&.raw_info&.positions['values']&.max_by {|p| Date.new(p.startDate.year, p.startDate.month, 1)}
     elsif auth&.extra&.raw_info&.positions['values']&.is_a?(String)
       return auth.extra.raw_info.positions['values']
     else
