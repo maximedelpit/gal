@@ -42,6 +42,7 @@ class Lead < ApplicationRecord
   #    message: "%{value} is not a valid size" }, if: :active?
 
   acts_as_taggable
+  after_save :extract_db_to_drive
 
   alias_method :seller, :user
 
