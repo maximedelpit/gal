@@ -87,7 +87,7 @@ class User < ApplicationRecord
     user_params[:job_title] = most_recent_position&.title
     user_params[:company] = most_recent_position&.company&.name
     user_params[:industry] = Industry.where(name: auth&.extra&.raw_info&.industry).first_or_create
-    add_lkdn_to_logs
+    # add_lkdn_to_logs
     return user_params.to_h
   end
 
