@@ -1,4 +1,5 @@
 class ProspectArea < ApplicationRecord
+  include Validatable
   has_many :zones, dependent: :destroy
   has_many :users, through: :zones
 

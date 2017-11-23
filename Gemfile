@@ -23,6 +23,8 @@ gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'
 
 gem 'wicked'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 # Business Operations Gems
 gem 'acts-as-taggable-on', '~> 4.0'
@@ -36,8 +38,10 @@ gem 'rails-i18n', '5.0.3'
 gem 'devise-i18n', '~> 1.2'
 
 # Admin
-gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'activeadmin', '~> 1.0'
+gem "active_admin_import" , github: "activeadmin-plugins/active_admin_import"
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'google_drive'
 
 
 # Monitoring
