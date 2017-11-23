@@ -27,7 +27,7 @@ class User < ApplicationRecord
   delegate :name, to: :industry, prefix: true, allow_nil: true
 
   before_update :subscribe_to_mailjet?
-
+  after_save :extract_db_to_drive
   # attr_accessor :industry_subcategory_ids, :prospect_area_ids
 
   def full_name
@@ -96,15 +96,4 @@ class User < ApplicationRecord
       })
     end
   end
-
-  # def prospect_areas_ids=(values)
-  # end
-
-  # def industry_subcategory_ids=(values)
-  #   self.industry_subcategory_ids =
-  # end
-
-  # def tag_ids=(values)
-  #   self.tag_ids = values.map {|v| v.to_i == 0 ? ActsAsTaggableOn::Tag.create(name: v.singularize.capitalize).id : v}
-  # end
 end

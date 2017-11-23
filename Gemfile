@@ -23,6 +23,8 @@ gem 'rails-assets-sweetalert2', '~> 5.1.1', source: 'https://rails-assets.org'
 gem 'sweet-alert2-rails'
 
 gem 'wicked'
+gem 'sidekiq'
+gem 'sidekiq-failures', '~> 1.0'
 
 # Business Operations Gems
 gem 'acts-as-taggable-on', '~> 4.0'
