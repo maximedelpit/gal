@@ -6,6 +6,7 @@ class CreateLeadStepsController < ApplicationController
 
   def show
     authorize @lead, :new?
+    @propositions = @lead.propositions.build
     render_wizard #(nil, {}, { lead_id: @lead.id })
   end
 
@@ -17,6 +18,7 @@ class CreateLeadStepsController < ApplicationController
       @lead.build_status = 'active'
       @lead.state ||= 'created'
     end
+    @propositions = @lead.propositions
     @lead.save
     session[:lead_id] = @lead.id
     # if last step & lead valid => we reset session
@@ -36,7 +38,7 @@ class CreateLeadStepsController < ApplicationController
 
   def lead_params
     params.require(:lead).permit(:first_name, :last_name, :company, :company_size, :within,
-      :location, :job_title, :phone, :mail, :linkedin_url, :description, :price, tag_list: [])
+      :location, :job_title, :phone, :mail, :linkedin_url, :description, :price, tag_list: [], propositions_attributes: [:id, :price, :mail])
   end
 
   def set_lead

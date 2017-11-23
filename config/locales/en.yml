@@ -43,6 +43,7 @@ en:
         private: 'Private?'
         user: 'Buyer'
         lead: 'Lead'
+        price: 'Price'
       prospect_area:
         country: 'Country'
         region: 'Region'
