@@ -77,7 +77,16 @@ class User < ApplicationRecord
 
   def self.get_position(auth)
     if auth&.extra&.raw_info&.positions['values']&.is_a?(Array)
-      return auth&.extra&.raw_info&.positions['values']&.max_by {|p| Date.new(p.startDate.year, p.startDate.month, 1)}
+      begin
+        exp = auth&.extra&.raw_info&.positions['values']&.max_by {|p| Date.new(
+          p.startDate.year || Date.today.year, p.startDate.month || 1, 1
+        )}
+      rescue ArgumentError => e
+        logger.error e
+        exp = auth&.extra&.raw_info&.positions['values']&.first || nil
+      end
+      return exp
+      # return auth&.extra&.raw_info&.positions['values']&.first
     elsif auth&.extra&.raw_info&.positions['values']&.is_a?(String)
       return auth.extra.raw_info.positions['values']
     else

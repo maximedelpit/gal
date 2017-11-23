@@ -8,6 +8,8 @@ function autosize(){
   },0);
 }
 var textareas = document.querySelectorAll('textarea')
-textareas.forEach(function(textarea, index, array){
-  textarea.addEventListener('keydown', autosize);
-});
+if (textareas) {
+  textareas.forEach(function(textarea, index, array){
+    textarea.addEventListener('keydown', autosize);
+  });
+}
