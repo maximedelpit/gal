@@ -1,5 +1,5 @@
 class Lead < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user
   has_many :propositions
 
   # has_many :targets, through: :propositions, class_name: "User",  foreign_key: :user_id
@@ -42,7 +42,9 @@ class Lead < ApplicationRecord
   #    message: "%{value} is not a valid size" }, if: :active?
 
   acts_as_taggable
+  accepts_nested_attributes_for :propositions, reject_if: :all_blank, allow_destroy: true
   after_save :extract_db_to_drive
+
 
   alias_method :seller, :user
 

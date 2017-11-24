@@ -1,7 +1,7 @@
 class LeadPolicy < ApplicationPolicy
 
   def create?
-    return true
+    return user.present?
   end
 
   def show?

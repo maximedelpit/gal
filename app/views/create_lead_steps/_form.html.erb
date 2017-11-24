@@ -6,7 +6,7 @@
         <%= f.error_notification %>
         <%= yield f %>
       <div class="col-xs-12 text-right">
-        <p><%= t('.price', default: "Price") %> <%= @lead.price %> €</p>
+        <!-- <p><%#= t('.price', default: "Price") %> <%#= @lead.price %> €</p> -->
         <% if @step != :description %>
           <%= link_to 'Back', previous_wizard_path, class: 'btn btn-round' %>
         <% end %>

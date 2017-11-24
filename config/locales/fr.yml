@@ -27,7 +27,7 @@ fr:
         phone: 'Téléphone'
         mail: 'Email'
         linkedin_url: 'Lien profil Linkedin'
-        nature: 'Nature souscription'
+        is_private: "Voulez-vous partager le lead avec quelqu'un?"
         state: 'Statut'
         deadline: 'Echéance'
         within: "A livrer d'ici"
@@ -43,6 +43,7 @@ fr:
         private: 'Privé ?'
         user: 'Acheteur'
         lead: 'Lead'
+        price: 'Prix'
       prospect_area:
         country: 'Pays'
         region: 'Région'

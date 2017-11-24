@@ -7,7 +7,11 @@ function autosize(){
     el.style.cssText = 'height:' + el.scrollHeight + 'px';
   },0);
 }
-var textareas = document.querySelectorAll('textarea')
-for (var i = 0; textareas.length; i++) {
-  textareas[i].addEventListener('keydown', autosize);
-}
+
+document.addEventListener("DOMContentLoaded", function(){
+  var textareas = document.querySelectorAll('textarea')
+  for (textarea in textareas) {
+    textarea.addEventListener('keydown', autosize);
+  }
+});
+

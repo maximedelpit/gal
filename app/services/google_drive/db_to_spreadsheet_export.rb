@@ -65,7 +65,7 @@ module GoogleDrive#::DbToSpreadsheetExport
 
     def build_lead_row(resource)
       values = resource.attributes.values
-      values << [resource.tags.pluck(:name).join(' / '), resource.propositions.pluck(:mail, :price).map {|pr| "#{pr[0]} (#{pr[1]}€)"}.join(' / ')]
+      values << [resource.tags.pluck(:name).join(' / ')]#, resource.propositions.pluck(:mail, :price).map {|pr| "#{pr[0]} (#{pr[1]}€)"}.join(' / ')]
       return values.flatten!
     end
 

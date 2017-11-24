@@ -8,3 +8,6 @@
 //= require_tree ./front_end
 
 
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})

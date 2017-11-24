@@ -1,67 +1,89 @@
-<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-4 col-md-offset-4">
+
+<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
   <div class="card-wrapper">
-    <h3 class='card-title text-center'><%= t('.congrats_title', default: "Congrats your deal is under review!") %></h3>
-      <div class="card-content">
-        <div class="inside-card row">
-          <!-- Availability.model_name.human(count: 2).upcase %>
-          Availability.human_attribute_name('starts_at').capitalize -->
-          <div class="contact-card col-xs-12">
-            <h4 class='card-sub-titles col-xs-12'><%= t('.contact_title') %></h4>
-            <div class="col-xs-12 col-sm-6">
-              <p class='attr-val'><i class="fa fa-address-card" aria-hidden="true"></i> <%= @lead.contact_fullname %></p>
-              <p class='attr-val'><i class="fa fa-briefcase" aria-hidden="true"></i> <%= @lead.job_title %></p>
-              <p class='attr-val'><i class="fa fa-building" aria-hidden="true"></i> <%= @lead.company %></p>
-            </div>
-            <div class="col-xs-12 col-sm-6">
-              <p class='attr-val'><i class="fa fa-phone" aria-hidden="true"></i> <%= format_phone(@lead.phone) %></p>
-              <p class='attr-val'><i class="fa fa-envelope" aria-hidden="true"></i> <%= @lead.mail %></p>
-              <!-- <p>
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-                <%#= link_to 'See profile', @lead.linkedin_url, target: :_blank %>
-              </p> -->
-            </div>
-          </div>
-
-
-          <div class="lead-card col-xs-12">
-            <h4 class='card-sub-titles col-xs-12'><%= t('.infos_title') %></h4>
-
-            <div id="description" class="col-xs-12">
-              <%= simple_format @lead.description %>
-            </div>
-
-            <div class="infos">
-              <div class="col-xs-12 col-sm-6">
-                <p class='attr-val'><i class="fa fa-briefcase" aria-hidden="true"></i> <%= @lead.job_title %></p>
-                <p class='attr-val'><i class="fa fa-users" aria-hidden="true"></i> <%= @lead.company_size %></p>
-              </div>
-              <div class="col-xs-12 col-sm-6">
-                <p class='attr-val'><i class="fa fa-map-marker" aria-hidden="true"></i> <%= @lead.location %></p>
-                <p class='attr-val'><i class="fa fa-hourglass-half" aria-hidden="true"></i> <%= @lead.within %></p>
-              </div>
-            </div>
-
-
-
-            <div id="tags" class="col-xs-12">
-              <ul class="tag_list list-inline">
-                <i class="fa fa-tags" aria-hidden="true"></i>
-                <% @lead.tag_list.each do |k| %>
-                  <li class='tags'><%= k %></li>
-                <% end %>
-              </ul>
-            </div>
-          </div>
-
-        <div id='creds'>
-          <p>
-            <% if current_user.admin %>
-              <%= t('.author') %> : <%= @lead.user.full_name %>,
-            <% end %>
-            <%= t('.created_at') %> <%= l(@lead.created_at, format: :short) %></p>
-        </span>
-
+   <!--  <h3 class='card-title text-center'><%#= t('.congrats_title', default: "Congrats your deal is under review!") %></h3> -->
+    <div class="lead-card no-title">
+      <div class="card-block col-xs-12">
+        <div id="price">
+          <span><%= @lead.price %></span>
         </div>
+        <h2 class='card-sub-titles red-text col-xs-12'><%= t('.infos_title') %></h2>
+        <div id="description" class="col-xs-12">
+          <!-- <blockquote> -->
+            <%= simple_format @lead.description %>
+          <!-- </blockquote> -->
+        </div>
+        <div id="tags" class="col-xs-12">
+          <ul class="tag_list list-inline">
+            <i class="fa fa-tags" aria-hidden="true"></i>
+            <% @lead.tag_list.each do |k| %>
+              <li class='tags' data-toggle="tooltip" data-placement="top" title="<%= k %>"><%= truncate(k, length: 10) %></li>
+            <% end %>
+          </ul>
+        </div>
+        <p id='creds'>
+          <% if current_user.admin %>
+            <%= t('.author') %> : <%= @lead.user.full_name %>,
+          <% else %>
+            <!-- <%#= t('.powered_by') %> :  -->
+            <%= image_tag 'logo_beta.svg', class: 'img-responsive', alt: 'logo get a lead', id: 'logo', width: '80'%>
+          <% end %>
+          <%= t('.created_at') %> <%= l(@lead.created_at, format: :short) %>
+        </p>
       </div>
+
+
+      <div class="card-footer xs-sz">
+        <ul class='list-unstyled'>
+          <% if @lead.company.present? %>
+            <li class='<%= should_blur? %>'>
+              <i class="fa fa-briefcase" aria-hidden="true"></i> <%= @lead.company %>
+            </li>
+          <% end %>
+          <% if @lead.company_size.present? %>
+            <li>
+              <i class="fa fa-users" aria-hidden="true"></i> <%= @lead.company_size %>
+            </li>
+          <% end %>
+        <!-- </ul>
+        <ul class='list-unstyled'> -->
+          <% if @lead.location.present? %>
+            <li>
+              <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @lead.location %>
+            </li>
+          <% end %>
+          <% if @lead.within.present? %>
+            <li>
+              <i class="fa fa-hourglass-half" aria-hidden="true"></i> <%= t("lead.WITHIN.#{@lead.within}") %>
+            </li>
+          <% end %>
+        </ul>
+        <ul class='list-unstyled'>
+          <% if @lead.contact_fullname.present? %>
+            <li class='<%= should_blur? %>'>
+              <i class="fa fa-address-card" aria-hidden="true"></i> <%= @lead.contact_fullname %>
+            </li>
+          <% end %>
+          <% if @lead.mail.present? %>
+            <li class='<%= should_blur? %>'>
+              <i class="fa fa-envelope" aria-hidden="true"></i> <%= @lead.mail %>
+            </li>
+          <% end %>
+          <% if @lead.phone.present? %>
+            <li class='<%= should_blur? %>'>
+              <i class="fa fa-phone" aria-hidden="true"></i> <%= @lead.phone %>
+            </li>
+          <% end %>
+          <% if @lead.job_title.present? %>
+            <li>
+              <i class="fa fa-briefcase" aria-hidden="true"></i> <%= @lead.job_title %>
+            </li>
+          <% end %>
+          <!-- <li>
+            <i class="fa fa-phone" aria-hidden="true"></i> <%#= format_phone(@lead.phone) %>
+          </li> -->
+        </ul>
+      </div>
+    </div>
   </div>
 </div>
