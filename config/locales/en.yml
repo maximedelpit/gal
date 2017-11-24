@@ -27,7 +27,7 @@ en:
         phone: 'Mobile phone'
         mail: 'Email'
         linkedin_url: 'Link of the Linkedin profile'
-        nature: 'Subscription nature'
+        is_private: 'Do you want to share with someone ?'
         state: 'State'
         deadline: 'Deadline'
         within: 'Implementation in'

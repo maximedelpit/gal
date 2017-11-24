@@ -1,7 +1,7 @@
 ActiveAdmin.register Lead do
 
   permit_params :first_name, :last_name, :company, :company_size, :location, :job_title,
-              :phone, :mail, :linkedin_url, :nature, :state, :deadline, :within,
+              :phone, :mail, :linkedin_url, :is_private, :state, :deadline, :within,
               :description, :user_id, :price
   controller do
     # clear blank attr on save

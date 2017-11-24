@@ -7,6 +7,9 @@ class CreateLeadStepsController < ApplicationController
   def show
     authorize @lead, :create?
     @propositions = @lead.propositions.build
+    if !@lead.is_private && step == :checkout
+      skip_step
+    end
     render_wizard #(nil, {}, { lead_id: @lead.id })
   end
 
@@ -38,7 +41,8 @@ class CreateLeadStepsController < ApplicationController
 
   def lead_params
     params.require(:lead).permit(:first_name, :last_name, :company, :company_size, :within,
-      :location, :job_title, :phone, :mail, :linkedin_url, :description, :price, tag_list: [], propositions_attributes: [:id, :price, :mail])
+      :location, :job_title, :phone, :mail, :linkedin_url, :description, :price,
+      :is_private, :share_to, tag_list: [])
   end
 
   def set_lead

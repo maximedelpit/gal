@@ -1,10 +1,7 @@
 <%= render layout: 'form' do |f| %>
   <!-- Checkout & share -->
-  <h4 class='card-sub-titles col-xs-12'><%= t('.checkout', default: 'Checkout') %></h4>
-  <%#= f.input :price, wrapper_html: {class: 'col-xs-12 col-sm-12'}, input_html: {} %>
-
-  <%= f.simple_fields_for :propositions do |p| %>
-    <%= p.input :mail, wrapper_html: {class: 'col-xs-12'} %>
-    <%= p.input :price, collection: [['Free', 0], ['30 €', 30]] , as: :radio_buttons, wrapper_html: {class: 'col-xs-12'}, input_html: {} %>
-  <% end %>
+  <h4 class='card-sub-titles col-xs-12'><%= t('.checkout', default: 'Share your lead') %></h4>
+  <%= f.input :price, collection: [['Free', 0], ['30 €', 30]] , as: :radio_buttons, wrapper_html: {class: 'col-xs-12 col-sm-12'}, input_html: {} %>
+  <%#= p.input :price, collection: [['Free', 0], ['30 €', 30]] , as: :radio_buttons, wrapper_html: {class: 'col-xs-12'}, input_html: {} %>
+  <%= f.input :share_to, as: :email, wrapper_html: {class: 'col-xs-12 col-sm-12'}, input_html: {} %>
 <% end %>
