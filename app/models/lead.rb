@@ -43,7 +43,7 @@ class Lead < ApplicationRecord
 
   acts_as_taggable
   accepts_nested_attributes_for :propositions, reject_if: :all_blank, allow_destroy: true
-  after_save :extract_db_to_drive
+  after_save :extract_db_to_drive, if :extractable?
 
 
   alias_method :seller, :user
@@ -54,6 +54,10 @@ class Lead < ApplicationRecord
 
   def contact_fullname
     "#{first_name.capitalize} #{last_name.capitalize}"
+  end
+
+  def extractable?
+    build_status == 'active'
   end
 
   def private_fields
