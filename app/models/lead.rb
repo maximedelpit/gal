@@ -57,6 +57,7 @@ class Lead < ApplicationRecord
   end
 
   def extractable?
+    puts "IS IT ACTIVE ? #{build_status == 'active'} / #{build_status}"
     build_status == 'active'
   end
 

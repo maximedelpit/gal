@@ -6,7 +6,7 @@ class CreateLeadStepsController < ApplicationController
 
   def show
     authorize @lead, :create?
-    @propositions = @lead.propositions.build
+    # @propositions = @lead.propositions.build
     if !@lead.is_private && step == :checkout
       skip_step
     end
@@ -21,7 +21,7 @@ class CreateLeadStepsController < ApplicationController
       @lead.build_status = 'active'
       @lead.state ||= 'created'
     end
-    @propositions = @lead.propositions
+    # @propositions = @lead.propositions
     @lead.save
     session[:lead_id] = @lead.id
     # if last step & lead valid => we reset session
