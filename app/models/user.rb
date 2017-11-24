@@ -34,6 +34,31 @@ class User < ApplicationRecord
     return "#{first_name} #{last_name}"
   end
 
+  def self.add_lkdn_to_logs(auth)
+    logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
+    logger.tagged("LKDN_AUTH_1") { logger.debug auth }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_2") { logger.debug auth.info.slice(:first_name, :last_name) }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_3") { logger.debug auth.credentials.token }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_4") { logger.debug auth.credentials.expires_at }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_5") { logger.debug auth.info&.email }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_6") { logger.debug auth.info&.image }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_7") { logger.debug auth.info&.urls&.public_profile }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_9") { logger.debug auth.info&.location&.name }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_9") { logger.debug auth.info&.location&.country&.code&.downcase }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_10") { logger.debug auth&.extra&.raw_info&.industry }
+    puts "\n"
+    logger.tagged("LKDN_AUTH_11") { logger.debug auth&.extra&.raw_info&.positions }
+  end
+
   def self.find_for_linkedin_oauth(auth, override=false)
     user = User.find_by(provider: auth.provider, uid: auth.uid)
     user ||= User.find_by(email: auth.info.email) # User did a regular sign up in the past.
@@ -50,21 +75,40 @@ class User < ApplicationRecord
     return user
   end
 
+  def self.get_position(auth)
+    if auth&.extra&.raw_info&.positions['values']&.is_a?(Array)
+      begin
+        exp = auth&.extra&.raw_info&.positions['values']&.max_by {|p| Date.new(
+          p.startDate.year || Date.today.year, p.startDate.month || 1, 1
+        )}
+      rescue ArgumentError => e
+        logger.error e
+        exp = auth&.extra&.raw_info&.positions['values']&.first || nil
+      end
+      return exp
+      # return auth&.extra&.raw_info&.positions['values']&.first
+    elsif auth&.extra&.raw_info&.positions['values']&.is_a?(String)
+      return auth.extra.raw_info.positions['values']
+    else
+      return nil
+    end
+  end
+
   def self.linkedin_params(auth)
+    add_lkdn_to_logs(auth)
     user_params = auth.slice(:provider, :uid)
     user_params.merge! auth.info.slice(:first_name, :last_name)
     user_params[:token] = auth.credentials.token
     user_params[:token_expiry] = Time.at(auth.credentials.expires_at)
-    user_params[:linkedin_email] = auth.info.email
-    user_params[:picture_url] = auth.info.image
-    user_params[:linkedin_url] = auth.info.urls.public_profile
-    user_params[:location] = auth.info.location.name # "#{auth.info.location.name} (auth.info.location.country.code)"
-    user_params[:language] = auth.info.location.country.code.downcase == 'fr' ? 'fr' : 'en'
-    most_recent_position = auth.extra.raw_info.positions['values'].max_by {|p| Date.new(p.startDate.year,p.startDate.month, 1)}
-    user_params[:job_title] = most_recent_position.title
-    user_params[:company] = most_recent_position.company.name
-    user_params[:industry] = Industry.where(name: auth.extra.raw_info.industry).first_or_create
-    # Language
+    user_params[:linkedin_email] = auth.info&.email
+    user_params[:picture_url] = auth.info&.image
+    user_params[:linkedin_url] = auth.info&.urls&.public_profile
+    user_params[:location] = auth.info&.location&.name # "#{auth.info.location.name} (auth.info.location.country.code)"
+    user_params[:language] = auth.info&.location&.country&.code&.downcase == 'fr' ? 'fr' : 'en'
+    most_recent_position = get_position(auth)
+    user_params[:job_title] = most_recent_position&.title
+    user_params[:company] = most_recent_position&.company&.name
+    user_params[:industry] = Industry.where(name: auth&.extra&.raw_info&.industry).first_or_create
     return user_params.to_h
   end
 
