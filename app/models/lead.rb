@@ -43,7 +43,7 @@ class Lead < ApplicationRecord
 
   acts_as_taggable
   accepts_nested_attributes_for :propositions, reject_if: :all_blank, allow_destroy: true
-  after_save :extract_db_to_drive, if :extractable?
+  after_save :extract_db_to_drive, if: :extractable?
 
 
   alias_method :seller, :user
