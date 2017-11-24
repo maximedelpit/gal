@@ -3,6 +3,6 @@ class DataToDriveJob < ApplicationJob
 
   def perform(ws_title)
     puts 'YOUHOU'
-    GoogleDrive::DbToSpreadsheetExport.new.perform(ws_title)
+    GoogleDrive::DbToSpreadsheetExport.new.call(ws_title)
   end
 end
