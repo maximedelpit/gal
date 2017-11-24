@@ -5,7 +5,7 @@ class CreateLeadStepsController < ApplicationController
   before_action :set_lead
 
   def show
-    authorize @lead, :new?
+    authorize @lead, :create?
     @propositions = @lead.propositions.build
     render_wizard #(nil, {}, { lead_id: @lead.id })
   end
