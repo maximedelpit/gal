@@ -11,9 +11,3 @@ var textareas = document.querySelectorAll('textarea')
 for (var i = 0; textareas.length; i++) {
   textareas[i].addEventListener('keydown', autosize);
 }
-
-
-// var textareas = document.querySelectorAll('textarea')
-// textareas.forEach(function(textarea, index, array){
-//   textarea.addEventListener('keydown', autosize);
-// });
