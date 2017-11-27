@@ -135,6 +135,9 @@ en:
       congrats_title: 'Congrats, your lead is under review!'
       contact_title: 'Contact'
       infos_title: 'Lead content'
+      thank_you: 'Thank you!'
+      private_message: 'Your lead has been sent!'
+      public_message: 'Your lead has been published!'
   pages:
     home:
       buy_lead: 'Buy a lead'

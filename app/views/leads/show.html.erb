@@ -1,88 +1,26 @@
 
 <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
   <div class="card-wrapper">
-   <!--  <h3 class='card-title text-center'><%#= t('.congrats_title', default: "Congrats your deal is under review!") %></h3> -->
-    <div class="lead-card no-title">
-      <div class="card-block col-xs-12">
-        <div id="price">
-          <span><%= @lead.price %></span>
-        </div>
-        <h2 class='card-sub-titles red-text col-xs-12'><%= t('.infos_title') %></h2>
-        <div id="description" class="col-xs-12">
+   <!-- <h3 class='card-title text-center'><%#= t('.congrats_title', default: "Congrats your deal is under review!") %></h3> -->
+    <div class="card-content no-title">
+      <div class="card-block">
+        <div class="text-center">
           <!-- <blockquote> -->
-            <%= simple_format @lead.description %>
+            <h2 class='card-sub-titles'><%= t('.thank_you',  default: "Thank you" )%></h2>
+            <div class="gif-wrapper">
+              <!-- 5wWf7GW1AzV6pF3MaVW -->
+              <iframe src="//giphy.com/embed/YC6ZedMDgR1Fm" width="432" height="250" frameBorder="0" class="giphy-embed img-responsive centered" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/the-office-slow-clap-dwight-schrute-YC6ZedMDgR1Fm" class='text-center'></a></p>
+            </div>
+            <p class='md-sz'>
+              <% if @lead.is_private %>
+                <%= t('.private_message', default: "Your lead has been published!") %>
+              <% else %>
+              <%= t('.public_message', default: "Your lead has been published!") %>
+              <% end %>
+            </p>
           <!-- </blockquote> -->
         </div>
-        <div id="tags" class="col-xs-12">
-          <ul class="tag_list list-inline">
-            <i class="fa fa-tags" aria-hidden="true"></i>
-            <% @lead.tag_list.each do |k| %>
-              <li class='tags' data-toggle="tooltip" data-placement="top" title="<%= k %>"><%= truncate(k, length: 10) %></li>
-            <% end %>
-          </ul>
-        </div>
-        <p id='creds'>
-          <% if current_user.admin %>
-            <%= t('.author') %> : <%= @lead.user.full_name %>,
-          <% else %>
-            <!-- <%#= t('.powered_by') %> :  -->
-            <%= image_tag 'logo_beta.svg', class: 'img-responsive', alt: 'logo get a lead', id: 'logo', width: '80'%>
-          <% end %>
-          <%= t('.created_at') %> <%= l(@lead.created_at, format: :short) %>
-        </p>
-      </div>
 
-
-      <div class="card-footer xs-sz">
-        <ul class='list-unstyled'>
-          <% if @lead.company.present? %>
-            <li class='<%= should_blur? %>'>
-              <i class="fa fa-briefcase" aria-hidden="true"></i> <%= @lead.company %>
-            </li>
-          <% end %>
-          <% if @lead.company_size.present? %>
-            <li>
-              <i class="fa fa-users" aria-hidden="true"></i> <%= @lead.company_size %>
-            </li>
-          <% end %>
-        <!-- </ul>
-        <ul class='list-unstyled'> -->
-          <% if @lead.location.present? %>
-            <li>
-              <i class="fa fa-map-marker" aria-hidden="true"></i> <%= @lead.location %>
-            </li>
-          <% end %>
-          <% if @lead.within.present? %>
-            <li>
-              <i class="fa fa-hourglass-half" aria-hidden="true"></i> <%= t("lead.WITHIN.#{@lead.within}") %>
-            </li>
-          <% end %>
-        </ul>
-        <ul class='list-unstyled'>
-          <% if @lead.contact_fullname.present? %>
-            <li class='<%= should_blur? %>'>
-              <i class="fa fa-address-card" aria-hidden="true"></i> <%= @lead.contact_fullname %>
-            </li>
-          <% end %>
-          <% if @lead.mail.present? %>
-            <li class='<%= should_blur? %>'>
-              <i class="fa fa-envelope" aria-hidden="true"></i> <%= @lead.mail %>
-            </li>
-          <% end %>
-          <% if @lead.phone.present? %>
-            <li class='<%= should_blur? %>'>
-              <i class="fa fa-phone" aria-hidden="true"></i> <%= @lead.phone %>
-            </li>
-          <% end %>
-          <% if @lead.job_title.present? %>
-            <li>
-              <i class="fa fa-briefcase" aria-hidden="true"></i> <%= @lead.job_title %>
-            </li>
-          <% end %>
-          <!-- <li>
-            <i class="fa fa-phone" aria-hidden="true"></i> <%#= format_phone(@lead.phone) %>
-          </li> -->
-        </ul>
       </div>
     </div>
   </div>

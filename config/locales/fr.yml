@@ -135,6 +135,9 @@ fr:
       congrats_title: "Merci ! Votre lead est en cours de validation..."
       contact_title: 'Décideur'
       infos_title: 'Besoin exprimé'
+      thank_you: 'Merci!'
+      private_message: 'Votre lead a bien été envoyé!'
+      public_message: 'Votre lead a bien été publié!'
   pages:
     home:
       buy_lead: 'Acheter un lead'
