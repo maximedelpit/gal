@@ -42,7 +42,7 @@ class Lead < ApplicationRecord
   #    message: "%{value} is not a valid size" }, if: :active?
 
   acts_as_taggable
-  accepts_nested_attributes_for :propositions, reject_if: :all_blank, allow_destroy: true
+  # accepts_nested_attributes_for :propositions, reject_if: :all_blank, allow_destroy: true
   after_save :extract_db_to_drive, if: :extractable?
 
 
@@ -58,7 +58,12 @@ class Lead < ApplicationRecord
 
   def extractable?
     puts "IS IT ACTIVE ? #{build_status == 'active'} / #{build_status}"
-    build_status == 'active'
+    # TO DO => check when rails v upgrade for changes
+    # DEPRECATION WARNING: The behavior of `attribute_change` inside of after callbacks will be changing
+    # in the next version of Rails. The new return value will reflect the behavior of calling the method
+    # after `save` returned (e.g. the opposite of what it returns now).
+    # To maintain the current behavior, use `saved_change_to_attribute` instead.
+    build_status == 'active' && changes.present?
   end
 
   def private_fields
