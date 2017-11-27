@@ -102,7 +102,7 @@ en:
         profile_basics: 'Basic informations' #custom
         tos_agreement_message: 'By registering you accept terms & conditions' #custom
         title_linkedin_ok: "Confirm registration" #custom
-        title_registered: "Edit profile" #custom
+        title_register: "Edit profile" #custom
         prospect_areas_placeholder: 'Type your areas'
         subcategories_placeholder: 'Type your industries'
         tags_placeholder: 'Type your prefered keywords'
