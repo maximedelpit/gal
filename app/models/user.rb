@@ -27,7 +27,7 @@ class User < ApplicationRecord
   delegate :name, to: :industry, prefix: true, allow_nil: true
 
   before_update :subscribe_to_mailjet?
-  after_save :extract_db_to_drive
+  # after_save :extract_db_to_drive # NB: temp disable du to memory bloat
   # attr_accessor :industry_subcategory_ids, :prospect_area_ids
 
   def full_name
