@@ -10,8 +10,9 @@ function autosize(){
 
 document.addEventListener("DOMContentLoaded", function(){
   var textareas = document.querySelectorAll('textarea')
-  for (textarea in textareas) {
-    textarea.addEventListener('keydown', autosize);
+  for (var i = 0; i < textareas.length; i++) {
+  // for (i textarea in textareas) {
+    textareas[i].addEventListener('keydown', autosize);
   }
 });
 
