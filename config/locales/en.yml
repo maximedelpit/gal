@@ -27,14 +27,13 @@ en:
         phone: 'Mobile phone'
         mail: 'Email'
         linkedin_url: 'Link of the Linkedin profile'
-        is_private: 'Do you want to share with someone ?'
+        nature: 'Subscription nature'
         state: 'State'
         deadline: 'Deadline'
         within: 'Implementation in'
         description: 'Description'
         user: 'Seller'
         price: 'Price'
-        tag_list: "Keywords"
         tag_ids: "Keywords"
       proposition:
         mail: 'Recepient email'
@@ -43,7 +42,6 @@ en:
         private: 'Private?'
         user: 'Buyer'
         lead: 'Lead'
-        price: 'Price'
       prospect_area:
         country: 'Country'
         region: 'Region'
@@ -84,7 +82,8 @@ en:
       12_months: "12 months"
       over_12_months: "> 12 months"
   leads:
-    form:
+    new:
+      new_title: "Create a new Lead"
       intro1: "Hello %{name},\n Let's create a new lead together!"
       intro2: "Do you have a new lead to offer?\n Great! Let´s go"
       intro3: "Hello %{name}! I will help you create your lead"
@@ -120,24 +119,17 @@ en:
       tag_list1:  "Which are the keywords associated with the lead?"
       tag_list2:  "To better target the interested audience, could you select keywords for the lead?"
       tag_list3:  "Which Keywords would you associate to this description?"
+      recap_contact: 'to do Recap'
       grant1: "Great!"
       grant2: "Thank you %{name}"
       grant3: "Continue..."
-      contact: 'Lead contact'
-      description: 'Lead description'
-      recap_contact: 'to do Recap'
       submit: "Submit"
-    new:
-      new_title: "Create a new Lead"
     show:
       author: 'Post by'
       created_at: 'at'
       congrats_title: 'Congrats, your lead is under review!'
       contact_title: 'Contact'
       infos_title: 'Lead content'
-      thank_you: 'Thank you!'
-      private_message: 'Your lead has been sent!'
-      public_message: 'Your lead has been published!'
   pages:
     home:
       buy_lead: 'Buy a lead'

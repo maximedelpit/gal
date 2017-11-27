@@ -27,14 +27,13 @@ fr:
         phone: 'Téléphone'
         mail: 'Email'
         linkedin_url: 'Lien profil Linkedin'
-        is_private: "Voulez-vous partager le lead avec quelqu'un?"
+        nature: 'Nature souscription'
         state: 'Statut'
         deadline: 'Echéance'
-        within: "A livrer d'ici"
+        within: 'Mise en oeuvre dans'
         description: 'Description'
         user: 'Vendeur'
         price: 'Prix'
-        tag_list: "Mots clés"
         tag_ids: "Mots clés"
       proposition:
         mail: 'Email destinataire'
@@ -43,7 +42,6 @@ fr:
         private: 'Privé ?'
         user: 'Acheteur'
         lead: 'Lead'
-        price: 'Prix'
       prospect_area:
         country: 'Pays'
         region: 'Région'
@@ -84,7 +82,8 @@ fr:
       12_months: "12 mois"
       over_12_months: "> 12 mois"
   leads:
-    form:
+    new:
+      new_title: "Créer un nouveau Lead"
       intro1: "Bonjour %{name},\n Créons un nouveau lead ensemble!"
       intro2: "Un nouveau lead ensemble a proposer %{name}?\n Super! Allons-y"
       intro3: "Bonjour %{name}! Je vais vous aider à créer votre lead"
@@ -120,24 +119,17 @@ fr:
       tag_list1:  "Quels mots clés sont associés au lead?"
       tag_list2:  "Afin de mieux cibler l'audience intéressée, pourriez-vous sélectionner les mots clés relatifs au lead ?"
       tag_list3:  "Quelles mots clés associeriez vous à cette description ?"
+      recap_contact: 'Récap TO DO'
       grant1: "Super!"
       grant2: "Merci %{name}"
       grant3: "Poursuivons..."
-      contact: 'Personne à contacter'
-      description: 'Description de la mission'
-      recap_contact: 'Récap TO DO'
       submit: "Valider"
-    new:
-      new_title: "Créer un nouveau Lead"
     show:
       author: 'Posté par'
       created_at: 'le'
       congrats_title: "Merci ! Votre lead est en cours de validation..."
       contact_title: 'Décideur'
       infos_title: 'Besoin exprimé'
-      thank_you: 'Merci!'
-      private_message: 'Votre lead a bien été envoyé!'
-      public_message: 'Votre lead a bien été publié!'
   pages:
     home:
       buy_lead: 'Acheter un lead'
