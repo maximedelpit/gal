@@ -34,6 +34,7 @@ en:
         description: 'Description'
         user: 'Seller'
         price: 'Price'
+        share_to: "Recipient's email"
         tag_list: "Keywords"
         tag_ids: "Keywords"
       proposition:
@@ -83,6 +84,19 @@ en:
       6_months: "6 months"
       12_months: "12 months"
       over_12_months: "> 12 months"
+  create_lead_steps:
+    form:
+      back: 'Back'
+      checkout_title: 'Share your lead'
+      company_title: 'Targeted company'
+      contact_title: "Contact within targeted company"
+      description_title: 'Lead description'
+      new_title: "Create a new lead"
+      price:
+        zero: "Free (%{currency}%{count})"
+        one: "%{currency}%{count}"
+        other: "%{currency}%{count}"
+      submit: "Submit"
   leads:
     form:
       new_title: "Create a new Lead"

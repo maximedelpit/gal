@@ -1,8 +1,9 @@
 <%= render layout: 'form' do |f| %>
   <!-- Client & Lead description-->
-  <h4 class='card-sub-titles col-xs-12'><%= t('.description', default: 'Description') %></h4>
+  <h4 class='card-sub-titles col-xs-12'><%= t('.description_title', default: 'Description') %></h4>
   <%#= f.input :company, wrapper_html: {class: 'col-xs-8'}, input_html: {} %>
   <%#= f.input :within, collection: t(Lead::WITHIN, scope: 'lead.WITHIN').zip(Lead::WITHIN),  wrapper_html: {class: 'col-xs-4'}, input_html: {} %>
   <%= f.input :description, wrapper_html: {class: 'col-xs-12'}, input_html: {rows: 6} %>
+  <%= f.input :within, collection: t(Lead::WITHIN, scope: 'lead.WITHIN').zip(Lead::WITHIN),  wrapper_html: {class: 'col-xs-12'}, input_html: {} %>
   <%= f.input :tag_list, collection: user_tags_collection.pluck(:name), include_blank: t('.tag_list', default: "Lead Keywords"), wrapper_html: { multiple: true, class: 'col-xs-12' }, input_html: { value: params[:lead]&.send(:[], :tag_list), class: 'select2', multiple: true } %>
 <% end %>
