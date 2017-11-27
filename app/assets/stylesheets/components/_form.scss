@@ -24,7 +24,12 @@
     }
 
     .control-label, .help-block {
-      @extend .xs-sz
+      @extend .xs-sz;
+    }
+
+    .help-block {
+      font-style: italic;
+      color : darken($yellow, 20%);
     }
   }
 

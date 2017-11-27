@@ -2,6 +2,8 @@ fr:
   simple_form:
     "yes": 'Oui'
     "no": 'Non'
+    autocomplete:
+      hint: "Utilisez le clavier pour filtrer les résultats. Vous pouvez ajouter des élements en pressant 'Entrer'"
     required:
       text: 'Champs obligatoire'
       mark: '*'

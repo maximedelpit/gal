@@ -92,6 +92,8 @@ fr:
       contact_title: "Contact dans l'entreprise"
       description_title: 'Description de la mission'
       new_title: "Créer un nouveau Lead"
+      placeholder_description: "Ne soyez pas avare en détails !\n\nExemple: Recherche outil CRM pour remplacer solution interne (Excel) non satisfaisante pour les commerciaux\n(~20 personnes)"
+      placeholder_tags: 'B2B / Outil Commercial / Suivi des ventes / Prospection'
       price:
         zero: "Gratuit (%{count} %{currency})"
         one: "%{count} %{currency}"

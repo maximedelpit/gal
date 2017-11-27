@@ -100,11 +100,12 @@
   padding: 3px 6px;
 }
 
-.select2-search__field::placeholder {
+.select2-search__field::placeholder, input::placeholder, textarea::placeholder {
+  // @extend .xs-sz;
   color: lighten($gray, 20%);
   font-style: italic;
 }
 
-.select2-search__field:focus::placeholder {
+.select2-search__field:focus::placeholder, input:focus::placeholder, textarea:focus::placeholder {
   opacity: 0;
 }
