@@ -98,7 +98,7 @@ fr:
         submit: Valider
         we_need_your_current_password_to_confirm_your_changes: nous avons besoin de votre mot de passe actuel pour valider ces modifications
         title_linkedin_ok: "Inscription - Vous y êtes presque !"
-        title_register: "Edition du profil"
+        title_registered: "Edition du profil"
         nl_subscription_message: 'Je souhaite recevoir la Newsletter Get a Lead'
         profile_settings: 'Email et mot de passe'
         profile_basics: 'Basic informations'
@@ -111,7 +111,7 @@ fr:
       new:
         sign_up: "M'inscrire"
         welcome: "Rejoignez l'aventure Get a Lead !"
-        signup_guidelines: "Get a Lead est une plateforme réservée aux professionels, inscrivez-vous via Linkedin. Rassurez-vous: nous n'aurons pas accès à votre réseau ni ne pourrons poster à votre place"
+        signup_guidelines: "Get a Lead est une plateforme réservée aux professionels, inscrivez-vous via Linkedin.\nRassurez-vous: nous n'aurons pas accès à votre réseau ni ne pourrons poster à votre place"
         why_linkedin_title: "Pourquoi Linkedin ?"
         why_linkedin: "Pour vous faciliter la vie : un clic et vous êtes prêts à publier et recevoir des leads ! Nous réupérons vos nom, prénom et intitulé de poste via votre profil."
       signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
