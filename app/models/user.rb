@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable,
          :omniauthable, omniauth_providers: [:linkedin]
-  belongs_to :industry
+  belongs_to :industry, optional: true
   has_many :subcategories, dependent: :destroy
   has_many :industry_subcategories, through: :subcategories
   has_many :zones, dependent: :destroy

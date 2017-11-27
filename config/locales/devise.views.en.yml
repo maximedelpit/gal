@@ -105,7 +105,7 @@ en:
         title_registered: "Edit profile" #custom
         prospect_areas_placeholder: 'Type your areas'
         subcategories_placeholder: 'Type your industries'
-        tags_placeholder: 'Type your prefered keywords'
+        tags_placeholder: 'Type your preferred keywords'
         registration_success: 'Registration successful'
         edit_success: 'Profile was updated successfully'
       new:
