@@ -1,5 +1,5 @@
 module GoogleDrive#::DbToSpreadsheetExport
-  class DbToSpreadsheetExport
+  class InsertToSpreadsheet
     def initialize
       @session = GoogleDrive::Session.from_service_account_key("config/gal-1ff0c255cc9d.json")
       @spreadsheet = @session.spreadsheet_by_key(ENV['LEAD_AUTO_SPREADSHEET_KEY'])
@@ -10,19 +10,14 @@ module GoogleDrive#::DbToSpreadsheetExport
       @klass = wsheet_title.classify.constantize
       @column_names = @klass.column_names
       associate_resources(wsheet_title, ids)
-      update_data
+      insert_data
     end
 
     private
 
-    def clear_extra_rows
-      @ws.delete_rows(@row, @ws.num_rows)
-    end
-
-    def update_data
-      # we skip first sheet row so we substract 1 to our resource array
-      generate_header
-      @row = 2
+    def insert_data
+      # Use serializers & List...
+      @row = @ws.num_rows
       @klass.find_each do | resource |
         values = build_row(resource)
         (1..@ws.num_cols).each do |col|
@@ -30,15 +25,7 @@ module GoogleDrive#::DbToSpreadsheetExport
         end
         @row += 1
       end
-      clear_extra_rows
       @ws.save
-    end
-
-    def generate_header
-      @column_names.each_with_index do |col_name, i|
-        i += 1
-        @ws[1, i] = col_name
-      end
     end
 
     def associate_resources(wsheet_title, ids)
