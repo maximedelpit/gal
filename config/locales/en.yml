@@ -34,6 +34,7 @@ en:
         description: 'Description'
         user: 'Seller'
         price: 'Price'
+        share_to: "Recipient's email"
         tag_list: "Keywords"
         tag_ids: "Keywords"
       proposition:
@@ -83,8 +84,22 @@ en:
       6_months: "6 months"
       12_months: "12 months"
       over_12_months: "> 12 months"
+  create_lead_steps:
+    form:
+      back: 'Back'
+      checkout_title: 'Share your lead'
+      company_title: 'Targeted company'
+      contact_title: "Contact within targeted company"
+      description_title: 'Lead description'
+      new_title: "Create a new lead"
+      price:
+        zero: "Free (%{currency}%{count})"
+        one: "%{currency}%{count}"
+        other: "%{currency}%{count}"
+      submit: "Submit"
   leads:
     form:
+      new_title: "Create a new Lead"
       intro1: "Hello %{name},\n Let's create a new lead together!"
       intro2: "Do you have a new lead to offer?\n Great! Let´s go"
       intro3: "Hello %{name}! I will help you create your lead"
@@ -120,12 +135,12 @@ en:
       tag_list1:  "Which are the keywords associated with the lead?"
       tag_list2:  "To better target the interested audience, could you select keywords for the lead?"
       tag_list3:  "Which Keywords would you associate to this description?"
+      recap_contact: 'to do Recap'
       grant1: "Great!"
       grant2: "Thank you %{name}"
       grant3: "Continue..."
       contact: 'Lead contact'
       description: 'Lead description'
-      recap_contact: 'to do Recap'
       submit: "Submit"
     new:
       new_title: "Create a new Lead"

@@ -30,10 +30,11 @@ fr:
         is_private: "Voulez-vous partager le lead avec quelqu'un?"
         state: 'Statut'
         deadline: 'Echéance'
-        within: "A livrer d'ici"
+        within: 'Mise en oeuvre dans'
         description: 'Description'
         user: 'Vendeur'
         price: 'Prix'
+        share_to: 'Email du destinataire'
         tag_list: "Mots clés"
         tag_ids: "Mots clés"
       proposition:
@@ -83,8 +84,22 @@ fr:
       6_months: "6 mois"
       12_months: "12 mois"
       over_12_months: "> 12 mois"
+  create_lead_steps:
+    form:
+      back: 'Retour'
+      checkout_title: 'Partagez votre lead'
+      company_title: 'Entreprise ciblée'
+      contact_title: "Contact dans l'entreprise"
+      description_title: 'Description de la mission'
+      new_title: "Créer un nouveau Lead"
+      price:
+        zero: "Gratuit (%{count} %{currency})"
+        one: "%{count} %{currency}"
+        other: "%{count} %{currency}"
+      submit: "Valider"
   leads:
     form:
+      new_title: "Créer un nouveau Lead"
       intro1: "Bonjour %{name},\n Créons un nouveau lead ensemble!"
       intro2: "Un nouveau lead ensemble a proposer %{name}?\n Super! Allons-y"
       intro3: "Bonjour %{name}! Je vais vous aider à créer votre lead"
@@ -120,12 +135,12 @@ fr:
       tag_list1:  "Quels mots clés sont associés au lead?"
       tag_list2:  "Afin de mieux cibler l'audience intéressée, pourriez-vous sélectionner les mots clés relatifs au lead ?"
       tag_list3:  "Quelles mots clés associeriez vous à cette description ?"
+      recap_contact: 'Récap TO DO'
+      contact: 'Personne à contacter'
+      description: 'Description de la mission'
       grant1: "Super!"
       grant2: "Merci %{name}"
       grant3: "Poursuivons..."
-      contact: 'Personne à contacter'
-      description: 'Description de la mission'
-      recap_contact: 'Récap TO DO'
       submit: "Valider"
     new:
       new_title: "Créer un nouveau Lead"
