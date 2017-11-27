@@ -9,3 +9,4 @@ public/assets
 # Ignore application configuration
 /config/application.yml
 /config/gal-1ff0c255cc9d.json
+dump/*
