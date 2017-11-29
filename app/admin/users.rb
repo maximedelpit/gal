@@ -15,7 +15,7 @@ ActiveAdmin.register User do
   # end
 
   form do |f|
-    f.inputs :email, :first_name, :last_name, :location, :industry, :position, :phone_number, :admin, :password
+    f.inputs :email, :first_name, :last_name, :location, :industry, :job_title, :phone_number, :admin, :password
     f.button 'OK'
   end
 
