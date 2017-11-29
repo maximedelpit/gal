@@ -10,7 +10,7 @@ module GoogleDrive#::DbToSpreadsheetExport
     private
 
     def clear_extra_rows
-      @ws.delete_rows(@row, @ws.num_rows)
+      @ws.delete_rows(@row, (@ws.num_rows - @row + 1))
     end
 
     def update_data

@@ -25,7 +25,7 @@ en:
         location: "Location"
         job_title: 'Job title'
         phone: 'Mobile phone'
-        mail: 'Email'
+        mail: 'Business Email'
         linkedin_url: 'Link of the Linkedin profile'
         is_private: 'Do you want to share with someone ?'
         state: 'State'
@@ -52,7 +52,7 @@ en:
         city: 'City'
         category: 'Category'
       user:
-        email: 'Email'
+        email: 'Business Email'
         first_name: 'First Name'
         last_name: 'Name'
         location: 'Location'
@@ -67,8 +67,8 @@ en:
         linkedin_email: 'Email Linkedin'
         picture_url: 'Url profile picture'
         linkedin_url: 'Link of Linkedin profile'
-        industry_subcategory_ids: "My industry"
-        prospect_area_ids: "My prospecting areas"
+        industry_subcategory_ids: "My business sector"
+        prospect_area_ids: "My geographical target area(s)"
         tag_ids: "I offer solutions in..."
   lead:
     STATES:
@@ -92,6 +92,8 @@ en:
       contact_title: "Contact within targeted company"
       description_title: 'Lead description'
       new_title: "Create a new lead"
+      placeholder_description: "Give us details!\n\nExample: Looking for a CRM tool to replace existing internal solutions (MS Excel) for sales team\n(~20 people)"
+      placeholder_tags: 'B2B / Sales Tool / Sales Analytics / Prospection'
       price:
         zero: "Free (%{currency}%{count})"
         one: "%{currency}%{count}"

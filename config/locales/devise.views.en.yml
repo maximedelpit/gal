@@ -97,23 +97,23 @@ en:
         update: Update
         submit: Submit
         we_need_your_current_password_to_confirm_your_changes: we need your current password to confirm your changes
-        nl_subscription_message: 'I want to receive the newsletter' #custom
-        profile_settings: 'Login & security' #custom
+        nl_subscription_message: 'I want to subscribe to the Get a Lead newsletter' #custom
+        profile_settings: 'Email & Password' #custom
         profile_basics: 'Basic informations' #custom
         tos_agreement_message: 'By registering you accept terms & conditions' #custom
         title_linkedin_ok: "Confirm registration" #custom
         title_registered: "Edit profile" #custom
-        prospect_areas_placeholder: 'Type your areas'
-        subcategories_placeholder: 'Type your industries'
-        tags_placeholder: 'Type your preferred keywords'
+        prospect_areas_placeholder: 'Example: Berlin, Brandenburg, PLZ: 10-19'
+        subcategories_placeholder: 'Example: Digital Marketing'
+        tags_placeholder: 'Example: SEA, SEO, Analytics'
         registration_success: 'Registration successful'
         edit_success: 'Profile was updated successfully'
       new:
         sign_up: Register
-        welcome: "Thanks for !" #custom
-        signup_guidelines: "Get a Lead is a product for professionals. To facilitate the onboarding, please register via Linkedin." #custom
+        welcome: "Join the Get a Lead community!" #custom
+        signup_guidelines: "Get a Lead is a product for professionals, please register with Linkedin. Don't worry we will not be able to acces your connections or post with your profile." #custom
         why_linkedin_title: "Why Linkedin?" #custom
-        why_linkedin: "To make it simple: in one click you will be ready you to generate and receive leads." #custom
+        why_linkedin: "Because we want to keep it simple for you: in a few clicks you will be ready to create and receive some leads." #custom
       signed_up: Welcome! You have registered successfully.
       signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
       signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.

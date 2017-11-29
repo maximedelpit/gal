@@ -2,6 +2,8 @@ en:
   simple_form:
     "yes": 'Yes'
     "no": 'No'
+    autocomplete:
+      hint: "Use your keyboard to filterthe list. You can add missing items by pressing 'Enter'"
     required:
       text: 'required'
       mark: '*'
