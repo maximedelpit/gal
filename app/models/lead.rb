@@ -44,6 +44,8 @@ class Lead < ApplicationRecord
   acts_as_taggable
   # accepts_nested_attributes_for :propositions, reject_if: :all_blank, allow_destroy: true
   # after_save :extract_db_to_drive, if: :extractable? # NB: temp disable du to memory bloat
+  after_update :upsert_in_spreadsheet, if: :extractable?
+  before_destroy :destroy_in_spreadsheet
 
 
   alias_method :seller, :user
@@ -57,7 +59,6 @@ class Lead < ApplicationRecord
   end
 
   def extractable?
-    puts "IS IT ACTIVE ? #{build_status == 'active'} / #{build_status}"
     # TO DO => check when rails v upgrade for changes
     # DEPRECATION WARNING: The behavior of `attribute_change` inside of after callbacks will be changing
     # in the next version of Rails. The new return value will reflect the behavior of calling the method

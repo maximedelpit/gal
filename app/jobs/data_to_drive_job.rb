@@ -1,8 +1,8 @@
 class DataToDriveJob < ApplicationJob
   queue_as :default
 
-  def perform(ws_title)
+  def perform(service_name, ws_title, ids=[])
     puts 'YOUHOU'
-    GoogleDrive::DbToSpreadsheetExport.new.call(ws_title)
+    service_name.constantize.new(ws_title, ids).call
   end
 end

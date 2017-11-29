@@ -4,8 +4,7 @@ module GoogleDrive
 
     def call
       associate_resources
-      binding.pry
-      # insert_data
+      insert_data
     end
 
     private

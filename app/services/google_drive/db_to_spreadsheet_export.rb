@@ -1,15 +1,9 @@
 module GoogleDrive#::DbToSpreadsheetExport
   class DbToSpreadsheetExport
-    def initialize
-      @session = GoogleDrive::Session.from_service_account_key("config/gal-1ff0c255cc9d.json")
-      @spreadsheet = @session.spreadsheet_by_key(ENV['LEAD_AUTO_SPREADSHEET_KEY'])
-    end
+    include GoogleDrive::Helpers
 
-    def call(wsheet_title, ids)
-      @ws = @spreadsheet.worksheet_by_title(wsheet_title)
-      @klass = wsheet_title.classify.constantize
-      @column_names = @klass.column_names
-      associate_resources(wsheet_title, ids)
+    def call
+      associate_resources
       update_data
     end
 
@@ -41,17 +35,17 @@ module GoogleDrive#::DbToSpreadsheetExport
       end
     end
 
-    def associate_resources(wsheet_title, ids)
-      if wsheet_title == 'users'
+    def associate_resources
+      if @wsheet_title == 'users'
         @query = @klass.includes(:prospect_areas, :tags, :industry_subcategories)
         @column_names << %w(prospect_areas tags industry_subcategories)
         @column_names.flatten!
-      elsif wsheet_title == 'leads'
+      elsif @wsheet_title == 'leads'
         @query = @klass.includes(:tags, :propositions)
         @column_names << %w(tags propositions)
         @column_names.flatten!
       end
-      @query = @klass.where(id: ids) if ids.present?
+      @query = @klass.where(id: @ids) if @ids.present?
     end
 
     def build_row(resource)

@@ -4,7 +4,6 @@ module GoogleDrive
 
     def call
       associate_resources
-      binding.pry
       upsert_data
     end
 

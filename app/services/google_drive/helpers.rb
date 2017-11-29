@@ -14,11 +14,11 @@ module GoogleDrive
 
     def associate_resources
       if @wsheet_title == 'users'
-        @query = @klass.eager_load(:prospect_areas, :tags, :industry_subcategories)
+        @query = @klass.includes(:prospect_areas, :tags, :industry_subcategories)
         @column_names << %w(prospect_areas tags industry_subcategories)
         @column_names.flatten!
       elsif @wsheet_title == 'leads'
-        @query = @klass.eager_load(:tags, :propositions)
+        @query = @klass.includes(:tags, :propositions)
         @column_names << %w(tags propositions)
         @column_names.flatten!
       end
