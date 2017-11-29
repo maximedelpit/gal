@@ -5,7 +5,7 @@
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, class: 'card-content' }) do |f| %>
       <div class="col-xs-12"><%= f.error_notification %></div>
       <div class='flex-title'>
-        <h4 class='card-sub-titles'><%= t('devise.registrations.edit.profile_settings') %></h4>
+        <h4 class='card-sub-titles'><%= t("devise.registrations.edit.title_#{current_user.state}") %></h4>
         <%= f.input :language, collection: [['En', 'en'], ['Fr', 'fr']], include_blank: false, label: false, wrapper_html: {id:'language', class: ''}, input_html: {} %>
       </div>
       <div class="form-inputs row">
