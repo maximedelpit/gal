@@ -23,7 +23,7 @@ module GoogleDrive#::DbToSpreadsheetExport
       # we skip first sheet row so we substract 1 to our resource array
       generate_header
       @row = 2
-      @klass.find_each do | resource |
+      @query.find_each do | resource |
         values = build_row(resource)
         (1..@ws.num_cols).each do |col|
           @ws[@row, col] = values[col-1]
@@ -43,15 +43,15 @@ module GoogleDrive#::DbToSpreadsheetExport
 
     def associate_resources(wsheet_title, ids)
       if wsheet_title == 'users'
-        @klass = @klass.includes(:prospect_areas, :tags, :industry_subcategories)
+        @query = @klass.includes(:prospect_areas, :tags, :industry_subcategories)
         @column_names << %w(prospect_areas tags industry_subcategories)
         @column_names.flatten!
       elsif wsheet_title == 'leads'
-        @klass = @klass.includes(:tags, :propositions)
+        @query = @klass.includes(:tags, :propositions)
         @column_names << %w(tags propositions)
         @column_names.flatten!
       end
-      @klass = @klass.where(id: ids) if ids.present?
+      @query = @klass.where(id: ids) if ids.present?
     end
 
     def build_row(resource)
