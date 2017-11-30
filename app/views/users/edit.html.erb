@@ -5,7 +5,7 @@ s<div class="col-xs-12 col-sm-6 col-sm-offset-3">
     <%= simple_form_for(@user, url: update_password_user_path, html: { method: :put, class: 'card-content' }) do |f| %>
       <div class="col-xs-12"><%= f.error_notification %></div>
       <div class='col-xs-12'>
-        <h4 class='card-sub-titles'><%= t('devise.registrations.edit.title_linkedin_ok') %></h4>
+        <h4 class='card-sub-titles'><%= t("devise.registrations.edit.profile_settings") %></h4>
         <%= f.input :language, collection: [['En', 'en'], ['Fr', 'fr']], include_blank: false, label: false, wrapper_html: {id:'language', class: ''}, input_html: {} %>
       </div>
       <div class="form-inputs row">
