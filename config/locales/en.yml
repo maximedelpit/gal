@@ -52,7 +52,7 @@ en:
         city: 'City'
         category: 'Category'
       user:
-        email: 'Email'
+        email: 'Business Email'
         first_name: 'First Name'
         last_name: 'Name'
         location: 'Location'

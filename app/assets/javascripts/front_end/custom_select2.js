@@ -1,5 +1,6 @@
 $('.select2').select2({
   closeOnSelect: true,
+  selectOnClose: true,
   debug: true,
   allowClear: false,
   placeholder: '',
@@ -23,4 +24,3 @@ $('.select2').select2({
 //     // });
 //   }
 // });
-

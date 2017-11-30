@@ -35,12 +35,12 @@
   // width: 215px;
   // height: 36px;
   transition: 0.2s ease;
-  background: $red;//#3377B0;
+  background: #3377B0;
   color: white;
 
   &:active, &:hover, &:focus {
     // background-image: image-url("linkedin_connect_active.png");
-    background: $red;//#2D699B;
+    background: #2D699B;
     color: white !important;
   }
   // &:hover {
