@@ -4,11 +4,11 @@ class ProspectArea < ApplicationRecord
   has_many :users, through: :zones
 
   before_save :set_name
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
 
   def one_of_them
-    if [country, region, departement, zipcode].compact.blank?
+    if [country, region, department, zipcode].compact.blank?
       errors.add :country, "Must have at least a country, region, department or zipcode"
     end
   end
@@ -18,6 +18,6 @@ class ProspectArea < ApplicationRecord
   end
 
   def to_s
-    [country, region, departement, zipcode].compact.join(', ')
+    [country, region, department, zipcode].compact.join(', ')
   end
 end

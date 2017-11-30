@@ -1,0 +1,35 @@
+en:
+  active_admin:
+    industry_subcategories:
+      csv_guidelines_html: "<p class='alert'>CSV must respect conditions below:</p>
+      <ul>
+        <li>Semi colon separator (;)</li>
+        <li>Remove useless empty columns from csv file</li>
+        <li>Mandatory headers (in English, case sensitive) are: id, name, validated</li>
+        <li>If needed you can look at the Database schema to get proper fields name</li>
+        <li>If you add a new item, leave id field empty</li>
+        <li>'Name' field is unique. If you try to add a row on a pre-existing name please provide the id or you'll raise an error</li>
+        <li>Errors are generated row by row. Valid rows, will be integrated even if others are raising errors.</li>
+      </ul>"
+    prospect_areas:
+      csv_guidelines_html: "<p class='alert'>CSV must respect conditions below:</p>
+      <ul>
+        <li>Semi colon separator (;)</li>
+        <li>Remove useless empty columns from csv file</li>
+        <li>Mandatory headers (in English, case sensitive) are: id, country, region, zipcode, department, category, name, validated</li>
+        <li>If needed you can look at the Database schema to get proper fields name</li>
+        <li>If you add a new item, leave id field empty</li>
+        <li>'Name' field is unique. If you try to add a row on a pre-existing name please provide the id or you'll raise an error</li>
+        <li>Errors are generated row by row. Valid rows, will be integrated even if others are raising errors.</li>
+      </ul>"
+    tags:
+      csv_guidelines_html: "<p class='alert'>CSV must respect conditions below:</p>
+      <ul>
+        <li>Semi colon separator (;)</li>
+        <li>Remove useless empty columns from csv file</li>
+        <li>Mandatory headers (in English, case sensitive) are: id, name, validated</li>
+        <li>If needed you can look at the Database schema to get proper fields name</li>
+        <li>If you add a new item, leave id field empty</li>
+        <li>'Name' field is unique. If you try to add a row on a pre-existing name please provide the id or you'll raise an error</li>
+        <li>Errors are generated row by row. Valid rows, will be integrated even if others are raising errors.</li>
+      </ul>"

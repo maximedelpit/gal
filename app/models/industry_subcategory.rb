@@ -4,7 +4,7 @@ class IndustrySubcategory < ApplicationRecord
   has_many :subcategories, dependent: :destroy
   has_many :users, through: :subcategories
 
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: true
 
   acts_as_taggable
 
