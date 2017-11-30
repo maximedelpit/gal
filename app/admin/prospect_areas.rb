@@ -3,7 +3,6 @@ ActiveAdmin.register ProspectArea do
     csv_options: { col_sep: ';'},
     validate: false,
     on_duplicate_key_update: {conflict_target: [:name], columns: [ :validated, :country, :region, :zipcode, :department, :category]},
-    after_batch_import: proc{ |import|  binding.pry},
     template_object: ActiveAdminImport::Model.new(
       force_encoding: :auto,
       hint: I18n.t('active_admin.prospect_areas.csv_guidelines_html'),
