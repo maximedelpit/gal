@@ -27,6 +27,7 @@ module ApplicationHelper
     return IndustrySubcategory.left_outer_joins(:subcategories).select(:name, :id).where(%Q(
       industry_subcategories.validated = 'true' OR
       (industry_subcategories.validated = 'false' AND subcategories.user_id = #{current_user.id})
+      #{params_collection_condition('industry_subcategories', 'industry_subcategory_ids')}
     )).distinct(:name).order(:name)
     # (IndustrySubcategory.where(validated: true) || current_user.industry_subies.where(validated: false))
   end
@@ -35,6 +36,7 @@ module ApplicationHelper
     return ProspectArea.left_outer_joins(:zones).select(:name, :id).where(%Q(
       prospect_areas.validated = 'true' OR
       (prospect_areas.validated = 'false' AND zones.user_id = #{current_user.id})
+      #{params_collection_condition('prospect_areas', 'prospect_area_ids')}
     )).distinct(:name).order(:name)
     # (ProspectArea.where(validated: true) || current_user.prospect_areas.where(validated: false))
   end
@@ -43,11 +45,19 @@ module ApplicationHelper
     return ActsAsTaggableOn::Tag.left_outer_joins(:taggings).where(%Q(
       tags.validated = 'true' OR
       (tags.validated = 'false' AND taggings.taggable_id = #{current_user.id} AND taggings.taggable_type = 'User')
+      #{params_collection_condition('tags', 'tag_ids')}
     )).distinct(:name).order(:name)
     # tag_ids = ActsAsTaggableOn::Tagging.where(taggable_type: 'IndustrySubcategory').or(
     #   ActsAsTaggableOn::Tagging.where(taggable_type: 'User', taggable_id: current_user.id)
     # ).distinct(:tag_id).pluck(:tag_id)
     # return ActsAsTaggableOn::Tag.where(id: tag_ids)
+  end
+
+  def params_collection_condition(table_name, associated_key)
+    if params[:user]&.send(:[], associated_key)
+      params_string = params[:user]&.send(:[], :prospect_area_ids)&.select {|i| i.present?}&.join(', ')
+      return %Q(OR #{table_name}.id IN (#{params_string}))
+    end
   end
 
   def buyer_sweet_data
