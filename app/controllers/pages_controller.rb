@@ -4,5 +4,7 @@ class PagesController < ApplicationController
   # layout 'no_flex_layout'
 
   def home
+    params[:has_registered] = session[:has_registered]
+    session[:has_registered] = nil
   end
 end

@@ -4,7 +4,7 @@ class Lead < ApplicationRecord
 
   # has_many :targets, through: :propositions, class_name: "User",  foreign_key: :user_id
 
-  COMPANY_SIZES = %w(0-10 11-25 26-100 101-250 500+)
+  COMPANY_SIZES = %w(0-10 11-25 26-100 101-500 500+)
   WITHIN = ['1_month', '3_months', '6_months', '12_months', 'over_12_months']
   STATES = %w(created confirmed to_requalify rejected proposed sold)
 
