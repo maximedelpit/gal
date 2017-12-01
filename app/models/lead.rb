@@ -1,6 +1,6 @@
 class Lead < ApplicationRecord
   belongs_to :user
-  has_many :propositions
+  has_many :propositions, dependent: :destroy
 
   # has_many :targets, through: :propositions, class_name: "User",  foreign_key: :user_id
 
