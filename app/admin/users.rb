@@ -35,4 +35,19 @@ ActiveAdmin.register User do
     end
     f.button 'OK'
   end
+
+
+  index do
+    id_column
+    [:email, :first_name, :last_name, :location, :job_title, :phone_number, :company,
+      :state, :language, :industry_id, :admin, :linkedin_email, :accepts_tos, :nl_subscription, :created_at, :updated_at].each do |_attr|
+      column _attr
+    end
+    [:tags, :prospect_areas, :industry_subcategories].each do |assoc|
+      column assoc do |u|
+        u.send(assoc).pluck(:name).join(' / ')
+      end
+    end
+    actions
+  end
 end

@@ -42,4 +42,18 @@ ActiveAdmin.register Lead do
     end
     f.actions
   end
+
+
+  index do
+    id_column
+    [:first_name, :last_name, :company, :company_size, :location, :job_title,
+     :phone, :mail, :linkedin_url, :is_private, :share_to, :state, :deadline, :within,
+      :description, :user_id, :price, :created_at, :updated_at].each do |_attr|
+      column _attr
+    end
+    column :tags do |u|
+      u.send(:tags).pluck(:name).join(' / ')
+    end
+    actions
+  end
 end
