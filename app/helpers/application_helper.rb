@@ -55,7 +55,7 @@ module ApplicationHelper
 
   def params_collection_condition(table_name, associated_key)
     if params[:user]&.send(:[], associated_key).present? && params[:user]&.send(:[], associated_key) != ['']
-      params_string = params[:user]&.send(:[], :prospect_area_ids)&.select {|i| i.present?}&.join(', ')
+      params_string = params[:user]&.send(:[], associated_key)&.select {|i| i.present?}&.join(', ')
       return %Q(OR #{table_name}.id IN (#{params_string}))
     end
   end
