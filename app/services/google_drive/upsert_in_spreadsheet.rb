@@ -20,14 +20,3 @@ module GoogleDrive
     end
   end
 end
-
-
-# Lead.find_each do |l|
-#   l.user_id = 6 if l.user_id.nil?
-#   l.state = 'created'
-#   l.build_status = 'active'
-#   l.save
-# end
-# Lead.find_each do |l|
-#   l.update(created_at: l.created_at - 10.seconds)
-# end
