@@ -29,7 +29,11 @@
 
     .help-block {
       font-style: italic;
-      color : darken($yellow, 20%);
+      color: darken($yellow, 20%);
+    }
+
+    .help-block.has-error {
+      color: $state-danger-text;
     }
   }
 

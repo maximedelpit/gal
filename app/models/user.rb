@@ -139,7 +139,6 @@ class User < ApplicationRecord
     restore_attributes(attrs_to_restore.keys)
   end
 
-
   def subscribe_to_mailjet?
     if changes[:nl_subscription] #&& nl_subscription # temporary deactivated
       SubscribeToMailjetList.perform_later(id)
