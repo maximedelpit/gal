@@ -135,7 +135,8 @@ class User < ApplicationRecord
     # The purpose of the method is to avoid overwriting fields user has manually changed
     # TO DO
     # whitelist attributes that changed while value was previously set => TBD
-    attrs_to_restore = changes.select {|attr_, v| v[0].present? && v[1] != v[0]}.reject {|attr_| %w(token token_expiry).include?(attr_)}
+    rejected_cols = %w(token token_expiry picture_url)
+    attrs_to_restore = changes.select {|attr_, v| v[0].present? && v[1] != v[0]}.reject {|attr_| rejected_cols.include?(attr_)}
     restore_attributes(attrs_to_restore.keys)
   end
 
