@@ -28,7 +28,20 @@ class User < ApplicationRecord
 
   after_update :subscribe_to_mailjet?
   # after_save :extract_db_to_drive # NB: temp disable du to memory bloat
+  after_create :insert_in_spreadsheet, if: :extractable?
+  after_update :upsert_in_spreadsheet, if: :extractable?
+  before_destroy :destroy_in_spreadsheet
   # attr_accessor :industry_subcategory_ids, :prospect_area_ids
+
+
+  def extractable?
+    # after create.... / edit profile
+    if changed? == false || changed == ["sign_in_count", "current_sign_in_at", "updated_at"] || changed == ["sign_in_count", "current_sign_in_at", "last_sign_in_at", "updated_at"] || changed == ["token", "token_expiry", "updated_at"] || changed == ["sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "updated_at"]
+      return false
+    else
+      return true
+    end
+  end
 
   def full_name
     return "#{first_name} #{last_name}"
