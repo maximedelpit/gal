@@ -79,7 +79,7 @@ class User < ApplicationRecord
     if auth&.extra&.raw_info&.positions['values']&.is_a?(Array)
       begin
         exp = auth&.extra&.raw_info&.positions['values']&.max_by {|p| Date.new(
-          p.startDate.year || Date.today.year, p.startDate.month || 1, 1
+          p&.startDate&.year || Date.today.year, p&.startDate&.month || 1, 1
         )}
       rescue ArgumentError => e
         logger.error e
@@ -128,7 +128,7 @@ class User < ApplicationRecord
 
 
   def subscribe_to_mailjet?
-    if changes[:nl_subscription] #&& nl_subscription
+    if changes[:nl_subscription] #&& nl_subscription # temporary deactivated
       SubscribeToMailjetList.perform_later(id)
     end
   end
