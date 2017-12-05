@@ -57,3 +57,8 @@ group :development, :test do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
+
+group :development do
+  gem 'ruby-graphviz', '~> 1.2', '>= 1.2.3'
+  gem 'rails-erd'
+end

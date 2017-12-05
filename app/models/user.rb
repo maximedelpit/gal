@@ -26,7 +26,7 @@ class User < ApplicationRecord
   alias_method :industry_subies, :industry_subcategories
   delegate :name, to: :industry, prefix: true, allow_nil: true
 
-  before_update :subscribe_to_mailjet?
+  after_update :subscribe_to_mailjet?
   # after_save :extract_db_to_drive # NB: temp disable du to memory bloat
   after_create :insert_in_spreadsheet, if: :extractable?
   after_update :upsert_in_spreadsheet, if: :extractable?
@@ -92,7 +92,7 @@ class User < ApplicationRecord
     if auth&.extra&.raw_info&.positions['values']&.is_a?(Array)
       begin
         exp = auth&.extra&.raw_info&.positions['values']&.max_by {|p| Date.new(
-          p.startDate.year || Date.today.year, p.startDate.month || 1, 1
+          p&.startDate&.year || Date.today.year, p&.startDate&.month || 1, 1
         )}
       rescue ArgumentError => e
         logger.error e
@@ -141,16 +141,8 @@ class User < ApplicationRecord
 
 
   def subscribe_to_mailjet?
-    if changes[:nl_subscription] #&& nl_subscription
-      Mailjet::Contactslist_managecontact.create(id: ENV['MAILJET_LIST_ID'], action: "addforce", email: email, name: full_name,
-        properties: {
-          first_name: first_name,
-          last_name: last_name,
-          company: company,
-          job_title: job_title,
-          language: language,
-          newsletter_sub: nl_subscription
-      })
+    if changes[:nl_subscription] #&& nl_subscription # temporary deactivated
+      SubscribeToMailjetList.perform_later(id)
     end
   end
 end

@@ -17,7 +17,7 @@ class CreateLeadStepsController < ApplicationController
     authorize @lead, :update?
     @lead.assign_attributes(lead_params)
     @lead.build_status = "#{step}"
-    if step == steps.last
+    if step == steps.last || (step == :contact && !@lead.is_private)
       @lead.build_status = 'active'
       @lead.state ||= 'created'
     end

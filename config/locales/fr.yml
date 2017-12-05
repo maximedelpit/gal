@@ -52,7 +52,7 @@ fr:
         city: 'Ville'
         category: 'Type'
       user:
-        email: 'Email professionnel'
+        email: 'Email professionnel (pour recevoir mes Leads)'
         first_name: 'Prénom'
         last_name: 'Nom'
         location: 'Localisation'

@@ -3,7 +3,7 @@ fr:
     "yes": 'Oui'
     "no": 'Non'
     autocomplete:
-      hint: "Utilisez le clavier pour filtrer les résultats. Vous pouvez ajouter des élements en pressant 'Entrer'"
+      hint: "Sélectionnez un élément dans la liste ou saisissez librement."
     required:
       text: 'Champs obligatoire'
       mark: '*'
@@ -11,7 +11,7 @@ fr:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Merci de renseigner tous les champs obligatoires"
+      default_message: "Merci de vous assurez que tous les champs obligatoires sont renseignés correctement."
     # Examples
     # labels:
     #   defaults:

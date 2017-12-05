@@ -1,0 +1,35 @@
+fr:
+  active_admin:
+    industry_subcategories:
+      csv_guidelines_html: "<p class='alert'>Le csv doit respecter les conditions ci-dessous:</p>
+      <ul>
+        <li>Séparateur point virgule (;)</li>
+        <li>Ne pas contenir de colonnes vides inutiles</li>
+        <li>Les intitulés obligatoires sont les suivants (respecter la langue et la casse): id, name, validated</li>
+        <li>Si besoin consulter le schema de base de données pour avoir le bon intitulé des colonnes</li>
+        <li>Si vous ajoutez un nouvel élement, laisser le champ id vide</li>
+        <li>Le 'name' est unique, si vous cherchez à ajouter une ligne sur un name pre-existant sans donner l'id, alors une erreur apparaitra</li>
+        <li>Les erreurs sont générées ligne par ligne. Les lignes valides seront intégrées même si d'autres posent problème</li>
+      </ul>"
+    prospect_areas:
+      csv_guidelines_html: "<p class='alert'>Le csv doit respecter les conditions ci-dessous:</p>
+      <ul>
+        <li>Séparateur point virgule (;)</li>
+        <li>Ne pas contenir de colonnes vides inutiles</li>
+        <li>Les intitulés obligatoires sont les suivants (respecter la langue et la casse): id, country, region, zipcode, department, category, name, validated</li>
+        <li>Si besoin consulter le schema de base de données pour avoir le bon intitulé des colonnes</li>
+        <li>Si vous ajoutez un nouvel élement, laisser le champ id vide</li>
+        <li>Le 'name' est unique, si vous cherchez à ajouter une ligne sur un name pre-existant sans donner l'id, alors une erreur apparaitra</li>
+        <li>Les erreurs sont générées ligne par ligne. Les lignes valides seront intégrées même si d'autres posent problème</li>
+      </ul>"
+    tags:
+      csv_guidelines_html: "<p class='alert'>Le csv doit respecter les conditions ci-dessous:</p>
+      <ul>
+        <li>Séparateur point virgule (;)</li>
+        <li>Ne pas contenir de colonnes vides inutiles</li>
+        <li>Les intitulés obligatoires sont les suivants (respecter la langue et la casse): id, name, validated</li>
+        <li>Si besoin consulter le schema de base de données pour avoir le bon intitulé des colonnes</li>
+        <li>Si vous ajoutez un nouvel élement, laisser le champ id vide</li>
+        <li>Le 'name' est unique, si vous cherchez à ajouter une ligne sur un name pre-existant sans donner l'id, alors une erreur apparaitra</li>
+        <li>Les erreurs sont générées ligne par ligne. Les lignes valides seront intégrées même si d'autres posent problème</li>
+      </ul>"
