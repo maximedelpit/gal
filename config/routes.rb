@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   scope '(:locale)', locale: /fr|en/ do
-    root to: 'pages#home'
+    root to: 'pages#start'
     resources :leads, only: [:new, :create, :show]
     resources :create_lead_steps
     resource :user, only: [:edit] do

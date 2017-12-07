@@ -156,7 +156,7 @@ fr:
       private_message: 'Votre lead a bien été envoyé!'
       public_message: 'Votre lead a bien été publié!'
   pages:
-    home:
+    start:
       buy_lead: 'Acheter un lead'
       buyer_alert_title: 'Coming soon!'
       buyer_alert_text: "Pendant la phase de Beta, il n'est pas possible d'acheter des leads via la plateforme. Notre équipe vous contactera automatiquement par mail ou via linkedin dès que nous recevrons un lead suceptible de vous intéresser !"
