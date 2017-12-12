@@ -111,9 +111,9 @@ en:
       new:
         sign_up: Register
         welcome: "Join the Get a Lead community!" #custom
-        signup_guidelines: "Get a Lead is a product for professionals, please register with Linkedin. Don't worry we will not be able to acces your connections or post with your profile." #custom
+        signup_guidelines: "Get a Lead is a product for professionals, please register with Linkedin. Don't worry we will not be able to access your connections or post with your profile." #custom
         why_linkedin_title: "Why Linkedin?" #custom
-        why_linkedin: "Because we want to keep it simple for you: in a few clicks you will be ready to create and receive some leads." #custom
+        why_linkedin: "Linkedin is the most trusted business social network in the world. To guarantee the quality of our leads and the trustworthyness of our community we only accept users with a complete Linkedin profile." #custom
       signed_up: Welcome! You have registered successfully.
       signed_up_but_inactive: You have signed up successfully. However, we could not sign you in because your account is not yet activated.
       signed_up_but_locked: You have signed up successfully. However, we could not sign you in because your account is locked.

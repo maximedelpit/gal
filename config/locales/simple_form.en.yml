@@ -3,7 +3,7 @@ en:
     "yes": 'Yes'
     "no": 'No'
     autocomplete:
-      hint: "Select an element in the list or just type in a new one."
+      hint: "Select an element in the list or just type in a new one and press Enter."
     required:
       text: 'required'
       mark: '*'

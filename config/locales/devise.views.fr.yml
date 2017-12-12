@@ -113,7 +113,7 @@ fr:
         welcome: "Rejoignez l'aventure Get a Lead !"
         signup_guidelines: "Get a Lead est une plateforme réservée aux professionels, inscrivez-vous via Linkedin.\nRassurez-vous: nous n'aurons pas accès à votre réseau ni ne pourrons poster à votre place"
         why_linkedin_title: "Pourquoi Linkedin ?"
-        why_linkedin: "Pour vous faciliter la vie : un clic et vous êtes prêts à publier et recevoir des leads ! Nous réupérons vos nom, prénom et intitulé de poste via votre profil."
+        why_linkedin: "Linkedin est le réseau social professionnel le plus fiable au monde. Afin de garantir la qualité de nos leads et la crédibilité de notre communauté, nous n'acceptons que les utilisateurs ayant un profil Linkedin complet."
       signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
       signed_up_but_inactive: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte n’a pas encore été activé.
       signed_up_but_locked: Vous vous êtes enregistré(e) avec succès. Cependant, nous n’avons pas pu vous connecter car votre compte est verrouillé.

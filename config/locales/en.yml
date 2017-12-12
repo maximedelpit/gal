@@ -52,7 +52,7 @@ en:
         city: 'City'
         category: 'Category'
       user:
-        email: 'Business Email'
+        email: 'Email'
         first_name: 'First Name'
         last_name: 'Name'
         location: 'Location'
@@ -156,7 +156,7 @@ en:
       private_message: 'Your lead has been sent!'
       public_message: 'Your lead has been published!'
   pages:
-    start:
+    home:
       buy_lead: 'Buy a lead'
       buyer_alert_title: 'Coming soon!'
       buyer_alert_text: "We are still in Beta-Phase, we will contact you by email to send you the most relevant leads!"
