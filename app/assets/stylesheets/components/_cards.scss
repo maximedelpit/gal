@@ -1,24 +1,3 @@
-.attr-val {
-  margin-bottom: 2px;
-  i.fa {
-    margin-right: 4px;
-  }
-}
-.attr-value-item {
-  display: flex;
-  justify-content: space-between;
-}
-
-.tags {
-  background: $gray-blue;
-  color: white;
-  padding: 2px 4px;
-  border-radius: 6px;
-  font-size: 1.2rem;
-  margin: 0 2px;
-}
-
-
 .card-title  {
   margin: 0;
   background: $darker-blue-gray;
@@ -37,13 +16,6 @@
 .card-sub-titles.red-text {
   color: $brand-success;
 }
-
-
-// @media (max-width: 425px) {
-//   .card-wrapper .card-content {
-//     padding: 2rem 0 !important;
-//   }
-// }
 
 .card-wrapper {
   margin-bottom: 1rem;
@@ -151,15 +123,35 @@
       filter: blur(3px)
     }
   }
-}
 
-#tags {
-  margin-top: 20px;
-}
+  .attr-val {
+    margin-bottom: 2px;
+    i.fa {
+      margin-right: 4px;
+    }
+  }
+  .attr-value-item {
+    display: flex;
+    justify-content: space-between;
+  }
 
-#creds {
-  float: right;
-  font-size: 1.1rem;
-  color: $light-gray;
+  .tags {
+    background: $gray-blue;
+    color: white;
+    padding: 2px 4px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    margin: 0 2px;
+  }
+  #tags {
+    margin-top: 20px;
+  }
+
+  #creds {
+    float: right;
+    font-size: 1.1rem;
+    color: $light-gray;
+  }
+
 }
 
