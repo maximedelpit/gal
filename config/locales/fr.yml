@@ -67,9 +67,9 @@ fr:
         linkedin_email: 'Email Linkedin'
         picture_url: 'Url image de profil'
         linkedin_url: 'Lien du profil Linkedin'
-        industry_subcategory_ids: "Mon secteur d'activité"
+        industry_subcategory_ids: "Mes secteurs d'activité"
         prospect_area_ids: "Mes zones géographiques de prospection"
-        tag_ids: "Je propose des solutions de type... "
+        tag_ids: "Je veux recevoir des leads de type..."
   lead:
     STATES:
       created: "Créé"
