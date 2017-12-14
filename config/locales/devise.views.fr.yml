@@ -102,7 +102,7 @@ fr:
         nl_subscription_message: 'Je souhaite recevoir la Newsletter Get a Lead'
         profile_settings: 'Email et mot de passe'
         profile_basics: 'Mon Profil'
-        tos_agreement_message_html: "Je reconnais avoir lu et j'accepte les <a href=%{href}>conditions générales du service</a>"
+        tos_agreement_message_html: "Je reconnais avoir lu et j'accepte les <a href=%{href} target='_blank'>conditions générales du service</a>"
         prospect_areas_placeholder: 'Exemple: Paris ; Hauts-de-France ; Yvelines '
         subcategories_placeholder: 'Exemple: Marketing Digital'
         tags_placeholder: 'Exemple: SEA ; SEO ; Analytics'

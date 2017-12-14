@@ -100,7 +100,7 @@ en:
         nl_subscription_message: 'I want to subscribe to the Get a Lead newsletter' #custom
         profile_settings: 'Email & Password' #custom
         profile_basics: 'My Profile' #custom
-        tos_agreement_message_html: "By registering you accept <a href='/assets/get_a_lead_gu_en.pdf'>terms & conditions</a>" #custom
+        tos_agreement_message_html: "By registering you accept <a href='/assets/get_a_lead_gu_en.pdf' target='_blank'>terms & conditions</a>" #custom
         title_linkedin_ok: "Confirm registration" #custom
         title_registered: "Edit profile" #custom
         prospect_areas_placeholder: 'Example: Berlin, Brandenburg, PLZ: 10-19'
