@@ -17,7 +17,7 @@ class User < ApplicationRecord
 
   STATES = %w(linkedin_ok registered)
 
-  validates :email, :language, :zones, :subcategories, :taggings, presence: true, on: :update
+  validates :email, :language, :zones, :taggings, presence: true, on: :update
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
   validates :state, inclusion: { in: STATES,
    message: "%{value} is not a valid state" }
@@ -27,11 +27,9 @@ class User < ApplicationRecord
   delegate :name, to: :industry, prefix: true, allow_nil: true
 
   after_update :subscribe_to_mailjet?
-  # after_save :extract_db_to_drive # NB: temp disable du to memory bloat
   after_create :insert_in_spreadsheet, if: :extractable?
   after_update :upsert_in_spreadsheet, if: :extractable?
   before_destroy :destroy_in_spreadsheet
-  # attr_accessor :industry_subcategory_ids, :prospect_area_ids
 
 
   def extractable?
@@ -126,7 +124,7 @@ class User < ApplicationRecord
   end
 
   def mark_as_registered?
-    if state != 'registered' && email.present? && language.present? && subcategories.present? && zones.present? && taggings.present?
+    if state != 'registered' && email.present? && language.present? && zones.present? && taggings.present? # && subcategories.present?
       assign_attributes(state: 'registered')
     end
   end

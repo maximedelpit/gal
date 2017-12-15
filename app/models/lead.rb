@@ -29,21 +29,8 @@ class Lead < ApplicationRecord
 
   # Contact step validation
   validates :last_name, :job_title, :mail, presence: true, if: -> {validation_for?(:contact) || active?}
-
-
-  # validates :last_name, :job_title, :mail, :company, :company_size, :location,
-  #   :description, :job_title, :mail, presence: true if: :active?
-  # validates :description, length: {
-  #   in: 10..300,
-  #   too_short: "%{count} characters is the minimum allowed",
-  #   too_long: "%{count} characters is the maximum allowed"
-  # }, if: :active?
-  # validates :company_size, inclusion: { in: COMPANY_SIZES,
-  #    message: "%{value} is not a valid size" }, if: :active?
-
   acts_as_taggable
   # accepts_nested_attributes_for :propositions, reject_if: :all_blank, allow_destroy: true
-  # after_save :extract_db_to_drive, if: :extractable? # NB: temp disable du to memory bloat
   after_update :upsert_in_spreadsheet, if: :extractable?
   before_destroy :destroy_in_spreadsheet
 
