@@ -17,10 +17,10 @@ class User < ApplicationRecord
 
   STATES = %w(linkedin_ok registered)
 
-  validates :email, :language, :zones, :taggings, presence: true, on: :update
+  validates :email, :language, presence: true, on: :update
+  # validates :zones, :taggings, presence: true, on: :update
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
-  validates :state, inclusion: { in: STATES,
-   message: "%{value} is not a valid state" }
+  validates :state, inclusion: { in: STATES, message: "%{value} is not a valid state" }
 
   alias_method :subies, :subcategories
   alias_method :industry_subies, :industry_subcategories
@@ -124,7 +124,7 @@ class User < ApplicationRecord
   end
 
   def mark_as_registered?
-    if state != 'registered' && email.present? && language.present? && zones.present? && taggings.present? # && subcategories.present?
+    if accepts_tos && state != 'registered' && email.present? && language.present? # && zones.present? && taggings.present? # && subcategories.present?
       assign_attributes(state: 'registered')
     end
   end

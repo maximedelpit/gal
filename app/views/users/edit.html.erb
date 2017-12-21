@@ -1,4 +1,4 @@
-s<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+s<div class="col-xs-12 col-sm-4 col-sm-offset-4">
   <div class="card-wrapper">
     <h3 class='card-title'><%= t("devise.registrations.edit.title_#{@user.state}") %></h3>
 
@@ -34,13 +34,14 @@ s<div class="col-xs-12 col-sm-6 col-sm-offset-3">
         </div>
       <% end %>
 
-      <h4 class='card-sub-titles'><%= User.human_attribute_name('prospect_area_ids').capitalize %></h4>
+      <!-- #### NB: TO SOON vs User ACQ STRAT. If uncomment =>  User#mark_as_registered? & reset mandatory fields if needed ####  -->
+      <!-- <h4 class='card-sub-titles'><%#= User.human_attribute_name('prospect_area_ids').capitalize %></h4>
       <div class="form-inputs row">
-        <%= f.error :zones, class: 'col-xs-12' %>
-        <%= f.input :prospect_area_ids, required: true, collection: prospect_areas_collection,
+        <%#= f.error :zones, class: 'col-xs-12' %>
+        <%#= f.input :prospect_area_ids, required: true, collection: prospect_areas_collection,
             label_method: :name, value_method: :id, label: false, hint: t('simple_form.autocomplete.hint'),
             wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true, "data-placeholder" => t('devise.registrations.edit.prospect_areas_placeholder')} %>
-      </div>
+      </div> -->
       <!-- <h4 class='card-sub-titles'><%#= User.human_attribute_name('industry_subcategory_ids').capitalize %></h4>
       <div class="form-inputs row">
         <%#= f.error :subcategories, class: 'col-xs-12' %>
@@ -48,13 +49,13 @@ s<div class="col-xs-12 col-sm-6 col-sm-offset-3">
             label_method: :name, value_method: :id, label: false, hint: t('simple_form.autocomplete.hint'),
             wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true, "data-placeholder" => t('devise.registrations.edit.subcategories_placeholder')} %>
       </div> -->
-      <h4 class='card-sub-titles'><%= User.human_attribute_name('tag_ids').capitalize %></h4>
+      <!-- <h4 class='card-sub-titles'><%#= User.human_attribute_name('tag_ids').capitalize %></h4>
       <div class="form-inputs row">
-        <%= f.error :taggings, class: 'col-xs-12' %>
-        <%= f.input :tag_ids, collection: user_tags_collection, label_method: :name, value_method: :id,
+        <%#= f.error :taggings, class: 'col-xs-12' %>
+        <%#= f.input :tag_ids, collection: user_tags_collection, label_method: :name, value_method: :id,
         label: false, hint: t('simple_form.autocomplete.hint'),
         wrapper_html: {class: 'col-xs-12'}, input_html: {class: 'select2', multiple: true, "data-placeholder" => t('devise.registrations.edit.tags_placeholder')} %>
-      </div>
+      </div> -->
 
 
       <div class="form-inputs row">
