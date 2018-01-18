@@ -1,5 +1,5 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "https://getalead.io/" }
+  config.action_mailer.default_url_options = { host: "https://www.app.getalead.io/" }
   config.action_mailer.delivery_method = :mailjet
 
   # Settings specified here will take precedence over those in config/application.rb.

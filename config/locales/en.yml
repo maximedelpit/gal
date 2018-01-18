@@ -92,7 +92,7 @@ en:
       contact_title: "Contact within targeted company"
       description_title: 'Lead description'
       new_title: "Create a new lead"
-      placeholder_description: "Give us details!\n\nExample: Looking for a CRM tool to replace existing internal solutions (MS Excel) for sales team\n(~20 people)"
+      placeholder_description: "Give us details!\n\nExample: Agribusiness company is looking for a CRM tool to replace existing internal solutions (MS Excel) for sales team\n(~20 people)"
       placeholder_tags: 'B2B / Sales Tool / Sales Analytics / Prospection'
       price:
         zero: "Free (%{currency}%{count})"
