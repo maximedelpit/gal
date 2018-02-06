@@ -34,6 +34,7 @@ class User < ApplicationRecord
 
   def extractable?
     # after create.... / edit profile
+    return true if ENV['TEST']
     if changed? == false || changed == ["sign_in_count", "current_sign_in_at", "updated_at"] || changed == ["sign_in_count", "current_sign_in_at", "last_sign_in_at", "updated_at"] || changed == ["token", "token_expiry", "updated_at"] || changed == ["sign_in_count", "current_sign_in_at", "last_sign_in_at", "current_sign_in_ip", "last_sign_in_ip", "updated_at"]
       return false
     else

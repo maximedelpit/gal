@@ -530,3 +530,7 @@ admin = User.new(admin: true, first_name: "Admin", last_name: "System", email: "
 admin.save(validate: false)
 
 puts 'Admin created'
+
+# 2.times do |i|
+#   User.create!(admin: true, first_name: "test_i#{i}", last_name: "TEST", email: "test-#{i}@gal.com", password: "123456", industry: Industry.first, state: "registered", language: "fr")
+# end
