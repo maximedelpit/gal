@@ -8,3 +8,6 @@ $('.select2').select2({
   minimumInputLength: 1,
   tokenSeparators: [","]//,
 });
+
+
+// s
