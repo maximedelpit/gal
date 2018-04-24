@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171130164352) do
+ActiveRecord::Schema.define(version: 20180420151810) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 20171130164352) do
     t.string "build_status"
     t.string "share_to"
     t.boolean "is_private"
+    t.boolean "for_my_self"
+    t.integer "offer_limit"
     t.index ["user_id"], name: "index_leads_on_user_id"
   end
 

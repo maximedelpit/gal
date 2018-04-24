@@ -1,7 +1,7 @@
 class CreateLeadStepsController < ApplicationController
   skip_before_action :reset_lead_session
   include Wicked::Wizard
-  steps :description, :company, :contact, :checkout
+  steps :context, :description, :company, :contact, :checkout
   before_action :set_lead
 
   def show
@@ -42,7 +42,7 @@ class CreateLeadStepsController < ApplicationController
   def lead_params
     params.require(:lead).permit(:first_name, :last_name, :company, :company_size, :within,
       :location, :job_title, :phone, :mail, :linkedin_url, :description, :price,
-      :is_private, :share_to, tag_list: [])
+      :is_private, :share_to, :for_my_self, tag_list: [])
   end
 
   def set_lead
