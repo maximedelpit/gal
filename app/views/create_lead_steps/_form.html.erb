@@ -7,7 +7,7 @@
         <%= yield f %>
       <div class="col-xs-12 text-right">
         <!-- <p><%#= t('.price', default: "Price") %> <%#= @lead.price %> €</p> -->
-        <% if @step != :description %>
+        <% if @step != self.assigns['wizard_steps'][0] %>
           <%= link_to t('.back'), previous_wizard_path, class: 'btn btn-round' %>
         <% end %>
         <%= f.submit t('.submit'), class: "btn btn-success", id:'btn-lead-create' %>

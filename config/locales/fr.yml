@@ -37,6 +37,7 @@ fr:
         share_to: 'Email du destinataire'
         tag_list: "Mots clés"
         tag_ids: "Mots clés"
+        offer_limit: 'Nombre de mises en relation maximum souhaitées'
       proposition:
         mail: 'Email destinataire'
         state: 'Statut'
@@ -90,7 +91,10 @@ fr:
       checkout_title: 'Partagez votre lead'
       company_title: 'Entreprise ciblée'
       contact_title: "Contact dans l'entreprise"
+      context_title: 'Pour qui publiez-vous ce lead ?'
       description_title: 'Description de la mission'
+      for_my_self_text_true: 'Ma société'
+      for_my_self_text_false: 'Pour un tiers'
       new_title: "Créer un nouveau Lead"
       placeholder_description: "Ne soyez pas avare en détails !\n\nExemple: Entreprise du secteur agroalimentaire recherche outil CRM pour remplacer solution interne (Excel) non satisfaisante pour les commerciaux\n(~20 personnes)"
       placeholder_tags: 'B2B / Outil Commercial / Suivi des ventes / Prospection'

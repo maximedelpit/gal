@@ -1,9 +1,16 @@
 
 <%= render layout: 'form' do |f| %>
-  <h4 class='card-sub-titles col-xs-12'><%= t('.lead_context') %></h4>
-  <%= f.collection_radio_buttons :for_my_self,
-      [[true, content_tag(:i, t('.for_my_self_true') ,class: 'fa fa-user')],
-      [false, content_tag(:i, t('.for_my_self_false') ,class: 'fa fa-handshake-o')]],
-      :first, :last, wrapper_html: {class: 'col-xs-12 col-sm-12'}, input_html: {}
-  %>
+  <h4 class='card-sub-titles col-xs-12'><%= t('.context_title') %></h4>
+  <br><br><br>
+
+  <div class="form-group col-xs-12">
+    <%= f.collection_radio_buttons :for_my_self,
+          [
+            [true, content_tag(:i, t('.for_my_self_text_true'), class: 'btn btn-round fa fa-user')],
+            [false, content_tag(:i, t('.for_my_self_text_false'), class: 'btn btn-round fa fa-handshake-o')]
+        ],
+          :first, :last, {item_wrapper_class: 'icon-selector col-xs-6 text-center'} do |b| %>
+      <%= b.radio_button + b.text %>
+    <% end %>
+  </div><br><br><br>
 <% end %>

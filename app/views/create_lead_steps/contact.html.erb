@@ -6,6 +6,7 @@
   <%= f.input :mail, wrapper_html: {class: 'col-xs-12 col-sm-6'}, input_html: {} %>
   <%= f.input :phone, wrapper_html: {class: 'col-xs-12 col-sm-6'}, input_html: {} %>
   <%= f.input :job_title, wrapper_html: {class: 'col-xs-12 col-sm-12'}, input_html: {} %>
+  <%= f.input :offer_limit, wrapper_html: {class: 'col-xs-12 col-sm-12'}, input_html: {min: 1, value: @lead.offer_limit || 1} %>
   <br>
   <%= f.input :is_private, wrapper_html: {class: 'col-xs-12 col-sm-12'}, input_html: {} %>
 <% end %>

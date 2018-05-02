@@ -10,6 +10,7 @@ class Lead < ApplicationRecord
 
   # Global
   validates :user_id, presence: true
+  validates :for_my_self, inclusion: { in: [true, false] }
   validates :state, inclusion: { in: STATES, message: "%{value} is not a valid state" }, if: :active?
 
   # Description step validation

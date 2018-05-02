@@ -37,6 +37,7 @@ en:
         share_to: "Recipient's email"
         tag_list: "Keywords"
         tag_ids: "Keywords"
+        offer_limit: 'Max number of supplier contacts wished'
       proposition:
         mail: 'Recepient email'
         state: 'Status'
@@ -90,7 +91,10 @@ en:
       checkout_title: 'Share your lead'
       company_title: 'Targeted company'
       contact_title: "Contact within targeted company"
+      context_title: 'Who do you publish this lead for ?'
       description_title: 'Lead description'
+      for_my_self_text_true: 'My company'
+      for_my_self_text_false: 'For a third party'
       new_title: "Create a new lead"
       placeholder_description: "Give us details!\n\nExample: Logistics services company is looking for a CRM tool to replace existing internal solutions (MS Excel) for sales team\n(~20 people)"
       placeholder_tags: 'B2B / Sales Tool / Sales Analytics / Prospection'

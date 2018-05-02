@@ -1,11 +1,46 @@
-label > input{ /* HIDE RADIO */
-  visibility: hidden; /* Makes input not-clickable */
-  position: absolute; /* Remove input from document flow */
+// label > input{ /* HIDE RADIO */
+//   visibility: hidden; /* Makes input not-clickable */
+//   position: absolute; /* Remove input from document flow */
+// }
+// label > input + img, label > input + .fa{ /* IMAGE STYLES */
+//   cursor:pointer;
+//   border:2px solid transparent;
+// }
+// label > input:checked + img, label > input:checked + .fa{ /* (RADIO CHECKED) IMAGE STYLES */
+//   border:2px solid #f00;
+// }
+
+
+  .icon-selector {
+    label {
+      margin-bottom: 0;
+      width: 100%;
+    }
+    input[type=checkbox], input[type=radio] {
+      display:none;
+    }
+    input[type=checkbox] + .fa, input[type=radio] + .fa {
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+      text-align: center;
+      display: block;
+      color: $gray;
+      opacity: 0.7;
+      border: 1px solid;
+      // padding: 12px;
+      &:before {
+        margin-right: 6px;
+        font-size: 18px;
+      }
+    }
+    input[type=checkbox]:checked + .fa, input[type=radio]:checked + .fa,
+    input[type=checkbox]:hover + .fa, input[type=radio]:hover + .fa {
+      color: $blue;
+      border: 1px solid;
+      border-color: $blue;
+      opacity: 1;
+    }
 }
-label > input + img, label > input + .fa{ /* IMAGE STYLES */
-  cursor:pointer;
-  border:2px solid transparent;
-}
-label > input:checked + img, label > input:checked + .fa{ /* (RADIO CHECKED) IMAGE STYLES */
-  border:2px solid #f00;
-}
+
+
