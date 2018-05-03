@@ -71,6 +71,9 @@ en:
         industry_subcategory_ids: "My business activities"
         prospect_area_ids: "My geographical target area(s)"
         tag_ids: "Send me leads related to..."
+        publish_for_myself: 'Publish leads for myself'
+        publish_for_others: 'Publish leads for my clients or prospects'
+        get_clients: 'Find my next client'
   lead:
     STATES:
       created: "Created"

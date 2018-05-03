@@ -71,6 +71,9 @@ fr:
         industry_subcategory_ids: "Mes secteurs d'activité"
         prospect_area_ids: "Mes zones géographiques de prospection"
         tag_ids: "Je veux recevoir des leads de type..."
+        publish_for_myself: 'Publier des besoins qui me concernent'
+        publish_for_others: 'Publier des leads qui concernant mes clients ou prospects'
+        get_clients: 'Trouver mon prochain client'
   lead:
     STATES:
       created: "Créé"

@@ -30,6 +30,8 @@ class Lead < ApplicationRecord
 
   # Contact step validation
   validates :last_name, :job_title, :mail, presence: true, if: -> {validation_for?(:contact) || active?}
+  validates :phone, presence: true, allow_blank: false, if: -> {validation_for?(:contact) || active?}
+
   acts_as_taggable
   # accepts_nested_attributes_for :propositions, reject_if: :all_blank, allow_destroy: true
   after_update :upsert_in_spreadsheet, if: :extractable?

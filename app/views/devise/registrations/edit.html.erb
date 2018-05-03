@@ -34,6 +34,14 @@
         </div>
       <% end %>
 
+      <h4 class='card-sub-titles'><%= t('devise.registrations.edit.looking_for') %></h4>
+      <div class="form-inputs flex-row col-xs-12">
+
+        <%= f.input :publish_for_myself, as: :boolean, wrapper_html: {class: 'icon-selector'}, label: content_tag(:i, content_tag(:div, User.human_attribute_name('publish_for_myself')), class: 'btn btn-round fa fa-user') %>
+        <%= f.input :publish_for_others, as: :boolean, wrapper_html: {class: 'icon-selector'}, label: content_tag(:i, content_tag(:div, User.human_attribute_name('publish_for_others')), class: 'btn btn-round fa fa-share-alt') %>
+        <%= f.input :get_clients, as: :boolean, wrapper_html: {class: 'icon-selector'}, label: content_tag(:i, content_tag(:div, User.human_attribute_name('get_clients')), class: 'btn btn-round fa fa-handshake-o') %>
+      </div>
+
       <h4 class='card-sub-titles'><%= User.human_attribute_name('prospect_area_ids').capitalize %></h4>
       <div class="form-inputs row">
         <%= f.error :zones, class: 'col-xs-12' %>
