@@ -27,10 +27,10 @@ fr:
         phone: 'Téléphone'
         mail: 'Email'
         linkedin_url: 'Lien profil Linkedin'
-        is_private: "Voulez-vous partager le lead avec quelqu'un?"
+        is_private: "Voulez-vous partager le lead avec quelqu’un que vous connaissez ?"
         state: 'Statut'
         deadline: 'Echéance'
-        within: 'Mise en oeuvre dans'
+        within: "Décision d’ici"
         description: 'Description'
         user: 'Vendeur'
         price: 'Prix'
@@ -92,13 +92,13 @@ fr:
     form:
       back: 'Retour'
       checkout_title: 'Partagez votre lead'
-      company_title: 'Entreprise ciblée'
-      contact_title: "Contact dans l'entreprise"
+      company_title: 'Entreprise concernée'
+      contact_title: "Contact décideur sur ce besoin"
       context_title: 'Pour qui publiez-vous ce lead ?'
       description_title: 'Description de la mission'
       for_my_self_text_true: 'Ma société'
       for_my_self_text_false: 'Pour un tiers'
-      new_title: "Créer un nouveau Lead"
+      new_title: "Déclarer un besoin"
       placeholder_description: "Ne soyez pas avare en détails !\n\nExemple: Entreprise du secteur agroalimentaire recherche outil CRM pour remplacer solution interne (Excel) non satisfaisante pour les commerciaux\n(~20 personnes)"
       placeholder_tags: 'B2B / Outil Commercial / Suivi des ventes / Prospection'
       price:
@@ -164,9 +164,8 @@ fr:
       public_message: 'Votre lead a bien été publié!'
   pages:
     start:
-      buy_lead: 'Acheter un lead'
+      buy_lead: 'Trouver un client'
       buyer_alert_title: 'Coming soon!'
       buyer_alert_text: "Pendant la phase de Beta, il n'est pas possible d'acheter des leads via la plateforme. Notre équipe vous contactera automatiquement par mail ou via linkedin dès que nous recevrons un lead suceptible de vous intéresser !"
-      create_lead: 'Vendre un lead'
-      content_html: "<p>Certaines informations que vous récoltez au quotidien ne vous intéressent pas mais peuvent avoir de la valeur pour d'autres. Partagez les et recevez-en !</p><br>
-        <p>Plus vous générez de leads qualifiés, plus vous en recevez.</p>"
+      create_lead: 'Déclarer un besoin'
+      content_html: "<Test"

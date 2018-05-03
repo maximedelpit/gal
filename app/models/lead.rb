@@ -16,7 +16,7 @@ class Lead < ApplicationRecord
   # Description step validation
   validates :description, presence: true, if: -> {validation_for?(:description) || active?}
   validates :description, length: {
-    in: 10..10000,
+    in: 10..2000,
     too_short: "%{count} characters is the minimum allowed",
     too_long: "%{count} characters is the maximum allowed"
   }, if: -> {validation_for?(:description) || active?}

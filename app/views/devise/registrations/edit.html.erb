@@ -24,8 +24,8 @@
       <% if @user.state == 'registered' %>
         <h4 class='card-sub-titles'><%= t('devise.registrations.edit.profile_basics') %></h4>
         <div class="form-inputs row">
-          <%= f.input :first_name, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
-          <%= f.input :last_name, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
+          <%= f.input :first_name, wrapper_html: {class: 'col-xs-12 col-md-6'}, label_html: { class: "user_first_name", rel: "popover", data: {toggle: 'popover', trigger: 'hover', content: 'Some popover content', placement: 'right', container: 'body' }} %>
+          <%= f.input :last_name, wrapper_html: {class: 'col-xs-12 col-md-6'}, label_html: { class: "user_first_name", rel: "popover", data: {toggle: 'popover', trigger: 'hover', content: 'Some popover content', placement: 'right', container: 'body' }}  %>
           <%= f.input :location, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
           <%= f.input :job_title, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
           <%= f.input :phone_number, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
