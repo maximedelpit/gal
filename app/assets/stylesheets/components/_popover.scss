@@ -1,0 +1,8 @@
+.popover {
+  background: $dark-blue-gray;
+  color: $lighter-gray;
+  font-size: 12px;
+  .arrow::after {
+    color: $dark-blue-gray;
+  }
+}
