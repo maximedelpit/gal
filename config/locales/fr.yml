@@ -21,7 +21,7 @@ fr:
         first_name: 'Prénom'
         last_name: 'Nom'
         company: 'Société'
-        company_size: 'Taille Société'
+        company_size: "Nombre d'emloyés"
         location: "Localisation"
         job_title: 'Fonction'
         phone: 'Téléphone'
@@ -99,8 +99,12 @@ fr:
       for_my_self_text_true: 'Ma société'
       for_my_self_text_false: 'Pour un tiers'
       new_title: "Déclarer un besoin"
-      placeholder_description: "Ne soyez pas avare en détails !\n\nExemple: Entreprise du secteur agroalimentaire recherche outil CRM pour remplacer solution interne (Excel) non satisfaisante pour les commerciaux\n(~20 personnes)"
+      placeholder_description: "Exemple: Entreprise du secteur agroalimentaire recherche outil CRM pour remplacer solution interne (Excel) non satisfaisante pour les commerciaux\n(~20 personnes)"
+      popover_description: "Détaillez ici le besoin que vous avez identifié, sans dévoiler d’informations confidentielles. Soyez précis, c’est la 1ère garantie de trouver le bon prestataire !"
+      popover_within: "Il s’agit du délai avant décision, qui détermine aussi la date d’expiration de ce besoin"
       placeholder_tags: 'B2B / Outil Commercial / Suivi des ventes / Prospection'
+      popover_tags: "Les mots-clé permettent de catégoriser votre besoin et de faciliter l’identification du ou des prestataires pertinents."
+      popover_is_private: "Cochez cette case si vous souhaitez envoyer ce besoin à une connaissance en particulier, et rien qu’à lui. Vous pourrez indiquer son adresse mail à la prochaine étape."
       price:
         zero: "Gratuit (%{count} %{currency})"
         one: "%{count} %{currency}"
@@ -168,4 +172,5 @@ fr:
       buyer_alert_title: 'Coming soon!'
       buyer_alert_text: "Pendant la phase de Beta, il n'est pas possible d'acheter des leads via la plateforme. Notre équipe vous contactera automatiquement par mail ou via linkedin dès que nous recevrons un lead suceptible de vous intéresser !"
       create_lead: 'Déclarer un besoin'
-      content_html: "<Test"
+      content_html: "<p><a href='https://www.getalead.io/'>Getalead.io</a> est un moteur de recherche de solutions et prestataires B2B.</p>
+                    <p>Publiez vos propres besoins ou ceux de quelqu'un d'autre. Notre algorithme permet ensuite de communiquer ces opportunités aux prestataires les plus pertinents, et de réconcilier ainsi l'efficacité du commercial et la satisfaction du décideur.</p>"

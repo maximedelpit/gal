@@ -31,8 +31,11 @@
       white-space: normal;
       // padding: 12px;
       &:before {
-        margin-right: 6px;
+        padding: 4px 0px;
         font-size: 18px;
+      }
+      * {
+        padding: 4px 0;
       }
     }
     input[type=checkbox]:checked + .fa, input[type=radio]:checked + .fa,

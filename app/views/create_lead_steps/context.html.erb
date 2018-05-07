@@ -6,8 +6,8 @@
   <div class="form-group flex-row">
     <%= f.collection_radio_buttons :for_my_self,
           [
-            [true, content_tag(:i, t('.for_my_self_text_true'), class: 'btn btn-round fa fa-user')],
-            [false, content_tag(:i, t('.for_my_self_text_false'), class: 'btn btn-round fa fa-share-alt')]
+            [true, content_tag(:i, content_tag(:div, t('.for_my_self_text_true')), class: 'btn btn-round fa fa-user')],
+            [false, content_tag(:i, content_tag(:div, t('.for_my_self_text_false')), class: 'btn btn-round fa fa-share-alt')]
         ],
           :first, :last, {item_wrapper_class: 'icon-selector col-xs-6 text-center'} do |b| %>
       <%= b.radio_button + b.text %>

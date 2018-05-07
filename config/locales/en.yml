@@ -21,7 +21,7 @@ en:
         first_name: 'First Name'
         last_name: 'Name'
         company: 'Company'
-        company_size: 'Company Size'
+        company_size: 'Staff count'
         location: "Location"
         job_title: 'Job title'
         phone: 'Mobile phone'
@@ -99,8 +99,12 @@ en:
       for_my_self_text_true: 'My company'
       for_my_self_text_false: 'For a third party'
       new_title: "Create a new lead"
-      placeholder_description: "Give us details!\n\nExample: Logistics services company is looking for a CRM tool to replace existing internal solutions (MS Excel) for sales team\n(~20 people)"
+      placeholder_description: "Example: Logistics services company is looking for a CRM tool to replace existing internal solutions (MS Excel) for sales team\n(~20 people)"
+      popover_description: "Détaillez ici le besoin que vous avez identifié, sans dévoiler d’informations confidentielles. Soyez précis, c’est la 1ère garantie de trouver le bon prestataire !"
+      popover_within: "Il s’agit du délai avant décision, qui détermine aussi la date d’expiration de ce besoin"
       placeholder_tags: 'B2B / Sales Tool / Sales Analytics / Prospection'
+      popover_tags: "Les mots-clé permettent de catégoriser votre besoin et de faciliter l’identification du ou des prestataires pertinents."
+      popover_is_private: "Cochez cette case si vous souhaitez envoyer ce besoin à une connaissance en particulier, et rien qu’à lui. Vous pourrez indiquer son adresse mail à la prochaine étape."
       price:
         zero: "Free (%{currency}%{count})"
         one: "%{currency}%{count}"

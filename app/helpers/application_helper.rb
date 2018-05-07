@@ -76,4 +76,9 @@ module ApplicationHelper
     return data
   end
 
+  # def label_text_with_icon(f, class)
+  #   binding.pry
+  #   # content_for
+  # end
+
 end

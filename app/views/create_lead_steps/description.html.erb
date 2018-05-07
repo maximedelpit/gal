@@ -1,10 +1,37 @@
 <%= render layout: 'form' do |f| %>
   <!-- Client & Lead description-->
   <h4 class='card-sub-titles col-xs-12'><%= t('.description_title', default: 'Description') %></h4>
-  <%#= f.input :company, wrapper_html: {class: 'col-xs-8'}, input_html: {} %>
-  <%#= f.input :within, collection: t(Lead::WITHIN, scope: 'lead.WITHIN').zip(Lead::WITHIN),  wrapper_html: {class: 'col-xs-4'}, input_html: {} %>
-  <%= f.input :description, placeholder: t('.placeholder_description'), wrapper_html: {class: 'col-xs-12'}, input_html: {rows: 6} %>
-  <%= f.input :within, collection: t(Lead::WITHIN, scope: 'lead.WITHIN').zip(Lead::WITHIN),  wrapper_html: {class: 'col-xs-12'}, input_html: {} %>
-  <%= f.input :tag_list, collection: user_tags_collection.pluck(:name), include_blank: t('.tag_list', default: "Lead Keywords"), wrapper_html: { multiple: true, class: 'col-xs-12' }, input_html: { value: params[:lead]&.send(:[], :tag_list), class: 'select2', multiple: true, "data-placeholder" => t('.placeholder_tags') } %>
-  <%= f.error :taggings, class: 'col-xs-12' %>
+
+  <!-- Description -->
+  <%= f.input :description, wrapper_html: {class: 'col-xs-12'}, label: false, error: false do |ff| %>
+    <%= f.label :description, rel: "popover", data: {toggle: 'popover', trigger: 'hover', content: t('.popover_description'), container: 'body' }, class: 'control-label with-icon' do |l|%>
+        <span class='label-text'><%= Lead.human_attribute_name('description') %></span>
+        <i class="fa fa-question-circle"></i>
+    <% end %>
+    <%= f.input :description, label: false, placeholder: t('.placeholder_description'), input_html: {rows: 4} %>
+  <% end %>
+
+  <!-- Within -->
+  <%= f.input :within, wrapper_html: {class: 'col-xs-12'}, label: false, error: false do |ff|%>
+    <%= f.label :within, rel: "popover", data: {toggle: 'popover', trigger: 'hover', content: t('.popover_within'), container: 'body'}, class: 'control-label with-icon' do |l|%>
+        <span class='label-text'><%= Lead.human_attribute_name('within') %></span>
+        <i class="fa fa-question-circle"></i>
+    <% end %>
+    <%= f.input :within, label: false, collection: t(Lead::WITHIN, scope: 'lead.WITHIN').zip(Lead::WITHIN) %>
+  <% end %>
+
+
+  <!-- Tag List -->
+  <%= f.input :tag_list, label: false, wrapper_html: { multiple: true, class: 'col-xs-12' }, error: false do |ff| %>
+    <%= f.error :taggings, class: 'col-xs-12' %>
+    <%= f.label :tag_list, rel: "popover", data: {toggle: 'popover', trigger: 'hover', content: t('.popover_tags'), container: 'body'}, class: 'control-label with-icon' do |l|%>
+        <span class='label-text'><%= Lead.human_attribute_name('tag_list') %></span>
+        <i class="fa fa-question-circle"></i>
+    <% end %>
+    <%= f.input :tag_list, label: false, collection: user_tags_collection.pluck(:name), include_blank: t('.tag_list', default: "Lead Keywords"), input_html: { value: params[:lead]&.send(:[], :tag_list), class: 'select2', multiple: true, "data-placeholder" => t('.placeholder_tags') } %>
+  <% end %>
 <% end %>
+
+
+
+
