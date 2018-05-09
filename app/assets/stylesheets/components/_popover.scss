@@ -2,7 +2,8 @@
   background: $dark-blue-gray;
   color: $lighter-gray;
   font-size: 12px;
-  .arrow::after {
-    color: $dark-blue-gray;
-  }
+}
+
+.popover.right > .arrow:after{
+    border-right-color: $dark-blue-gray;
 }

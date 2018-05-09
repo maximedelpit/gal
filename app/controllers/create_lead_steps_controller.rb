@@ -48,7 +48,7 @@ class CreateLeadStepsController < ApplicationController
   end
 
   def set_lead
-    return @lead = session[:lead_id] ? Lead.find(session[:lead_id]) : Lead.new(price: 30, user: current_user)
+    return @lead = session[:lead_id] ? Lead.find(session[:lead_id]) : Lead.new(price: 30, user: current_user, for_my_self: true)
   end
 
   def fill_for_my_self_infos
