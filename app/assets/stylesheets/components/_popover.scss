@@ -4,6 +4,16 @@
   font-size: 12px;
 }
 
-.popover.right > .arrow:after{
-    border-right-color: $dark-blue-gray;
+.popover.right > .arrow:after {
+  border-right-color: $dark-blue-gray !important;
+}
+
+.popover.left > .arrow:after {
+  border-left-color: $dark-blue-gray !important;
+}
+.popover.top > .arrow:after {
+  border-top-color: $dark-blue-gray !important;
+}
+.popover.bottom > .arrow:after {
+  border-bottom-color: $dark-blue-gray !important;
 }
