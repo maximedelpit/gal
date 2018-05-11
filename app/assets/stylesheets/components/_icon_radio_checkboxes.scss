@@ -11,43 +11,85 @@
 // }
 
 
-  .icon-selector {
-    label {
-      margin-bottom: 0;
-      // width: 100%;
-    }
-    input[type=checkbox], input[type=radio] {
-      display:none;
-    }
-    input[type=checkbox] + .fa, input[type=radio] + .fa {
-      // display: flex;
-      // justify-content: center;
-      // align-items: center;
-      text-align: center;
+.icon-selector {
+  flex-basis: 0;
+  flex: 1 1 0;
+  .checkbox {
+    height: 100%;
+    margin: 0;
+  }
+  label {
+    margin-bottom: 0;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+  input[type=checkbox], input[type=radio] {
+    display:none;
+  }
+  input[type=checkbox] + .fa, input[type=radio] + .fa {
+    text-align: center;
+    display: block;
+    color: $gray;
+    opacity: 0.7;
+    white-space: normal;
+    padding: 6px;
+    &:before {
+      padding: 10px 0px;
+      font-size: 18px;
+      border: 1px solid;
       display: block;
-      color: $gray;
-      opacity: 0.7;
-      border: 1px solid;
-      white-space: normal;
-      // padding: 12px;
-      &:before {
-        padding: 4px 0px;
-        font-size: 18px;
-      }
-      * {
-        padding: 4px 0;
-      }
+      width: 40px;
+      height: 40px;
+      align-items: center;
+      margin: auto;
+      border-radius: 50%;
     }
-    input[type=checkbox]:checked + .fa, input[type=radio]:checked + .fa,
-    input[type=checkbox]:hover + .fa, input[type=radio]:hover + .fa {
-      color: $blue;
-      border: 1px solid;
+    * {
+      padding: 10px 0;
+    }
+  }
+  input[type=checkbox]:checked + .fa, input[type=radio]:checked + .fa {
+    color: $blue;
+    opacity: 1;
+    &:before {
       border-color: $blue;
-      opacity: 1;
+      background: $blue;
+      color: white;
     }
-    .radio label, .checkbox label {
-      padding: 0 10px;
+  }
+  .radio label, .checkbox label {
+    padding: 0 5px;
+  }
+  .fa {
+    height: 100%;
+    * {
+      font-family: $body-font;
     }
+  }
 }
 
+.icon-selector:hover {
+  input[type=checkbox] + .fa, input[type=radio] + .fa {
+    &:before {
+      background: $gray;
+      color: white;
+    }
+  }
 
+  input[type=checkbox]:checked + .fa, input[type=radio]:checked + .fa {
+    color: $blue;
+    opacity: 1;
+    &:before {
+      border-color: $blue;
+      background: $blue;
+      color: white;
+    }
+  }
+}
+
+@media (max-width: $screen-xs-max) {
+  #service-usage {
+    flex-direction: column;
+  }
+}

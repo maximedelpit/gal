@@ -83,6 +83,8 @@ en:
       proposed: 'Proposed'
       sold: 'Sold'
     WITHIN:
+      asap: "ASAP"
+      15_days: "15 days"
       1_month: "1 month"
       3_months: "3 months"
       6_months: "6 months"
@@ -105,6 +107,7 @@ en:
       placeholder_tags: 'B2B / Sales Tool / Sales Analytics / Prospection'
       popover_tags: "Les mots-clé permettent de catégoriser votre besoin et de faciliter l’identification du ou des prestataires pertinents."
       popover_is_private: "Cochez cette case si vous souhaitez envoyer ce besoin à une connaissance en particulier, et rien qu’à lui. Vous pourrez indiquer son adresse mail à la prochaine étape."
+      is_private_with_icon_html: "<span>Voulez-vous partager le lead avec quelqu’un que vous connaissez ?</span> <i class='fa fa-question-circle'></i>"
       price:
         zero: "Free (%{currency}%{count})"
         one: "%{currency}%{count}"

@@ -6,7 +6,10 @@ class Lead < ApplicationRecord
 
   COMPANY_SIZES = %w(0-10 11-25 26-100 101-500 500+)
   WITHIN = ['1_month', '3_months', '6_months', '12_months', 'over_12_months']
+  WITHIN = ['asap', '15_days', '1_month', '3_months', '6_months', '12_months', 'over_12_months']
+
   STATES = %w(created confirmed to_requalify rejected proposed sold)
+  LIMITS = [["Tous", nil], [1,1], [2,2], [3, 3]]
 
   # Global
   validates :user_id, presence: true

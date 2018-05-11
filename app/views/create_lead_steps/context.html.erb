@@ -3,14 +3,20 @@
   <h4 class='card-sub-titles col-xs-12'><%= t('.context_title') %></h4>
   <br><br>
 
-  <div class="form-group flex-row">
-    <%= f.collection_radio_buttons :for_my_self,
-          [
-            [true, content_tag(:i, content_tag(:div, t('.for_my_self_text_true')), class: 'btn btn-round fa fa-user')],
-            [false, content_tag(:i, content_tag(:div, t('.for_my_self_text_false')), class: 'btn btn-round fa fa-share-alt')]
-        ],
-          :first, :last, item_wrapper_class: 'icon-selector col-xs-6 text-center' do |b| %>
-      <%= b.radio_button + b.text %>
-    <% end %>
-  </div><br>
+  <div class="col-xs-12">
+    <div class="form-group flex-row">
+      <%= f.collection_radio_buttons :for_my_self,
+            [
+              [true, content_tag(:i, content_tag(:div, t('.for_my_self_text_true')), class: 'fa fa-user')],
+              [false, content_tag(:i, content_tag(:div, t('.for_my_self_text_false')), class: 'fa fa-share-alt')]
+          ],
+            :first, :last, item_wrapper_class: 'icon-selector' do |b| %>
+        <%= b.radio_button + b.text %>
+      <% end %>
+    </div>
+  </div>
+  <br>
 <% end %>
+
+
+<%#= f.input :publish_for_others, as: :boolean, wrapper_html: {class: 'icon-selector'}, label: content_tag(:i, content_tag(:div, User.human_attribute_name('publish_for_others')), class: 'fa fa-share-alt') %>
