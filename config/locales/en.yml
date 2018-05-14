@@ -173,7 +173,7 @@ en:
     start:
       buy_lead: 'Buy a lead'
       buyer_alert_title: 'Coming soon!'
-      buyer_alert_text: "We are still in Beta-Phase, we will contact you by email to send you the most relevant leads!"
+      buyer_alert_text_html: "<p>We are still in Beta-Phase, we will contact you by email to send you the most relevant leads!</p>"
       create_lead: 'Sell a lead'
       content_html: "<p>Some of the information that you collect on a daily basis does not interest you but may have value for others. Share it and receive some!</p><br>
         <p>The more qualified leads you generate, the more you will receive.</p>"

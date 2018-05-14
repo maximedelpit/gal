@@ -68,7 +68,7 @@ module ApplicationHelper
       imageAlt: 'Buy a lead with Get a Lead',
       animation: false,
       confirm: t('.buyer_alert_title'),
-      text: t('.buyer_alert_text')
+      text: t('.buyer_alert_text_html')
     }
     if user_signed_in?
       data.merge!({confirmButtonText: 'Connect'})

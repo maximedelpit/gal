@@ -75,7 +75,7 @@ class ApplicationController < ActionController::Base
       user_params.permit(
         :email, :password, :password_confirmation, :current_password, :first_name,
         :last_name, :language, :location, :job_title, :phone_number, :company,
-        :industry_id, :nl_subscription, :accepts_tos,
+        :industry_id, :nl_subscription, :accepts_tos, :publish_for_myself, :publish_for_others, :get_clients,
         {prospect_area_ids: [], industry_subcategory_ids: [], tag_ids: []}
       )
     end

@@ -3,7 +3,7 @@ fr:
     models:
       industry: 'Mon industrie'
       industry_subcategory: "Sous-catégorie d'industrie"
-      lead: 'Lead'
+      lead: 'besoin'
       proposition: 'Proposition'
       prospect_area: 'Zone de chalandise'
       tag: 'Mot Clé'
@@ -27,7 +27,7 @@ fr:
         phone: 'Téléphone'
         mail: 'Email'
         linkedin_url: 'Lien profil Linkedin'
-        is_private: "Voulez-vous partager le lead avec quelqu’un que vous connaissez ?"
+        is_private: "Voulez-vous partager le besoin avec quelqu’un que vous connaissez ?"
         state: 'Statut'
         deadline: 'Echéance'
         within: "Décision d’ici"
@@ -44,7 +44,7 @@ fr:
         click_to_buy: 'Click to buy'
         private: 'Privé ?'
         user: 'Acheteur'
-        lead: 'Lead'
+        lead: 'Besoin'
         price: 'Prix'
       prospect_area:
         country: 'Pays'
@@ -53,7 +53,7 @@ fr:
         city: 'Ville'
         category: 'Type'
       user:
-        email: 'Email professionnel (pour recevoir mes Leads)'
+        email: 'Email professionnel (pour recevoir mes besoins)'
         first_name: 'Prénom'
         last_name: 'Nom'
         location: 'Localisation'
@@ -70,7 +70,7 @@ fr:
         linkedin_url: 'Lien du profil Linkedin'
         industry_subcategory_ids: "Mes secteurs d'activité"
         prospect_area_ids: "Mes zones géographiques de prospection"
-        tag_ids: "Je veux recevoir des leads de type..."
+        tag_ids: "Je veux recevoir des besoins de type..."
         publish_for_myself: 'Publier mes besoins'
         publish_for_others: 'Publier pour des tiers'
         get_clients: 'Trouver des clients'
@@ -93,21 +93,21 @@ fr:
   create_lead_steps:
     form:
       back: 'Retour'
-      checkout_title: 'Partagez votre lead'
+      checkout_title: 'Partagez votre besoin'
       company_title: 'Entreprise concernée'
       contact_title: "Contact décideur sur ce besoin"
-      context_title: 'Pour qui publiez-vous ce lead ?'
+      context_title: 'Pour qui publiez-vous ce besoin ?'
       description_title: 'Description de la mission'
       for_my_self_text_true: 'Ma société'
       for_my_self_text_false: 'Pour un tiers'
-      new_title: "Déclarer un besoin"
+      new_title: "Publier un besoin"
       placeholder_description: "Exemple: Entreprise du secteur agroalimentaire recherche outil CRM pour remplacer solution interne (Excel) non satisfaisante pour les commerciaux\n(~20 personnes)"
       popover_description: "Détaillez ici le besoin que vous avez identifié, sans dévoiler d’informations confidentielles. Soyez précis, c’est la 1ère garantie de trouver le bon prestataire !"
       popover_within: "Il s’agit du délai avant décision, qui détermine aussi la date d’expiration de ce besoin"
       placeholder_tags: 'B2B / Outil Commercial / Suivi des ventes / Prospection'
       popover_tags: "Les mots-clé permettent de catégoriser votre besoin et de faciliter l’identification du ou des prestataires pertinents."
       popover_is_private: "Cochez cette case si vous souhaitez envoyer ce besoin à une connaissance en particulier, et rien qu’à lui. Vous pourrez indiquer son adresse mail à la prochaine étape."
-      is_private_with_icon_html: "<span>Voulez-vous partager le lead avec quelqu’un que vous connaissez ?</span> <i class='fa fa-question-circle'></i>"
+      is_private_with_icon_html: "<span>Voulez-vous partager le besoin avec quelqu’un que vous connaissez ?</span> <i class='fa fa-question-circle'></i>"
       price:
         zero: "Gratuit (%{count} %{currency})"
         one: "%{count} %{currency}"
@@ -115,19 +115,19 @@ fr:
       submit: "Valider"
   leads:
     form:
-      new_title: "Créer un nouveau Lead"
-      intro1: "Bonjour %{name},\n Créons un nouveau lead ensemble!"
-      intro2: "Un nouveau lead ensemble a proposer %{name}?\n Super! Allons-y"
-      intro3: "Bonjour %{name}! Je vais vous aider à créer votre lead"
+      new_title: "Créer un nouveau besoin"
+      intro1: "Bonjour %{name},\n Créons un nouveau besoin ensemble!"
+      intro2: "Un nouveau besoin ensemble a proposer %{name}?\n Super! Allons-y"
+      intro3: "Bonjour %{name}! Je vais vous aider à créer votre besoin"
       last_name1: "Quel est le nom de famille de votre contact?"
-      last_name2: "Quel est le nom de famille de la personne responsable du lead?"
-      last_name3: "Quel est le nom de famille du contact à l'origine du lead?"
+      last_name2: "Quel est le nom de famille de la personne responsable du besoin ?"
+      last_name3: "Quel est le nom de famille du contact à l'origine du besoin ?"
       first_name1: "Quel est son prénom?"
       first_name2: "Comment s'appelle la personne?"
       first_name3: "Pourriez-vous m'indiquer le prénom du contact?"
       company1: "Quelle est l'entreprise concernée?"
       company2: "La société en recherche s'appelle ?"
-      company3: "Quelle est l'entreprise ciblée par le lead?"
+      company3: "Quelle est l'entreprise ciblée par le besoin ?"
       job_title1: "Quelle est la fonction de %{first_name} %{last_name}?"
       job_title2: "Veuillez indiquer le métier de %{first_name} %{last_name}?"
       job_title3: "Connaissez-vous la profession de %{first_name} %{last_name}?"
@@ -145,11 +145,11 @@ fr:
       location1: "Où est située l'entreprise ?"
       location2: "Où se trouve {company} ?"
       location3: "Où est-elle basée ?"
-      description1: "Passons à la description du lead. Pourriez-vous nous décrire l'objet de la mission ?"
-      description2: "Passons à la descritpion du lead! En quoi consiste-t-il?"
+      description1: "Passons à la description du besoin. Pourriez-vous nous décrire l'objet de la mission ?"
+      description2: "Passons à la descritpion du besoin ! En quoi consiste-t-il?"
       description3: "Veuillez décrire la mission"
-      tag_list1:  "Quels mots clés sont associés au lead?"
-      tag_list2:  "Afin de mieux cibler l'audience intéressée, pourriez-vous sélectionner les mots clés relatifs au lead ?"
+      tag_list1:  "Quels mots clés sont associés au besoin ?"
+      tag_list2:  "Afin de mieux cibler l'audience intéressée, pourriez-vous sélectionner les mots clés relatifs au besoin ?"
       tag_list3:  "Quelles mots clés associeriez vous à cette description ?"
       recap_contact: 'Récap TO DO'
       contact: 'Personne à contacter'
@@ -159,21 +159,29 @@ fr:
       grant3: "Poursuivons..."
       submit: "Valider"
     new:
-      new_title: "Créer un nouveau Lead"
+      new_title: "Créer un nouveau besoin"
     show:
       author: 'Posté par'
       created_at: 'le'
-      congrats_title: "Merci ! Votre lead est en cours de validation..."
+      congrats_title: "Merci ! Votre besoin est en cours de validation..."
       contact_title: 'Décideur'
       infos_title: 'Besoin exprimé'
       thank_you: 'Merci!'
-      private_message: 'Votre lead a bien été envoyé!'
-      public_message: 'Votre lead a bien été publié!'
+      private_message: 'Votre besoin a bien été envoyé!'
+      public_message: 'Votre besoin a bien été publié!'
   pages:
     start:
       buy_lead: 'Trouver un client'
       buyer_alert_title: 'Coming soon!'
-      buyer_alert_text: "Pendant la phase de Beta, il n'est pas possible d'acheter des leads via la plateforme. Notre équipe vous contactera automatiquement par mail ou via linkedin dès que nous recevrons un lead suceptible de vous intéresser !"
+      buyer_alert_text_html: "<p>Aïe! Cette version Beta n'offre pas la possibilité de voir les besoins à acheter... </p>
+                          <p>Il faut patienter jusqu'à Septembre prochain pour cela 🙂 </p>
+                          <p>En attendant, dès que nous identifions un besoin susceptible de vous intéresser, nous vous proposerons de l'acheter par mail. Pour recevoir des besoins sur mesure, écrivez-nous dès aujourd'hui à team@getalead.io, en indiquant :</p>
+                          <ul>
+                            <li> une brève description de votre entreprise</li>
+                            <li>vos références commerciales</li>
+                            <li>le type de prospects / clients que vous recherchez. </li>
+                          </ul>
+                          <p>Merci !</p>"
       create_lead: 'Déclarer un besoin'
       content_html: "<p><a href='https://www.getalead.io/'>Getalead.io</a> est un moteur de recherche de solutions et prestataires B2B.</p>
                     <p>Publiez vos propres besoins ou ceux de quelqu'un d'autre. Notre algorithme permet ensuite de communiquer ces opportunités aux prestataires les plus pertinents, et de réconcilier ainsi l'efficacité du commercial et la satisfaction du décideur.</p>"
