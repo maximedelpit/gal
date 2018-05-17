@@ -16,8 +16,9 @@ class User < ApplicationRecord
   before_update :mark_as_registered?
 
   STATES = %w(linkedin_ok registered)
-
+  MAIL_REGEX = /\A([^@\s]+)(@)([^@\s.]+)([.])([^@\s.]+)\z/
   validates :email, :language, presence: true, on: :update
+  validates :email, :linkedin_email, format: {with: MAIL_REGEX}, on: :update
   # validates :zones, :taggings, presence: true, on: :update
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
   validates :state, inclusion: { in: STATES, message: "%{value} is not a valid state" }
