@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   def edit
     @user = current_user
     authorize @user
+    redirect_to edit_user_registration_path(@user) if @user.state != 'linkedin_ok'
   end
 
   def update_password

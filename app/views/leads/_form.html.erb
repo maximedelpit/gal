@@ -7,7 +7,7 @@
 
 
         <!-- Contact -->
-        <h4 class='card-sub-titles col-xs-12'><%= t('.contact', default: 'Contact') %></h4>
+        <h4 class='card-sub-titles'><%= t('.contact', default: 'Contact') %></h4>
         <%= f.input :last_name, wrapper_html: {class: 'col-xs-12 col-sm-6'},
             input_html: {"cf-questions" => "#{lead_intro_message}&&#{field_message(:last_name)}"}
         %>
@@ -29,7 +29,7 @@
 
 
         <!-- Client & Lead description-->
-        <h4 class='card-sub-titles col-xs-12'><%= t('.description', default: 'Description') %></h4>
+        <h4 class='card-sub-titles'><%= t('.description', default: 'Description') %></h4>
         <%= f.input :company, wrapper_html: {class: 'col-xs-12 col-sm-8'},
             input_html: {"cf-questions" => "#{grant?}#{field_message(:company)}"}
         %>

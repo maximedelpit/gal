@@ -1,6 +1,6 @@
 <%= render layout: 'form' do |f| %>
   <!-- Client & Lead description-->
-  <h4 class='card-sub-titles col-xs-12'><%= t('.description_title', default: 'Description') %></h4>
+  <h4 class='card-sub-titles'><%= t('.description_title', default: 'Description') %></h4>
 
   <!-- Description -->
   <%= f.input :description, wrapper_html: {class: 'col-xs-12'}, label: false, error: false do |ff| %>

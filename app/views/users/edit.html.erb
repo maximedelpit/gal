@@ -12,27 +12,27 @@ s<div class="col-xs-12 col-sm-4 col-sm-offset-4">
         <%= f.input :email, required: true, autofocus: true,  wrapper_html: {class: 'col-xs-12'}, input_html: {value: set_mail_value} %>
         <%= f.input :password, autocomplete: "off", required: password_required?(@user), wrapper_html: {class: 'col-xs-12 col-md-6'} %>
         <%= f.input :password_confirmation, required: password_required?(@user),  wrapper_html: {class: 'col-xs-12 col-md-6'} %>
-        <% if @user.state == 'registered' %>
+        <%# if @user.state == 'registered' %>
           <%# if devise_mapping.confirmable? && @user.pending_reconfirmation? %>
           <!--   <p><%#= t("devise.registrations.edit.currently_waiting_confirmation_for_email", email: @user.unconfirmed_email) %></p> -->
           <%# end %>
 
-            <%= f.input :current_password, hint: t("devise.registrations.edit.we_need_your_current_password_to_confirm_your_changes"), required: true, wrapper_html: {class: 'col-xs-12'} %>
-        <% end %>
+            <%#= f.input :current_password, hint: t("devise.registrations.edit.we_need_your_current_password_to_confirm_your_changes"), required: true, wrapper_html: {class: 'col-xs-12'} %>
+        <%# end %>
       </div>
 
-      <% if @user.state == 'registered' %>
-        <h4 class='card-sub-titles col-xs-12'><%= t('devise.registrations.edit.profile_basics') %></h4>
+    <!--   <%# if @user.state == 'registered' %>
+        <h4 class='card-sub-titles'><%#= t('devise.registrations.edit.profile_basics') %></h4>
         <div class="form-inputs row">
-          <%= f.input :first_name, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
-          <%= f.input :last_name, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
-          <%= f.input :location, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
-          <%= f.input :job_title, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
-          <%= f.input :phone_number, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
-          <%= f.input :company, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
-          <%= f.association :industry, collection: Industry.all.order(:name), wrapper_html: {class: 'col-xs-12 col-md-6'}, input_html: {class: 'select2-no-add'} %>
+          <%#= f.input :first_name, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
+          <%#= f.input :last_name, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
+          <%#= f.input :location, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
+          <%#= f.input :job_title, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
+          <%#= f.input :phone_number, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
+          <%#= f.input :company, wrapper_html: {class: 'col-xs-12 col-md-6'} %>
+          <%#= f.association :industry, collection: Industry.all.order(:name), wrapper_html: {class: 'col-xs-12 col-md-6'}, input_html: {class: 'select2-no-add'} %>
         </div>
-      <% end %>
+      <%# end %> -->
 
       <h4 class='card-sub-titles'><%= t('devise.registrations.edit.looking_for') %></h4>
       <div class="form-inputs row">
