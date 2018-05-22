@@ -21,7 +21,7 @@ fr:
         first_name: 'Prénom'
         last_name: 'Nom'
         company: 'Société'
-        company_size: "Nombre d'emloyés"
+        company_size: "Nombre d'employés"
         location: "Localisation"
         job_title: 'Fonction'
         phone: 'Téléphone'

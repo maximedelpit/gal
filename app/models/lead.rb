@@ -8,7 +8,7 @@ class Lead < ApplicationRecord
   WITHIN = ['asap', '15_days', '1_month', '3_months', '6_months', '12_months', 'over_12_months']
 
   STATES = %w(created confirmed to_requalify rejected proposed sold)
-  LIMITS = [["Tous", nil], [1,1], [2,2], [3, 3]]
+  LIMITS = [["Pas de limite", nil], [1,1], [2,2], [3, 3]]
 
   # Global
   validates :user_id, presence: true
