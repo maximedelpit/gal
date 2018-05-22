@@ -10,7 +10,7 @@ s<div class="col-xs-12 col-sm-4 col-sm-offset-4">
       </div>
       <div class="form-inputs row">
         <%= f.input :email, required: true, autofocus: true,  wrapper_html: {class: 'col-xs-12'}, input_html: {value: set_mail_value} %>
-        <%= f.input :phone_number, wrapper_html: {class: 'col-xs-12} %>
+        <%= f.input :phone_number, wrapper_html: {class: 'col-xs-12'} %>
         <%= f.input :password, autocomplete: "off", required: password_required?(@user), wrapper_html: {class: 'col-xs-12 col-md-6'} %>
         <%= f.input :password_confirmation, required: password_required?(@user),  wrapper_html: {class: 'col-xs-12 col-md-6'} %>
         <%# if @user.state == 'registered' %>
