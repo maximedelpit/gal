@@ -74,6 +74,14 @@ en:
         publish_for_myself: 'Publish leads for myself'
         publish_for_others: 'Publish leads for my clients or prospects'
         get_clients: 'Find my next client'
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: "%{value} is not a valid format. If the problem persist, contact us at team@getalead.io"
+            linkedin_email:
+              invalid: "%{value} is not a valid format. If the problem persist, contact us at team@getalead.io"
   lead:
     STATES:
       created: "Created"

@@ -23,6 +23,7 @@ class CreateLeadStepsController < ApplicationController
     elsif step == steps.first && @lead.for_my_self
       fill_for_my_self_infos
     end
+    # binding.pry
     # @propositions = @lead.propositions
     @lead.save
     session[:lead_id] = @lead.id

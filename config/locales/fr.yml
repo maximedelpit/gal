@@ -74,6 +74,14 @@ fr:
         publish_for_myself: 'Publier mes besoins'
         publish_for_others: 'Publier pour des tiers'
         get_clients: 'Trouver des clients'
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              invalid: "%{value} n'est pas un format d'email reconnu. Si le problème persiste contactez-nous sur team@getalead.io"
+            linkedin_email:
+              invalid: "%{value} n'est pas un format d'email reconnu. Si le problème persiste contactez-nous sur team@getalead.io"
   lead:
     STATES:
       created: "Créé"

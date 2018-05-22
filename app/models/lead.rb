@@ -5,7 +5,6 @@ class Lead < ApplicationRecord
   # has_many :targets, through: :propositions, class_name: "User",  foreign_key: :user_id
 
   COMPANY_SIZES = %w(0-10 11-25 26-100 101-500 500+)
-  WITHIN = ['1_month', '3_months', '6_months', '12_months', 'over_12_months']
   WITHIN = ['asap', '15_days', '1_month', '3_months', '6_months', '12_months', 'over_12_months']
 
   STATES = %w(created confirmed to_requalify rejected proposed sold)
@@ -14,22 +13,16 @@ class Lead < ApplicationRecord
   # Global
   validates :user_id, presence: true
   validates :for_my_self, inclusion: { in: [true, false] }
-  validates :state, inclusion: { in: STATES, message: "%{value} is not a valid state" }, if: :active?
+  validates :state, inclusion: { in: STATES}, if: :active?
 
   # Description step validation
   validates :description, presence: true, if: -> {validation_for?(:description) || active?}
-  validates :description, length: {
-    in: 10..2000,
-    too_short: "%{count} characters is the minimum allowed",
-    too_long: "%{count} characters is the maximum allowed"
-  }, if: -> {validation_for?(:description) || active?}
+  validates :description, length: { in: 10..2000 }, if: -> {validation_for?(:description) || active?}
+  validates :within, inclusion: { in: WITHIN }, if: -> {validation_for?(:description) || active?}
 
   # Company step validation
   validates :company, :company_size, :location, presence: true, if: -> {validation_for?(:company) || active?}
-  validates :company_size, inclusion: { in: COMPANY_SIZES,
-     message: "%{value} is not a valid size" }, if: -> {validation_for?(:company) || active?}
-  validates :within, inclusion: { in: WITHIN,
-   message: "%{value} is not a valid implementation period" }, if: -> {validation_for?(:company) || active?}
+  validates :company_size, inclusion: { in: COMPANY_SIZES }, if: -> {validation_for?(:company) || active?}
 
   # Contact step validation
   validates :last_name, :job_title, :mail, presence: true, if: -> {validation_for?(:contact) || active?}

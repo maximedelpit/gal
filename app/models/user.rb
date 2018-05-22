@@ -16,12 +16,13 @@ class User < ApplicationRecord
   before_update :mark_as_registered?
 
   STATES = %w(linkedin_ok registered)
-  MAIL_REGEX = /\A([^@\s]+)(@)([^@\s.]+)([.])([^@\s.]+)\z/
-  validates :email, :language, presence: true, on: :update
+  MAIL_REGEX = /\A([^@\s]+)(@)([^@\s]+)([^\W_])([.])([^@\s.]+)\z/
+  validates :email, :language, :phone_number, presence: true, on: :update
   validates :email, :linkedin_email, format: {with: MAIL_REGEX}, on: :update
   # validates :zones, :taggings, presence: true, on: :update
   validates :accepts_tos, presence: true, acceptance: { accept: true }, on: :update
-  validates :state, inclusion: { in: STATES, message: "%{value} is not a valid state" }
+  validates :state, inclusion: { in: STATES }
+  validate :reason_of_use?, on: :update
 
   alias_method :subies, :subcategories
   alias_method :industry_subies, :industry_subcategories
@@ -128,6 +129,12 @@ class User < ApplicationRecord
   def mark_as_registered?
     if accepts_tos && state != 'registered' && email.present? && language.present? # && zones.present? && taggings.present? # && subcategories.present?
       assign_attributes(state: 'registered')
+    end
+  end
+
+  def reason_of_use?
+     if [publish_for_myself, publish_for_others, get_clients].all?(&:blank?)
+      errors.add :get_clients, "Sélectionner au moins une raison"
     end
   end
 
