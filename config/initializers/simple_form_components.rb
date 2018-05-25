@@ -4,7 +4,6 @@ module SimpleForm
       attr_reader :options_scope
       def icon(wrapper_options = nil)
         find_options_scope
-        binding.pry
         return icon_class unless @options_scope[1][:icon].nil?
       end
 

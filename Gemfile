@@ -29,6 +29,7 @@ gem 'sidekiq-failures', '~> 1.0'
 # Business Operations Gems
 gem 'acts-as-taggable-on', '~> 4.0'
 gem 'omniauth-linkedin-oauth2'
+# gem 'omniauth-linkedin-oauth2', git: 'https://github.com/maximedelpit/omniauth-linkedin-oauth2.git', branch: 'mdesjardins-v2-fix'
 gem 'linkedin', '~> 1.1'
 gem 'mailjet'
 
