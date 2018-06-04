@@ -181,15 +181,10 @@ fr:
     start:
       buy_lead: 'Trouver un client'
       buyer_alert_title: 'Coming soon!'
-      buyer_alert_text_html: "<p>Aïe! Cette version Beta n'offre pas la possibilité de voir les besoins à acheter... </p>
-                          <p>Il faut patienter jusqu'à Septembre prochain pour cela 🙂 </p>
-                          <p>En attendant, dès que nous identifions un besoin susceptible de vous intéresser, nous vous proposerons de l'acheter par mail. Pour recevoir des besoins sur mesure, écrivez-nous dès aujourd'hui à team@getalead.io, en indiquant :</p>
-                          <ul>
-                            <li> une brève description de votre entreprise</li>
-                            <li>vos références commerciales</li>
-                            <li>le type de prospects / clients que vous recherchez. </li>
-                          </ul>
-                          <p>Merci !</p>"
+      buyer_alert_text_html: "<p>Nous n'avons pas encore développé la fonctionnalité vous permettant de parcourir les besoins à acheter sur la plateforme, mais nous travaillons comme des fous pour que cela sorte d'ici septembre 😉</p>
+        <p>En attendant, vous allez recevoir un appel dans les prochaines 24 à 48h de notre équipe pour comprendre quel type de besoin vous intéresse précisément et vous expliquer la façon dont nous vous les proposerons.</p>
+        <p>Merci de votre compréhension !!</p>
+        <p>L'équipe Getalead</p>"
       create_lead: 'Déclarer un besoin'
       content_html: "<p><a href='https://www.getalead.io/'>Getalead.io</a> est un moteur de recherche de solutions et prestataires B2B.</p>
                     <p>Publiez vos propres besoins ou ceux de quelqu'un d'autre. Notre algorithme permet ensuite de communiquer ces opportunités aux prestataires les plus pertinents, et de réconcilier ainsi l'efficacité du commercial et la satisfaction du décideur.</p>"

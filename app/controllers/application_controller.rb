@@ -29,14 +29,6 @@ class ApplicationController < ActionController::Base
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
 
-  # def log_exception(level, exception, scope={})
-  #   Rollbar.scope(scope).send(level, exception)
-  #   Rails.logger.send(level, exception)
-  #   if Rails.env == 'production'
-  #   else
-
-  # end
-
   def sanitize_collection_params(key, associations=%i(industry_subcategory_ids prospect_area_ids tag_ids))
     return if key.nil?
     associations.each do |as|
