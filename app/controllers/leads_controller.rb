@@ -1,4 +1,4 @@
-class LeadsController < ApplicationController
+class LeadsController < BusinessController
   def new
     @lead = Lead.new(price: 30, user: current_user, build_status: 'active')
     authorize @lead

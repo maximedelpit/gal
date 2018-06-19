@@ -24,11 +24,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def authenticate_user!
-    super
-    redirect_to edit_user_path if current_user.state != 'registered' && (params[:controller] != 'users' && params[:action] != 'edit')
-  end
-
   def default_url_options
     { locale: I18n.locale == I18n.default_locale ? nil : I18n.locale }
   end
@@ -67,8 +62,14 @@ class ApplicationController < ActionController::Base
   end
 
   def user_not_authorized
-    flash[:alert] = "Access forbidden"
-    redirect_to root_path
+    
+    if user_signed_in? && current_user.state == 'linkedin_ok'
+      flash[:alert] = I18n.t(:only_linkedin_ok)
+      redirect_to edit_user_path
+    else
+      flash[:alert] = "Access forbidden"
+      redirect_to root_path
+    end  
   end
 
   protected

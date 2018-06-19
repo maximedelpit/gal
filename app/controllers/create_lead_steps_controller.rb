@@ -1,4 +1,4 @@
-class CreateLeadStepsController < ApplicationController
+class CreateLeadStepsController < BusinessController
   skip_before_action :reset_lead_session
   include Wicked::Wizard
   steps :context, :description, :company, :contact, :checkout
