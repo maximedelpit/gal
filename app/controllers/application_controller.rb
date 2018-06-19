@@ -21,8 +21,12 @@ class ApplicationController < ActionController::Base
       edit_user_path
     else
       root_path
-      # new_lead_path
     end
+  end
+
+  def authenticate_user!
+    super
+    redirect_to edit_user_path if current_user.state != 'registered' && (params[:controller] != 'users' && params[:action] != 'edit')
   end
 
   def default_url_options

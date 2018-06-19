@@ -1,7 +1,7 @@
 class LeadPolicy < ApplicationPolicy
 
   def create?
-    return user.present?
+    return user.present? && user.state == 'registered'
   end
 
   def show?
