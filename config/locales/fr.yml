@@ -181,9 +181,8 @@ fr:
     start:
       buy_lead: 'Trouver un client'
       buyer_alert_title: 'Coming soon!'
-      buyer_alert_text_html: "<p>Nous n'avons pas encore développé la fonctionnalité vous permettant de parcourir les besoins à acheter sur la plateforme, mais nous travaillons comme des fous pour que cela sorte d'ici septembre 😉</p>
-        <p>En attendant, vous allez recevoir un appel dans les prochaines 24 à 48h de notre équipe pour comprendre quel type de besoin vous intéresse précisément et vous expliquer la façon dont nous vous les proposerons.</p>
-        <p>Merci de votre compréhension !!</p>
+      buyer_alert_text_html: "<p>En attendant de pouvoir consulter les opportunités directement sur le site, nous vous proposons par mail les opportunités qui peuvent vous intéresser.</p>
+        <p>Vous allez recevoir d’ici 24 à 48h un petit coup de fil de nos équipes pour vous expliquer le process en détail et pour mieux comprendre le type d’opportunités que vous recherchez !<p>
         <p>L'équipe Getalead</p>"
       create_lead: 'Déclarer un besoin'
       content_html: "<p><a href='https://www.getalead.io/'>Getalead.io</a> est un moteur de recherche de solutions et prestataires B2B.</p>
