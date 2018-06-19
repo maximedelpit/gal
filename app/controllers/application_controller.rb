@@ -64,7 +64,7 @@ class ApplicationController < ActionController::Base
   def user_not_authorized
     
     if user_signed_in? && current_user.state == 'linkedin_ok'
-      flash[:alert] = I18n.t(:only_linkedin_ok)
+      flash[:alert] = I18n.t(:missing_info_for_registered)
       redirect_to edit_user_path
     else
       flash[:alert] = "Access forbidden"

@@ -185,3 +185,4 @@ en:
       create_lead: 'Sell a lead'
       content_html: "<p>Some of the information that you collect on a daily basis does not interest you but may have value for others. Share it and receive some!</p><br>
         <p>The more qualified leads you generate, the more you will receive.</p>"
+  missing_info_for_registered: 'Your profile is incomplete. Please fill missing infos'

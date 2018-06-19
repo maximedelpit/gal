@@ -187,3 +187,4 @@ fr:
       create_lead: 'Déclarer un besoin'
       content_html: "<p><a href='https://www.getalead.io/'>Getalead.io</a> est un moteur de recherche de solutions et prestataires B2B.</p>
                     <p>Publiez vos propres besoins ou ceux de quelqu'un d'autre. Notre algorithme permet ensuite de communiquer ces opportunités aux prestataires les plus pertinents, et de réconcilier ainsi l'efficacité du commercial et la satisfaction du décideur.</p>"
+  missing_info_for_registered: 'Votre compte est incomplet, veuillez finaliser votre inscription'
