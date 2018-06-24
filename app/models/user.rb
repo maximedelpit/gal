@@ -45,7 +45,7 @@ class User < ApplicationRecord
   end
 
   def full_name
-    return "#{first_name} #{last_name}"
+    return "#{first_name} #{last_name}".strip
   end
 
   def self.add_lkdn_to_logs(auth)

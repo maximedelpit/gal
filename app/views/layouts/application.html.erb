@@ -26,5 +26,6 @@
     <script src="https://cdn.polyfill.io/v2/polyfill.min.js"></script>
     <%= javascript_include_tag 'application' %>
     <%= yield(:after_js) %>
+    <%= render 'shared/intercom_script' %>
   </body>
 </html>
