@@ -112,7 +112,7 @@ en:
       new:
         sign_up: Register
         welcome: "Join the Get a Lead community!" #custom
-        signup_guidelines: "Get a Lead is a product for professionals, please register with Linkedin. Don't worry we will not be able to access your connections or post with your profile." #custom
+        signup_guidelines_html: "<p>Get a Lead is a product for professionals, please register with Linkedin. Don't worry we will not be able to access your connections or post with your profile.</p>" #custom
         why_linkedin_title: "Why Linkedin?" #custom
         why_linkedin: "Linkedin is the most trusted business social network in the world. To guarantee the quality of our leads and the trustworthyness of our community we only accept users with a complete Linkedin profile." #custom
       signed_up: Welcome! You have registered successfully.

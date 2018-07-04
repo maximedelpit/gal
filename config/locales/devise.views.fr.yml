@@ -112,7 +112,11 @@ fr:
       new:
         sign_up: "M'inscrire"
         welcome: "Rejoignez l'aventure Get a Lead !"
-        signup_guidelines: "Get a Lead est une plateforme réservée aux professionels, inscrivez-vous via Linkedin.\nRassurez-vous: nous n'aurons pas accès à votre réseau ni ne pourrons poster à votre place"
+        signup_guidelines_html: "<p>Getalead est une plateforme réservée aux professionnels. L'inscription se fait via Linkedin pour garantir que seuls des professionnels rejoignent notre communauté. Mais rassurez-vous :</p>
+          <ul class='list-unstyled'>
+            <li>- nous n'avons accès ni à votre réseau ni à vos posts</li>
+            <li>- vous avez la possibilité de modifier votre adresse email à la seconde étape de l'inscription</li>
+          </ul>"
         why_linkedin_title: "Pourquoi Linkedin ?"
         why_linkedin: "Linkedin est le réseau social professionnel le plus fiable au monde. Afin de garantir la qualité de nos leads et la crédibilité de notre communauté, nous n'acceptons que les utilisateurs ayant un profil Linkedin complet."
       signed_up: Bienvenue ! Vous vous êtes enregistré(e) avec succès.
