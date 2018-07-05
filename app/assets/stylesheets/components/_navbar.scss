@@ -29,6 +29,9 @@
   align-items: center;
   justify-content: space-between;
 }
+.navbar-wagon-right > * {
+  margin: 0 10px;
+}
 
 /* Basic navbar item */
 .navbar-wagon-item {

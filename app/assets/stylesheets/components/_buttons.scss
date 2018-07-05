@@ -36,9 +36,10 @@
 .user-funnel-cta {
   display: flex;
   justify-content: center;
-  margin: 2rem 0;
+  margin: 1rem 0 2rem 0;
+  flex-wrap: wrap;
   * {
-    margin: 0 4px;
+    margin:4px;
   }
   .btn {
     min-width: 152px;

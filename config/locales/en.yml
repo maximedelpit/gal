@@ -10,6 +10,7 @@ en:
       tagging: 'Keyword'
       user: 'User'
       zone: 'User area'
+      tutorial: 'Tutorial'
     attributes:
       industry:
         linkedin_code: "Code Linkedin"
@@ -52,6 +53,10 @@ en:
         zipcode: 'zipcode'
         city: 'City'
         category: 'Category'
+      tutorials:
+        title: 'Title'
+        description: 'Description'
+        youtube_id: 'Youtube ID'
       user:
         email: 'Email'
         first_name: 'First Name'
