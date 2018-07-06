@@ -10,6 +10,7 @@ fr:
       tagging: 'Mot Clé'
       user: 'Utilisateur'
       zone: 'Zone utilisateur'
+      tutorial: 'Tutoriel'
     attributes:
       industry:
         linkedin_code: "Code Linkedin"
@@ -52,6 +53,10 @@ fr:
         zipcode: 'Code postal'
         city: 'Ville'
         category: 'Type'
+      tutorials:
+        title: 'Titre'
+        description: 'Description'
+        youtube_id: 'ID Youtbe'
       user:
         email: 'Email professionnel (pour recevoir mes besoins)'
         first_name: 'Prénom'
@@ -188,3 +193,4 @@ fr:
       content_html: "<p><a href='https://www.getalead.io/'>Getalead.io</a> est un moteur de recherche de solutions et prestataires B2B.</p>
                     <p>Publiez vos propres besoins ou ceux de quelqu'un d'autre. Notre algorithme permet ensuite de communiquer ces opportunités aux prestataires les plus pertinents, et de réconcilier ainsi l'efficacité du commercial et la satisfaction du décideur.</p>"
   missing_info_for_registered: 'Votre compte est incomplet, veuillez finaliser votre inscription'
+  discover_tutos: 'Découvrez nos tutoriels'

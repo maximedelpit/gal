@@ -1,0 +1,25 @@
+
+<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+  <div class="card-wrapper">
+    <h3 class='card-title text-center'>
+      <%= Tutorial.model_name.human.pluralize %>
+    </h3>
+    <div class="card-content no-title">
+      <div class="row">
+        <% @tutorials.each do |tuto| %>
+          <div class="col-xs-12 col-sm-6">
+            <div class="card-block">
+              <div class="text-center">
+                  <!-- <h2 class='card-sub-titles'><%#= tuto.title %></h2> -->
+                  <div class="video-wrapper">
+                    <iframe src='https://www.youtube.com/embed/<%= tuto.youtube_id %>' frameborder='0' allowfullscreen class='video'></iframe>
+                  </div>
+                  <%= link_to simple_format(tuto.title), tutorial_path(tuto), class: 'md-sz' %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

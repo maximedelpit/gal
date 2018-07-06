@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     root to: 'pages#start'
     resources :leads, only: [:new, :create, :show]
     resources :create_lead_steps
+    resources :tutorials, only: [:index, :show]
     resource :user, only: [:edit] do
       collection do
         put 'update_password'
@@ -13,12 +14,9 @@ Rails.application.routes.draw do
     end
   end
 
-  Rails.application.routes.draw do
-    # Sidekiq Web UI, only for admins.
-    require "sidekiq/web"
-    authenticate :user, lambda { |u| u.admin } do
-      mount Sidekiq::Web => '/sidekiq'
-    end
+  # Sidekiq Web UI, only for admins.
+  require "sidekiq/web"
+  authenticate :user, lambda { |u| u.admin } do
+    mount Sidekiq::Web => '/sidekiq'
   end
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
