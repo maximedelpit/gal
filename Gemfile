@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.4.1'
+ruby '2.6.1'
 
 gem 'devise'
 gem 'figaro'
@@ -48,7 +48,6 @@ gem 'google_drive'
 # Monitoring
 group :production do
   gem 'rollbar'
-  gem 'oj', '~> 2.16.1'
 end
 group :development, :test do
   gem 'pry-byebug'

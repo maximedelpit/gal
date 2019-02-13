@@ -521,7 +521,9 @@ prospect_areas = [
 ]
 
 prospect_areas.each do |attr_|
-  ProspectArea.create!(attr_.merge(validated: true))
+  pa = ProspectArea.new(attr_.merge(validated: true))
+  pa.name = pa.set_name
+  pa.save
 end
 puts 'ProspectArea created'
 
